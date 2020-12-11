@@ -58,8 +58,9 @@
                     <div class="oe_structure" />
 	                  <div class="text-center">
 	                        <br></br>
-						 <h5>ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h5><br></br>
-                         <h5>TAX INVOICE / OFFICIAL RECEIPT</h5>
+					<center><h6 style="font-size:15px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
+					
+                    <center><h6 style="font-size:15px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
                          <br></br>
                        </div>
 					
