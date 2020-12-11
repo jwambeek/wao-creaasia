@@ -41,7 +41,7 @@
 		</div>
 			
 			
-			<div class = "row">
+			<!--<div class = "row">
 				<div class="col-12 bm-2 text-center">
 					<center><h6 style="font-size:15px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
 					
@@ -50,10 +50,20 @@
                 </div>
 			</div>
 				
-	<br></br>				 
+	<br></br>-->				 
 	<t t-call="web.html_container">
 		<t t-foreach="docs" t-as="o">
 			<t t-call="web.external_layout">
+			<div class="page">
+                    <div class="oe_structure" />
+	                  <div class="text-center">
+	                        <br></br>
+                         <h3>TAX INVOICE / OFFICIAL RECEIPT</h3>
+                         <br></br>
+                       </div>
+					</div>
+		    </div>			   
+
                 <div class="page">
 								<div class="row mt32 mb32">
 									<!--<div class="col-xs-6">
