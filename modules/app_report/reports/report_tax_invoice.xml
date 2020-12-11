@@ -10,7 +10,7 @@
 				  <t t-foreach="docs" t-as="o">
 					
 					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
-					<p class ="_comp_add" style="font-size:14px">
+					<p class ="_comp_add" style="font-size:15px">
 					<t t-esc="o.company_id.street"/><br></br>
 					<t t-esc="o.company_id.street2"/><br></br>
 					<t t-esc="o.company_id.city">,</t>
@@ -18,7 +18,7 @@
 					<t t-esc="o.company_id.country_id.name"/>
 					<t t-esc="o.company_id.zip"/><br></br>
 					</p>
-					<strong style="font-size:14px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
+					<strong style="font-size:15px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
 					
 					</t>
                 </div>
@@ -36,10 +36,10 @@
                 <br></br>
                 <div class="col-3 bm-2 text-right">
 					<t t-foreach="docs" t-as="o">
-					<p class ="_local_lang_add" style="font-size:14px">
+					<p class ="_local_lang_add" style="font-size:15px">
 					     <t t-esc="o.company_id.address_local_lang"/>
 						 <br></br><br></br>
-						 <strong style="font-size:14px">เลขประจำตัวผู้เสียภาษี :</strong> <t t-esc="o.company_id.vat"/>
+						 <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี :</strong> <t t-esc="o.company_id.vat"/>
 					</p>	 
 					</t>
 
