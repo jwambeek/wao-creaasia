@@ -9,12 +9,12 @@
                 <div class="col-3 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
 					<small>
-					<strong style="font-size:10px"><t t-esc="o.company_id.name"/></strong><br></br>
+					<strong style="font-size:14px"><t t-esc="o.company_id.name"/></strong><br></br>
 					<t t-esc="o.company_id.street"/><br></br>
 					<t t-esc="o.company_id.street2"/><br></br>
 					<t t-esc="o.company_id.city"/><br></br>
 					<t t-esc="o.company_id.zip"/><br></br>
-					<strong style="font-size:10px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
+					<strong style="font-size:12px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
 					</small>
 					</t>
                 </div>
