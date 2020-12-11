@@ -78,12 +78,11 @@
 			    <strong style="font-size:16px">ชื่อ / ที่อยู่ </strong>
 				<br></br>
 				<strong style="font-size:16px">Name / Address :</strong>
-				<p class = "_cust_add" style= "font-size:16px">
 				<t t-esc="o.partner_id.street" />
 				<t t-esc="o.partner_id.street2" />
 				<t t-esc="o.partner_id.city" />
 				<t t-esc="o.partner_id.zip" />
-				</p>					
+									
                 </div>
 			</div>
 			<div class = "row">
