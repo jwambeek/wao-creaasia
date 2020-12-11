@@ -10,7 +10,7 @@
 				  <t t-foreach="docs" t-as="o">
 					<small>
 					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
-					<p class ="_comp_add" style="font-size:13px">
+					<p class ="_comp_add" style="font-size:14px">
 					<t t-esc="o.company_id.street"/><br></br>
 					<t t-esc="o.company_id.street2"/><br></br>
 					<t t-esc="o.company_id.city"/><br></br>
