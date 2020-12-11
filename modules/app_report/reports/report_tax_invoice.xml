@@ -17,9 +17,9 @@
 					<t t-esc="o.company_id.state_id.name"/><br></br>
 					<t t-esc="o.company_id.country_id.name"/>
 					<t t-esc="o.company_id.zip"/><br></br>
-					</p>
-					<strong style="font-size:15px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
 					
+					<strong style="font-size:15px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
+					</p>
 					</t>
                 </div>
                 
@@ -38,7 +38,7 @@
 					<t t-foreach="docs" t-as="o">
 					<p class ="_local_lang_add" style="font-size:15px">
 					     <t t-esc="o.company_id.address_local_lang"/>
-						 <br></br><br></br>
+						 <br></br>
 						 <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี :</strong> <t t-esc="o.company_id.vat"/>
 					</p>	 
 					</t>
@@ -68,7 +68,7 @@
 					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
 					
                     <center><h6 style="font-size:19px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
-                         
+                      <br></br>   
                        </div>
 					
 		    </div>			   
