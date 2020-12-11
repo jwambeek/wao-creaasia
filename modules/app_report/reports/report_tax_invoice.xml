@@ -16,7 +16,7 @@
 					<t t-esc="o.company_id.city">,</t>
 					<t t-esc="o.company_id.state_id.name"/><br></br>
 					<t t-esc="o.company_id.country_id.name"/>
-					<t t-esc="o.company_id.zip"/><br></br>
+					<t t-esc="o.company_id.zip"/>
 					
 					<p style="font-size:15px">Tax ID : <t t-esc="o.company_id.vat"/></p>
 					</p>
