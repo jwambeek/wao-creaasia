@@ -80,11 +80,11 @@ class AccountInvoice_Data(models.Model):
     #channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
     #address_local_lang =  fields.Text(string = 'Address (Thai)', tracking=True,readonly=True)
     
-    @api.depends('line_ids.price_unit', 'line_ids.seller_discount','line_ids.quantity')
+    @api.depends('invoice_line_ids.price_unit', 'invoice_line_ids.seller_discount','invoice_line_ids.quantity')
     def _cal_total_discount(self):
         for order in self:
             cal_discount = 0
-            for line_items in order.line_ids:
+            for line_items in order.invoice_line_ids:
                 cal_discount = cal_discount + (line_items.quantity * line_items.price_unit * line_items.seller_discount) / 100
             order.calculated_discount = cal_discount
         
