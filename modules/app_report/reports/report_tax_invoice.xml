@@ -127,11 +127,11 @@
 							<tbody>
 								<tr t-foreach="o.invoice_line_ids" t-as="line">
 									<!--<td style="border: 1px solid black"><span t-field="       	"/></td>-->
-									<td style="border: 1px solid black"><span t-field="line.product_id"/></td>
-									<td style="border: 1px solid black"><span t-field="line.name"/></td>
-									<td style="border: 1px solid black"><span t-field="line.quantity"/></td>
-									<td style="border: 1px solid black"><span t-field="line.price_unit"/></td>
-									<td style="border: 1px solid black"><span t-field="line.price_subtotal"/></td>
+									<td style="border: 1px "><span t-field="line.product_id"/></td>
+									<td style="border: 1px "><span t-field="line.name"/></td>
+									<td style="border: 1px "><span t-field="line.quantity"/></td>
+									<td style="border: 1px "><span t-field="line.price_unit"/></td>
+									<td style="border: 1px "><span t-field="line.price_subtotal"/></td>
 								</tr>
 							</tbody>
 							</table>
