@@ -7,14 +7,9 @@
 	    <div class="header">
             <div class="row">
                 <div class="col-3 bm-2 text-left">
-                    <!--<small><strong>Crea Trading Co.,Ltd.(Head Office)</strong><br></br>
-				   712/1 TBI Building, 6th Floor<br></br>
-				   Soi Sukhumvit 26 and 28, Khlon Ton,<br></br>
-				   Khlong Toei, Bangkok,<br></br>
-				   Thailand 10110</small>-->
-
-				   <t t-foreach="docs" t-as="o">
+				  <t t-foreach="docs" t-as="o">
 					<small>
+					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong> 
 					<t t-esc="o.company_id.street"/><br></br>
 					<t t-esc="o.company_id.street2"/><br></br>
 					<t t-esc="o.company_id.city"/><br></br>
@@ -81,7 +76,7 @@
 
                                     <div class="col-9 bm-2 text-right" >
 									    
-										<strong style="font-size:10px">ไม่ / No:</strong> <t t-esc="o.number"/>
+										<strong style="font-size:10px">ไม่ / No :</strong> <t t-esc="o.number"/>
 									</div>
                                 </div>
 					</div>
@@ -94,9 +89,9 @@
 										<strong style="font-size:10px">Tax ID No.</strong> <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 									</div>
                                     <br></br>
-									<div class="col-9 bm-2 text-center"  >
+									<div class="col-9 bm-2 text-right"  >
 									<span>
-										<strong style="font-size:10px">วันที่ / Date:</strong>
+										<strong style="font-size:10px">วันที่ / Date :</strong>
 										<t t-esc="o.date_invoice" class="m-0 text-right"/>
 									</span>	
 									</div>
