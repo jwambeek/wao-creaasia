@@ -72,8 +72,8 @@ class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
     seller_discount = fields.Float(string='Seller Discount')
 
-class AccountMove_Data(models.Model):
-    _inherit = 'account.move'
+class AccountInvoice_Data(models.Model):
+    _inherit = 'account.invoice'
 
     # seller_discount = fields.Float(string = 'Seller Discount',readonly=True, tracking=True)
 
@@ -120,8 +120,8 @@ class AccountMove_Data(models.Model):
     vat = fields.Float(string = 'Vat', compute = '_cal_total_vat', store = True, digits=(12,4))
 
     
-class AccountMove_Line_Data(models.Model):
-    _inherit = 'account.move.line'
+class AccountInvoice_Line_Data(models.Model):
+    _inherit = 'account.invoice.line'
     seller_discount = fields.Float('seller_discount')
 
 
@@ -129,5 +129,5 @@ class AccountMove_Line_Data(models.Model):
 class ResPartner_Data(models.Model):
     _inherit = 'res.company'
 
-    address_local_lang =  fields.Text(string = 'Address(Thai)')        
+    address_local_lang =  fields.Text(string = 'Local language address')        
 
