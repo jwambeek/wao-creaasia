@@ -76,14 +76,14 @@
     <div class="page">
 			<div class = "row">
 				<div class="col-12 bm-2 text-right">
-			    <strong style="font-size:14px">ไม่ / No :</strong> <t t-esc="o.number"/>					
+			    <strong style="font-size:15px">ไม่ / No :</strong> <t t-esc="o.number"/>					
                 </div>
 			</div>
            <div class = "row">
 				<div class="col-12 bm-2 text-left">
-			    <strong style="font-size:14px">ชื่อ / ที่อยู่ </strong>
+			    <strong style="font-size:15px">ชื่อ / ที่อยู่ </strong>
 				<br></br>
-				<strong style="font-size:14px">Name / Address :</strong>
+				<strong style="font-size:15px">Name / Address :</strong>
 				<t t-esc="o.partner_id.street" />
 				<t t-esc="o.partner_id.street2" />
 				<t t-esc="o.partner_id.city" />
@@ -95,16 +95,16 @@
 			</div>
 			<div class = "row">
 				<div class="col-12 bm-2 text-right">
-			    <strong style="font-size:14px">วันที่ / Date :</strong>
+			    <strong style="font-size:15px">วันที่ / Date :</strong>
 				<t t-esc="o.date_invoice" class="m-0 text-right"/>					
                 </div>
 			</div>
 			<div class = "row">
 				<div class="col-12 bm-2 text-left">
-			    	<strong style="font-size:14px">เลขประจำตัวผู้เสียภาษี  </strong>
+			    	<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>
 						<t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 						<br></br>
-						<strong style="font-size:14px">Tax ID No.</strong>					
+						<strong style="font-size:15px">Tax ID No.</strong>					
                 </div>
 			</div>
 </div>
@@ -147,21 +147,21 @@
 					<div id="total" class="row">
 						<div t-attf-class="#{'col-5' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
 							<table class="table table-sm">
-								<tr class="border-black o_price_subtotal" style="font-size:14px">
+								<tr class="border-black o_price_subtotal" style="font-size:15px">
 									<td><strong>ผลรวมทั้งสิ้น / Grand Total</strong></td>
 									<td class="text-right">
 										<span t-field="o.grand_total"/>
 									</td>
 								</tr>
 								    
-								<tr class="border-black o_calculated_discount" style="font-size:14px">
+								<tr class="border-black o_calculated_discount" style="font-size:15px">
 								<td><strong>ส่วนลด / Discount</strong></td>
 								<td class="text-right">
 									<span t-field="o.calculated_discount"/>
 								</td>
 								</tr>
 
-								<tr class="border-black o_total_baht_excl_VAT" style="font-size:14px">
+								<tr class="border-black o_total_baht_excl_VAT" style="font-size:15px">
 								<td><strong>รวมบาทไม่รวม ภาษีมูลค่าเพิ่ม / Total Baht Excl. Vat</strong></td>
 								<td class="text-right">
 									<span t-field="o.total_baht_excl_VAT"/>
@@ -174,7 +174,7 @@
 									</td>
 								</tr>-->
 
-								<tr class="border-black o_amount_tax" style="font-size:14px">
+								<tr class="border-black o_amount_tax" style="font-size:15px">
 									<td><strong>ภาษีมูลค่าเพิ่ม 7% / VAT 7%</strong></td>
 									<td class="text-right">
 										<span t-field="o.vat"/>
@@ -182,7 +182,7 @@
 								</tr>
 
 
-								<tr class="border-black o_total_baht_incl_VAT" style="font-size:14px">
+								<tr class="border-black o_total_baht_incl_VAT" style="font-size:15px">
 									<td><strong>รวมบาท ภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
 									<td class="text-right">
 										<span t-field="o.total_baht_incl_VAT"/>
