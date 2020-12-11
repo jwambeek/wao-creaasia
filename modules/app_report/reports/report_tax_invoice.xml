@@ -14,7 +14,7 @@
 					<t t-esc="o.company_id.street2"/><br></br>
 					<t t-esc="o.company_id.city"/><br></br>
 					<t t-esc="o.company_id.zip"/><br></br>
-					<t t-esc="o.country_id"/><br></br>
+					
 					<strong style="font-size:12px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
 					</small>
 					</t>
@@ -68,6 +68,17 @@
 		    </div>			   
 
                 <div class="page">
+<div class = "row">
+				<div class="col-12 bm-2 text-left">
+			    <strong style="font-size:16px">ชื่อ / ที่อยู่ </strong>
+				<br></br>
+				<strong style="font-size:16px">Name / Address :</strong>
+				<small>
+				<t t-esc="o.partner_id.street" />
+										</small>					
+                </div>
+			</div>
+
 								<div class="row mt32 mb32">
 									<!--<div class="col-xs-6">
 										<strong>Name / Address</strong> <t t-esc="o.partner_id"/>
