@@ -49,7 +49,7 @@
 
                 </div>
 			</div>
-			<br></br><br></br>
+			<br></br>
 			<div class = "row">
 				<div class="col-12 bm-2 text-right">
 					<center><h6 style="font-size:14px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
@@ -94,7 +94,7 @@
 										<strong style="font-size:10px">Tax ID No.</strong> <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 									</div>
                                     <br></br>
-									<div class="col-9 bm-2 text-right"  >
+									<div class="col-9 bm-2 text-center"  >
 									<span>
 										<strong style="font-size:10px">วันที่ / Date:</strong>
 										<t t-esc="o.date_invoice" class="m-0 text-right"/>
