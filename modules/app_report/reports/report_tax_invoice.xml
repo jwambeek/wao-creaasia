@@ -72,9 +72,9 @@
 										<strong>Name / Address</strong> <t t-esc="o.partner_id"/>
 									</div>-->
 									<div class="col-3 bm-2">
-									<strong style="font-size:14px">ชื่อ / ที่อยู่ </strong>
+									<strong style="font-size:15px">ชื่อ / ที่อยู่ </strong>
 									<br></br>
-									    <strong style="font-size:14px">Name/Address :</strong>
+									    <strong style="font-size:15px">Name/Address :</strong>
 										<small>
 										<t t-esc="o.partner_id" t-options='{"widget": "contact", "fields": [ "name","address"], "no_marker": True, "phone_icons": True}'/>
 										</small>
@@ -84,7 +84,7 @@
 
                                     <div class="col-9 bm-2 text-right" >
 									    
-										<strong style="font-size:14px">ไม่ / No :</strong> <t t-esc="o.number"/>
+										<strong style="font-size:15px">ไม่ / No :</strong> <t t-esc="o.number"/>
 									</div>
                                 </div>
 					</div>
@@ -92,7 +92,7 @@
 					<div class="page">
 								<div class="row mt32 mb32">
 									<div class="col-3 bm-2 "  >
-									    <strong style="font-size:14px">เลขประจำตัวผู้เสียภาษี</strong>
+									    <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี</strong>
 										 <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 										<br></br>
 										<strong style="font-size:14px">Tax ID No.</strong>
@@ -100,7 +100,7 @@
                                     <br></br>
 									<div class="col-9 bm-2 text-right"  >
 									<span>
-										<strong style="font-size:14px">วันที่ / Date :</strong>
+										<strong style="font-size:15px">วันที่ / Date :</strong>
 										<t t-esc="o.date_invoice" class="m-0 text-right"/>
 									</span>	
 									</div>
