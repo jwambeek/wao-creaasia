@@ -117,11 +117,11 @@
 								<thead>
 										<tr>
 											    <!--<th style="border: 1px solid black" class="text-center">No. </th>-->
-												<th style="border: solid black" class="text-center">สินค้า <br></br>Product</th>
-												<th style="border: 0px solid black" class="text-center">คำอธิบาย <br></br>Description </th>
-												<th style="border: 0px solid black" class="text-center">ปริมาณ <br></br>Quantity</th>
-												<th style="border: 0px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
-												<th style="border: 0px solid black" class="text-center">จำนวน <br></br>Amount </th>
+												<th style="border: 1px solid black" class="text-center">สินค้า <br></br>Product</th>
+												<th style="border: 1px solid black" class="text-center">คำอธิบาย <br></br>Description </th>
+												<th style="border: 1px solid black" class="text-center">ปริมาณ <br></br>Quantity</th>
+												<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
+												<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Amount </th>
 										</tr>
 								</thead>	
 							<tbody>
