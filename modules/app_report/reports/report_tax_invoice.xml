@@ -13,9 +13,11 @@
 					<p class ="_comp_add" style="font-size:14px">
 					<t t-esc="o.company_id.street"/><br></br>
 					<t t-esc="o.company_id.street2"/><br></br>
-					<t t-esc="o.company_id.city"/><br></br>
-					<t t-esc="o.company_id.zip"/><br></br>
+					<t t-esc="o.company_id.city">,</t>
 					<t t-esc="o.company_id.state_id.name"/><br></br>
+					<t t-esc="o.company_id.country_id.name"/>
+					<t t-esc="o.company_id.zip"/><br></br>
+					
 					</p>
 					<strong style="font-size:12px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
 					</small>
