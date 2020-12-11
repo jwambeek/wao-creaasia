@@ -81,7 +81,7 @@
 
                                     <div class="col-9 bm-2 text-right" >
 									    
-										<strong style="font-size:10px">เลขที่ใบแจ้งหนี้ / Invoice No:</strong> <t t-esc="o.name"/>
+										<strong style="font-size:10px">เลขที่ใบแจ้งหนี้ / Invoice No:</strong> <t t-esc="o.number"/>
 									</div>
                                 </div>
 					</div>
@@ -97,7 +97,7 @@
 									<div class="col-9 bm-2 text-right"  >
 									<span>
 										<strong style="font-size:10px">วันที่ในใบแจ้งหนี้ / Invoice Date:</strong>
-										<t t-esc="o.invoice_date" class="m-0 text-right"/>
+										<t t-esc="o.date_invoice" class="m-0 text-right"/>
 									</span>	
 									</div>
 
