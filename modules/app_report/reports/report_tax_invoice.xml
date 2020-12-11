@@ -9,7 +9,7 @@
                 <div class="col-3 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
 					<small>
-					<strong style="font-size:14px"><t t-esc="o.company_id.name"/></strong><br></br>
+					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
 					<t t-esc="o.company_id.street"/><br></br>
 					<t t-esc="o.company_id.street2"/><br></br>
 					<t t-esc="o.company_id.city"/><br></br>
@@ -78,12 +78,12 @@
 			    <strong style="font-size:16px">ชื่อ / ที่อยู่ </strong>
 				<br></br>
 				<strong style="font-size:16px">Name / Address :</strong>
-				<small>
+				
 				<t t-esc="o.partner_id.street" />
 				<t t-esc="o.partner_id.street2" />
 				<t t-esc="o.partner_id.city" />
 				<t t-esc="o.partner_id.zip" />
-				</small>					
+									
                 </div>
 			</div>
 			<div class = "row">
@@ -94,7 +94,7 @@
 			</div>
 			<div class = "row">
 				<div class="col-12 bm-2 text-left">
-			    	<strong style="font-size:16px">เลขประจำตัวผู้เสียภาษี</strong>
+			    	<strong style="font-size:16px">เลขประจำตัวผู้เสียภาษี  </strong>
 						<t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 						<br></br>
 						<strong style="font-size:16px">Tax ID No.</strong>					
