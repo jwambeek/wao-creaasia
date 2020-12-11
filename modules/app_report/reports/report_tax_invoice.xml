@@ -67,15 +67,23 @@
 					
 		    </div>			   
 
-                <div class="page">
-<div class = "row">
+    <div class="page">
+			<div class = "row">
+				<div class="col-12 bm-2 text-right">
+			    <strong style="font-size:16px">ไม่ / No :</strong> <t t-esc="o.number"/>					
+                </div>
+			</div>
+           <div class = "row">
 				<div class="col-12 bm-2 text-left">
 			    <strong style="font-size:16px">ชื่อ / ที่อยู่ </strong>
 				<br></br>
 				<strong style="font-size:16px">Name / Address :</strong>
 				<small>
 				<t t-esc="o.partner_id.street" />
-										</small>					
+				<t t-esc="o.partner_id.street2" />
+				<t t-esc="o.partner_id.city" />
+				<t t-esc="o.partner_id.zip" />
+				</small>					
                 </div>
 			</div>
 
