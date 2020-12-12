@@ -42,33 +42,41 @@ class SaleOrder_Data(models.Model):
         })
         return invoice_vals
 
-    def _prepare_invoice_line(self, **optional_values):
+    def _prepare_invoice_line(self, qty):
         """
         Prepare the dict of values to create the new invoice line for a sales order line.
 
         :param qty: float quantity to invoice
-        :param optional_values: any parameter that should be added to the returned invoice line
         """
         self.ensure_one()
+        res = {}
+        product = self.product_id.with_context(force_company=self.company_id.id)
+        account = product.property_account_income_id or product.categ_id.property_account_income_categ_id
+
+        if not account and self.product_id:
+            raise UserError(_('Please define income account for this product: "%s" (id:%d) - or for its category: "%s".') %
+                (self.product_id.name, self.product_id.id, self.product_id.categ_id.name))
+
+        fpos = self.order_id.fiscal_position_id or self.order_id.partner_id.property_account_position_id
+        if fpos and account:
+            account = fpos.map_account(account)
+
         res = {
-            'display_type': self.display_type,
-            'sequence': self.sequence,
             'name': self.name,
-            'product_id': self.product_id.id,
-            'product_uom_id': self.product_uom.id,
-            'quantity': self.qty_to_invoice,
+            'sequence': self.sequence,
+            'origin': self.order_id.name,
+            'account_id': account.id,
+            'price_unit': self.price_unit,
+            'quantity': qty,
             'discount': self.discount,
             'seller_discount': self.seller_discount,
-            'price_unit': self.price_unit,
-            'tax_ids': [(6, 0, self.tax_id.ids)],
-            'analytic_account_id': self.order_id.analytic_account_id.id,
+            'uom_id': self.product_uom.id,
+            'product_id': self.product_id.id or False,
+            'invoice_line_tax_ids': [(6, 0, self.tax_id.ids)],
+            'account_analytic_id': self.order_id.analytic_account_id.id,
             'analytic_tag_ids': [(6, 0, self.analytic_tag_ids.ids)],
-            'sale_line_ids': [(4, self.id)],
+            'display_type': self.display_type,
         }
-        if optional_values:
-            res.update(optional_values)
-        if self.display_type:
-            res['account_id'] = False
         return res
 
 class SaleOrderLine(models.Model):
