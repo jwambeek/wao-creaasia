@@ -28,7 +28,7 @@
 					<br></br><br></br>
                     <p style="text-align:center;">
 					<t t-foreach="docs" t-as="o">
-					<img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 125px;max-width: 250px"/>
+					<img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 150px;max-width: 350px"/>
 					</t>
 						<!--<img t-att-src="'app_report/static/description/crea-icon.jpg'" style="max-height: 125px;max-width: 250px"/>-->
 					</p>
