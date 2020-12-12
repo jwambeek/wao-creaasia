@@ -86,7 +86,7 @@
 			    <strong style="font-size:15px">ชื่อ / ที่อยู่ </strong>
 				<br></br>
 				<strong style="font-size:15px">Name / Address :</strong>
-				<t t-call="o.partner_id"/>
+				<t t-call="doc.partner_id"/>
 				<t t-esc="o.partner_id.street" />
 				<t t-esc="o.partner_id.street2" />
 				<t t-esc="o.partner_id.city" />
