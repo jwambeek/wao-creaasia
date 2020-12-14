@@ -7,6 +7,8 @@
                <field name="confirmation_date" position = "before" >
                     <field name="channel_order_number"/>   
                 </field>
+                
+                
         </field>
     </record>
     
@@ -16,6 +18,9 @@
         <field name="arch" type= "xml">
                <field name="website" position = "before" >
                     <field name="address_local_lang"/>   
+                </field>
+                <field name="address_local_lang" position = "before" >
+                    <field name="company_name_local_lang"/>   
                 </field>
         </field>
     </record>

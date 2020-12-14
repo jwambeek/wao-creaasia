@@ -140,5 +140,6 @@ class AccountInvoice_Line_Data(models.Model):
 class ResPartner_Data(models.Model):
     _inherit = 'res.company'
 
-    address_local_lang =  fields.Text(string = 'Local language address')        
+    address_local_lang =  fields.Text(string = 'Local language address')
+    company_name_local_lang = fields.Text(string = 'Company name (in local lang)')        
 
