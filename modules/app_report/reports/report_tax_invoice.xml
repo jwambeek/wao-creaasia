@@ -101,7 +101,7 @@
 
                                     <div class="col-4 bm-2 text-right" >
 									    
-										<strong style="font-size:15px">ไม่ / No :</strong> <t t-esc="o.number"/>
+										<strong style="font-size:15px">เลขที่ / No :</strong> <t t-esc="o.number"/>
 									</div>
                                 </div>
 					</div>
