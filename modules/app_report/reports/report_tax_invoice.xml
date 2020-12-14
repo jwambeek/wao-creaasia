@@ -9,7 +9,7 @@
                 <div class="col-3 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
 					
-					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br><br></br>
+					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
 					<p class ="_comp_add" style="font-size:15px">
 					<t t-esc="o.company_id.street"/><br></br>
 					<t t-esc="o.company_id.street2"/><br></br>
@@ -37,7 +37,7 @@
                 <br></br><br></br>
                 <div class="col-3 bm-2 text-center">
 					<t t-foreach="docs" t-as="o">
-					<strong style="font-size:15px"><t t-esc="o.company_id.company_name_local_lang"/></strong><br></br><br></br>
+					<strong style="font-size:15px"><t t-esc="o.company_id.company_name_local_lang"/></strong><br></br>
 					<p class ="_local_lang_add" style="font-size:15px">
 					     <t t-esc="o.company_id.address_local_lang"/>
 						 <br></br>
