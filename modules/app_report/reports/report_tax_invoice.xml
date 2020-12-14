@@ -24,7 +24,7 @@
 					
                 </div>
                 
-                <div class="col-6 bm-2 text-right">
+                <div class="col-4 bm-2 text-right">
 					<br></br><br></br>
                     <p style="text-align:center;">
 					<!--<t t-foreach="docs" t-as="o">
@@ -35,7 +35,7 @@
 					
                 </div>
                 <br></br><br></br>
-                <div class="col-3 bm-2 text-right">
+                <div class="col-5 bm-2 text-right">
 					<t t-foreach="docs" t-as="o">
 					<p class ="_local_lang_add" style="font-size:15px">
 					     <t t-esc="o.company_id.address_local_lang"/>
