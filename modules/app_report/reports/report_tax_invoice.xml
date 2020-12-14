@@ -83,7 +83,7 @@
 										<strong>Name / Address</strong> <t t-esc="o.partner_id"/>
 									</div>-->
 									<div class="col-8 bm-2">
-									<strong style="font-size:15px">นามลูกคา้ / ที่อยู่ </strong>
+									<strong style="font-size:15px">นามลูกคา / ที่อยู่ </strong>
 									<br></br>
 									    <strong style="font-size:15px">Name / Address :</strong>
 										<t t-esc="o.partner_id.name"/>
