@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class SaleOrder_Data(models.Model):
     _inherit = 'sale.order'
 
-    #channel_order_number = fields.Char(string = 'Channel Order No.')
+    channel_order_number = fields.Char(string = 'Channel Order No.')
 
     def _prepare_invoice(self):
         """
@@ -30,7 +30,7 @@ class SaleOrder_Data(models.Model):
             'account_id': self.partner_invoice_id.property_account_receivable_id.id,
             'partner_shipping_id': self.partner_shipping_id.id,
             'journal_id': journal_id,
-            #'channel_order_number':self.channel_order_number,
+            'channel_order_number':self.channel_order_number,
             'currency_id': self.pricelist_id.currency_id.id,
             'comment': self.note,
             'payment_term_id': self.payment_term_id.id,
