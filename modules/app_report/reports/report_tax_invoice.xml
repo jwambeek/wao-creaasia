@@ -83,7 +83,7 @@
 										<strong>Name / Address</strong> <t t-esc="o.partner_id"/>
 									</div>-->
 									<div class="col-8 bm-2">
-									<strong style="font-size:15px">ชื่อ / ที่อยู่ </strong>
+									<strong style="font-size:15px">นามลูกคา้ / ที่อยู่ </strong>
 									<br></br>
 									    <strong style="font-size:15px">Name / Address :</strong>
 										<t t-esc="o.partner_id.name"/>
@@ -138,7 +138,7 @@
 												<th style="border: 1px solid black" class="text-center">คำอธิบาย <br></br>Description </th>
 												<th style="border: 1px solid black" class="text-center">ปริมาณ <br></br>Quantity</th>
 												<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
-												<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Amount </th>
+												<th style="border: 1px solid black" class="text-center">จาํนวนเงิน <br></br>Amount </th>
 										</tr>
 								</thead>	
 							<tbody>
