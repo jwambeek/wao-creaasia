@@ -42,7 +42,7 @@
 					     <t t-esc="o.company_id.address_local_lang"/>
 						 <br></br>
 						 <!--<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี:</strong> <t t-esc="o.company_id.vat"/>-->
-						 <strong style="font-size:11px">เลขประจำตัวผู้เสียภาษี: <t t-esc="o.company_id.vat"/></strong>
+						 <strong style="font-size:14px">เลขประจำตัวผู้เสียภาษี: <t t-esc="o.company_id.vat"/></strong>
 					</p>	 
 					</t>
 
