@@ -21,7 +21,7 @@
 					</p>
 					
 					</t>
-					<br></br>
+					
                 </div>
                 
                 <div class="col-6 bm-2 text-right">
@@ -37,7 +37,7 @@
                 <br></br><br></br>
                 <div class="col-3 bm-2 text-right">
 					<t t-foreach="docs" t-as="o">
-					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
+					<!--<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>-->
 					<p class ="_local_lang_add" style="font-size:15px">
 					     <t t-esc="o.company_id.address_local_lang"/>
 						 <br></br>
@@ -47,7 +47,7 @@
 
                 </div>
 			</div>
-			<br></br><br></br>
+			<br></br>
 		</div>
 			
 			
