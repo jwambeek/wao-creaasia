@@ -108,7 +108,7 @@
 					<div class="page">
 								<div class="row mt32 mb32">
 									<div class="col-6 bm-2 "  >
-									    <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี</strong>
+									    <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  :</strong>
 										 <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 										<br></br>
 										<strong style="font-size:15px">Tax ID No.</strong>
