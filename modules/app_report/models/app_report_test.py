@@ -88,7 +88,7 @@ class AccountInvoice_Data(models.Model):
 
     # seller_discount = fields.Float(string = 'Seller Discount',readonly=True, tracking=True)
 
-    #channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
+    channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
     #address_local_lang =  fields.Text(string = 'Address (Thai)', tracking=True,readonly=True)
     
     @api.depends('invoice_line_ids.price_unit', 'invoice_line_ids.seller_discount','invoice_line_ids.quantity')
