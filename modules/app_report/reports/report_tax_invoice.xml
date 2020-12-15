@@ -169,16 +169,18 @@
 						<div t-attf-class="#{'col-5' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
 							<table class="table table-sm">
 								<tr class="border-black o_price_subtotal" style="font-size:15px">
+								    <td class="text-left">
+					                    <strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+									
+								    </td>
+
 									<td><strong>รวมทั้งสิ้น / Grand Total</strong></td>
 									<td class="text-right">
                                         <span t-esc="'%.2f'% o.grand_total"/>
 									
 									</td>
-									<td><strong>Ref::Order No.</strong></td>
-									<td class="text-left">
-					                    <strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+
 									
-									</td>
 								</tr>
 								    
 								<tr class="border-black o_calculated_discount" style="font-size:15px">
