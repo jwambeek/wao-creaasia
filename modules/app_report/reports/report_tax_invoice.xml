@@ -130,12 +130,12 @@
 							<table border="1" class="table table-condensed" >
 								<thead>
 										<tr>
-											    <th style="border: 1px solid black; width:8%" class="text-center">ลำดับที่ <br></br>No. </th>
-												<th style="border: 1px solid black" class="text-center">สินค้า <br></br>Product</th>
+											    <th style="border: 1px solid black" class="text-center">ลำดับที่ <br></br>No. </th>
+												<th style="border: 1px solid black; width:22%" class="text-center">สินค้า <br></br>Product</th>
 												<th style="border: 1px solid black; width:32%" class="text-center">รายการสินค้า<br></br>Description </th>
-												<th style="border: 1px solid black; width:12%" class="text-center">จำนวน <br></br>Quantity</th>
-												<th style="border: 1px solid black; width:12%" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
-												<th style="border: 1px solid black; width:12%" class="text-center">จำนวนเงิน <br></br>Amount </th>
+												<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Quantity</th>
+												<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
+												<th style="border: 1px solid black" class="text-center">จำนวนเงิน <br></br>Amount </th>
 										</tr>
 								</thead>	
 							<tbody>
@@ -176,7 +176,7 @@
 
                                 <tr>
                                 
-								<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px"><strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong></td>
+								<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px"><small>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</small></td>
 								<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px"  >
 									<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
 								</td>	
@@ -190,7 +190,7 @@
 
 								<tr>
                                    
-									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" ><strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
+									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" ><small>ภาษีมูลค่าเพิ่ม / VAT 7%</small></td>
 									<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" > 
 										<span t-esc="'%.2f'% o.vat"/>
 									</td>
@@ -199,7 +199,7 @@
 
 								<tr>
                                     
-									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" ><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
+									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" ><small>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</small></td>
 									<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" >
 										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
