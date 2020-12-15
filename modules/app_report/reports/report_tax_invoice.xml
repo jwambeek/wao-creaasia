@@ -192,7 +192,7 @@
                                    
 									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" ><small>ภาษีมูลค่าเพิ่ม / VAT 7%</small></td>
 									<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" > 
-										<strong><span t-esc="'%.2f'% o.vat"/><strong>
+										<strong><span t-esc="'%.2f'% o.vat"/></strong>
 									</td>
 								</tr>
 
