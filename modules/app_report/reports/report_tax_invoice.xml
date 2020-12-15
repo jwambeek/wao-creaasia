@@ -141,13 +141,13 @@
 							<tbody>
                                 <t t-set="counter" t-value="1"/>
                                     <tr t-foreach="o.invoice_line_ids" t-as="line">
-                                        <td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
-                                        <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id"/></td>
-                                        <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
-                                        <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
-                                        <td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
-                                        <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.price_subtotal)"/></td>
-                                        <t t-set="counter" t-value="counter + 1"/>
+                                        <td style="border: 1px solid black" class="text-center"><small><span t-esc="counter"/></small></td>
+                                        <td style="border: 1px solid black" class="text-center"><small><span t-field="line.product_id"/></small></td>
+                                        <td style="border: 1px solid black" class="text-left"><small><span t-field="line.name"/></small></td>
+                                        <td style="border: 1px solid black" class="text-center"><small><span t-esc="'%.0f'% line.quantity"/></small></td>
+                                        <td style="border: 1px solid black" class="text-right"><small><span t-field="line.price_unit"/></small></td>
+                                        <td style="border: 1px solid black" class="text-right"><small><span t-esc="'%.2f'% float(line.price_subtotal)"/></small></td>
+                                        <small><t t-set="counter" t-value="counter + 1"/></small>
                                     </tr>
                                 <tr>
                                     <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
