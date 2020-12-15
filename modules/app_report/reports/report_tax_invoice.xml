@@ -145,7 +145,7 @@
 								<tbody>
                                    <t t-set="counter" t-value="0"/>
                                 <tr t-foreach="o.invoice_line_ids" t-as="line">
-                                   <td style="border: 0px solid black" class="text-center"><span t-field="counter"/></td>
+                                   <td style="border: 0px solid black" class="text-center"><span t-esc="counter"/></td>
                                    <td style="border: 0px solid black" class="text-center"><span t-field="line.product_id"/></td>
                                    <td style="border: 0px solid black" class="text-left"><span t-field="line.name"/></td>
                                    <td style="border: 0px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
