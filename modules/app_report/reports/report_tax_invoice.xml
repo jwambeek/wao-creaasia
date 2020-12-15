@@ -174,7 +174,8 @@
 								<tr class="border-black o_calculated_discount" style="font-size:15px">
 								<td><strong>ส่วนลด/ Discount</strong></td>
 								<td class="text-right">
-									<span t-field="o.calculated_discount"/>
+									<!--<span t-field="o.calculated_discount"/>-->
+									<span t-field="'%.2f'%(o.calculated_discount)"/>
 								</td>
 								</tr>
 
