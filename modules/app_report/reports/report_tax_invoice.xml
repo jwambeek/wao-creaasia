@@ -41,7 +41,7 @@
 					<p class ="_local_lang_add" style="font-size:15px">
 					     <t t-esc="o.company_id.address_local_lang"/>
 						 <br></br>
-						 <strong style="font-size:15px">เลขประจาํตวัผูเ้สียภาษี:</strong> <t t-esc="o.company_id.vat"/>
+						 <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี:</strong> <t t-esc="o.company_id.vat"/>
 						 <!--<small>เลขประจำตัวผู้เสียภาษี: <t t-esc="o.company_id.vat"/></small>-->
 					</p>	 
 					</t>
@@ -146,7 +146,7 @@
 									<!--<td style="border: 1px solid black"><span t-field="       	"/></td>-->
 									<td style="border: 0px solid black" class="text-center"><span t-field="line.product_id"/></td>
 									<td style="border: 0px solid black" class="text-left"><span t-field="line.name"/></td>
-									<td style="border: 0px solid black" class="text-center"><span t-field="line.quantity"/></td>
+									<td style="border: 0px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
 									<td style="border: 0px solid black" class="text-right"><span t-field="line.price_unit"/></td>
 									<td style="border: 0px solid black" class="text-right"><span t-field="line.price_subtotal"/></td>
 								</tr>
@@ -197,7 +197,7 @@
 								<tr class="border-black o_amount_tax" style="font-size:15px">
 									<td><strong>ภาษีมูลค่าเพÉมิ / VAT 7%</strong></td>
 									<td class="text-right">
-										<span t-field="o.vat"/>
+										<span t-esc="'%.2f'% o.vat"/>
 									</td>
 								</tr>
 
@@ -205,7 +205,7 @@
 								<tr class="border-black o_total_baht_incl_VAT" style="font-size:15px">
 									<td><strong>มูลค่าสินคา้รวมภาษีมูลค่าเพิÉม / Total Baht Incl. VAT</strong></td>
 									<td class="text-right">
-										<span t-field="o.total_baht_incl_VAT"/>
+										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
 								</tr>
 
