@@ -24,7 +24,7 @@
 					
                 </div>
                 
-                <div class="col-6 bm-2 text-right">
+                <div class="col-4 bm-2 text-right">
 					<br></br><br></br>
                     <p style="text-align:center;">
 					<!--<t t-foreach="docs" t-as="o">
@@ -35,7 +35,7 @@
 					
                 </div>
                 <br></br><br></br>
-                <div class="col-3 bm-2 text-right">
+                <div class="col-5 bm-2 text-right">
 					<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px"><t t-esc="o.company_id.company_name_local_lang"/></strong><br></br>
 					<p class ="_local_lang_add" style="font-size:15px">
@@ -149,8 +149,8 @@
                                    <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id"/></td>
                                    <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
                                    <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
-                                   <td style="border: 1px solid black" class="text-right"><span t-field="'%.2f'% line.price_unit"/></td>
-                                   <td style="border: 1px solid black" class="text-right"><span t-field="'%.2f'% line.price_subtotal"/></td>
+                                   <td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
+                                   <td style="border: 1px solid black" class="text-right"><span t-field="line.price_subtotal"/></td>
                                     <t t-set="counter" t-value="counter + 1"/>
                                </tr>
                            </tbody>
