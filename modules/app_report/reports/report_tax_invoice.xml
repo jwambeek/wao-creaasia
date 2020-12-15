@@ -87,10 +87,11 @@
 
            <div class="row">
 				<div class="col-12 bm-2 text-left">
-					<strong style="font-size:15px">นามลูกค้า / ที่อยู่</strong>
+					<strong style="font-size:15px">นามลูกค้า / ที่อยู่</strong>&#160;&#160;&#160;
+					<t t-esc="o.partner_id.name"/>
 					<br></br>
 					<strong style="font-size:15px">Name / Address </strong>&#160;&#160;&#160;
-				<t t-esc="o.partner_id.name"/>
+				<!-- <t t-esc="o.partner_id.name"/> -->
 				<t t-esc="o.partner_id.street" />
 				<t t-esc="o.partner_id.street2" />
 				<t t-esc="o.partner_id.city" />
@@ -138,29 +139,43 @@
 										</tr>
 								</thead>	
 							<tbody>
-								<tbody>
-                                   <t t-set="counter" t-value="1"/>
-                                <tr t-foreach="o.invoice_line_ids" t-as="line">
-                                   <td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
-                                   <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id"/></td>
-                                   <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
-                                   <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
-                                   <td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
-                                   <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.price_subtotal)"/></td>
-                                    <t t-set="counter" t-value="counter + 1"/>
-                               </tr>
-                           </tbody>
+									<tbody>
+										<t t-set="counter" t-value="1"/>
+											<tr t-foreach="o.invoice_line_ids" t-as="line">
+												<td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
+												<td style="border: 1px solid black" class="text-center"><span t-field="line.product_id"/></td>
+												<td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
+												<td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
+												<td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
+												<td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.price_subtotal)"/></td>
+												<t t-set="counter" t-value="counter + 1"/>
+											</tr>
+									</tbody>
+									<tbody>
+										<tr>
+											<td>
+												<div class = "row">
+													<div class="col-12 bm-2 text-left">
+														<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+													</div>
+												</div>
+											</td>
+											<td>	
+												
+											</td>
+										</tr>
+									</tbody>
 							</tbody>
 							</table>
 						</div>
 					</div>
-				
-				<div class="clearfix">
-					<div class = "row">
+				<!-- <div class = "row">
 						<div class="col-12 bm-2 text-left">
 							<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
 						</div>
-					</div>
+				</div> -->
+				
+				<div class="clearfix">	
 					<div id="total" class="row">
 						<div t-attf-class="#{'col-5' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
 							<table class="table table-sm">
