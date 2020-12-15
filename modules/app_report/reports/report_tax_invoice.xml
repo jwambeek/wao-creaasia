@@ -81,7 +81,7 @@
 
 	       <div class="row">                        
 			    <div class="col-12 bm-2 text-right" >
-						<strong style="font-size:15px">เลขที่ / No.</strong>&#160;&#160;&#160; <t t-esc="o.number"/>
+						<strong style="font-size:15px">เลขที่ / No.</strong>&#160;&#160;&#160;&#160; <t t-esc="o.number"/>
 				</div>
             </div>
 
@@ -104,7 +104,7 @@
 			<div class="row">
 				<div class="col-12 bm-2 text-right"  >
 									<span>
-										<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;
+										<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;&#160;
 										<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
 									</span>	
 				</div>
@@ -113,7 +113,7 @@
 
             <div class="row">
 				<div class="col-12 bm-2 text-left"  >
-					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;
+					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;&#160;
 					    <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 						<br></br>
 										<strong style="font-size:15px">Tax ID No.</strong>
