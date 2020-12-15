@@ -69,7 +69,7 @@
                     <div class="oe_structure" />
 	                  <div class="text-center">
 	                        
-					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
+					<center><h6 style="font-size:19px">ใบกาํกบั ภาษี/ใบเสร็จรับเงนิ</h6></center>
 					
                     <center><h6 style="font-size:19px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
                       <br></br>   
@@ -83,7 +83,7 @@
 										<strong>Name / Address</strong> <t t-esc="o.partner_id"/>
 									</div>-->
 									<div class="col-8 bm-2">
-									<strong style="font-size:15px">นามลูกคา / ที่อยู่ </strong>
+									<strong style="font-size:15px">นามลูกคา้ / ที่อยู่ </strong>
 									<br></br>
 									    <strong style="font-size:15px">Name / Address :</strong>
 										<t t-esc="o.partner_id.name"/>
@@ -109,7 +109,7 @@
 					<div class="page">
 								<div class="row mt32 mb32">
 									<div class="col-6 bm-2 "  >
-									    <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  :</strong>
+									    <strong style="font-size:15px">เลขประจาํตวัผเู้สียภาษี  :</strong>
 										 <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 										<br></br>
 										<strong style="font-size:15px">Tax ID No.</strong>
@@ -118,7 +118,7 @@
 									<div class="col-6 bm-2 text-right"  >
 									<span>
 										<strong style="font-size:15px">วันที่ / Date :</strong>
-										<t t-esc="o.date_invoice" class="m-0 text-right"/>
+										<t t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
 									</span>	
 									</div>
 
@@ -135,8 +135,8 @@
 										<tr>
 											    <!--<th style="border: 1px solid black" class="text-center">No. </th>-->
 												<th style="border: 1px solid black" class="text-center">สินค้า <br></br>Product</th>
-												<th style="border: 1px solid black" class="text-center">คำอธิบาย <br></br>Description </th>
-												<th style="border: 1px solid black" class="text-center">ปริมาณ <br></br>Quantity</th>
+												<th style="border: 1px solid black" class="text-center">รายการสินคา้ <br></br>Description </th>
+												<th style="border: 1px solid black" class="text-center">จาํนวน <br></br>Quantity</th>
 												<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
 												<th style="border: 1px solid black" class="text-center">จาํนวนเงิน <br></br>Amount </th>
 										</tr>
@@ -200,7 +200,7 @@
 
 
 								<tr class="border-black o_total_baht_incl_VAT" style="font-size:15px">
-									<td><strong>รวมบาท ภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
+									<td><strong>มูลค่าสินคา้รวมภาษีมูลค่าเพิÉม / Total Baht Incl. VAT</strong></td>
 									<td class="text-right">
 										<span t-field="o.total_baht_incl_VAT"/>
 									</td>
