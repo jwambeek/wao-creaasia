@@ -154,13 +154,13 @@
 							</table>
 						</div>
 					</div>
-				<div class = "row">
-				<div class="col-12 bm-2 text-left">
-					<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
-					
-                </div>
-				</div>
+				
 				<div class="clearfix">
+					<div class = "row">
+						<div class="col-12 bm-2 text-left">
+							<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+						</div>
+					</div>
 					<div id="total" class="row">
 						<div t-attf-class="#{'col-5' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
 							<table class="table table-sm">
