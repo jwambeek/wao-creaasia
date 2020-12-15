@@ -118,7 +118,7 @@
 									<div class="col-6 bm-2 text-right"  >
 									<span>
 										<strong style="font-size:15px">วันที่ / Date :</strong>
-										<t t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
+										<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
 									</span>	
 									</div>
 
