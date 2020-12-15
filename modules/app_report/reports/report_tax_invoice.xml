@@ -165,8 +165,9 @@
 									
 									</td>
                                 </tr>
-                                <tr class="border-black o_calculated_discount" style="font-size:15px">
+                                <tr class="o_calculated_discount" style="font-size:15px">
                                     <td colspan="3">
+									&nbsp;
                                     </td>
                                     <td colspan="2"><strong>ส่วนลด/ Discount</strong></td>
                                     <td class="text-right" colspan="1">
@@ -175,8 +176,9 @@
                                     </td>
                                 </tr>
 
-                                <tr class="border-black o_total_baht_excl_VAT" style="font-size:15px">
+                                <tr class= "o_total_baht_excl_VAT" style="font-size:15px">
                                 <td colspan="3">
+									&nbsp;
                                     </td>
 								<td colspan="2"><strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong></td>
 								<td class="text-right">
@@ -190,8 +192,9 @@
 									</td>
 								</tr>-->
 
-								<tr class="border-black o_amount_tax" style="font-size:15px">
+								<tr class="o_amount_tax" style="font-size:15px">
                                     <td colspan="3">
+									&nbsp;
                                         </td>
 									<td colspan="2"><strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
 									<td class="text-right">
@@ -200,8 +203,9 @@
 								</tr>
 
 
-								<tr class="border-black o_total_baht_incl_VAT" style="font-size:15px">
+								<tr class="o_total_baht_incl_VAT" style="font-size:15px">
                                     <td colspan="3">
+									&nbsp;
                                         </td>
 									<td colspan="2"><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
 									<td class="text-right">
