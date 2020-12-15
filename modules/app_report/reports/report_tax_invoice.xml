@@ -139,68 +139,46 @@
 										</tr>
 								</thead>	
 							<tbody>
-									<tbody>
-										<t t-set="counter" t-value="1"/>
-											<tr t-foreach="o.invoice_line_ids" t-as="line">
-												<td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
-												<td style="border: 1px solid black" class="text-center"><span t-field="line.product_id"/></td>
-												<td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
-												<td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
-												<td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
-												<td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.price_subtotal)"/></td>
-												<t t-set="counter" t-value="counter + 1"/>
-											</tr>
-									</tbody>
-									<tbody>
-										<tr>
-											<td>
-												<div class = "row">
-													<div class="col-12 bm-2 text-left">
-														<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
-													</div>
-												</div>
-											</td>
-											<td>	
-												
-											</td>
-										</tr>
-									</tbody>
-							</tbody>
-							</table>
-						</div>
-					</div>
-				<!-- <div class = "row">
-						<div class="col-12 bm-2 text-left">
-							<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
-						</div>
-				</div> -->
-				
-				<div class="clearfix">	
-					<div id="total" class="row">
-						<div t-attf-class="#{'col-5' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
-							<table class="table table-sm">
-								<tr class="border-black o_price_subtotal" style="font-size:15px">
-
-									<td><strong>รวมทั้งสิ้น / Grand Total</strong></td>
-									<td class="text-right">
+                                <t t-set="counter" t-value="1"/>
+                                    <tr t-foreach="o.invoice_line_ids" t-as="line">
+                                        <td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
+                                        <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id"/></td>
+                                        <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
+                                        <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
+                                        <td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
+                                        <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.price_subtotal)"/></td>
+                                        <t t-set="counter" t-value="counter + 1"/>
+                                    </tr>
+                                <tr>
+                                    <td colspan="3" rowspan="5">
+                                        <div class = "row">
+                                            <div class="col-12 bm-2 text-left">
+                                                <strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td colspan="2">	
+                                        <strong>รวมทั้งสิ้น / Grand Total</strong>
+                                    </td>
+                                    <td class="text-right" colspan="1">
                                         <span t-esc="'%.2f'% o.grand_total"/>
 									
 									</td>
+                                </tr>
+                                <tr class="border-black o_calculated_discount" style="font-size:15px">
+                                    <td colspan="3">
+                                    </td>
+                                    <td colspan="2"><strong>ส่วนลด/ Discount</strong></td>
+                                    <td class="text-right" colspan="1">
+                                        <!--<span t-field="o.calculated_discount"/>-->
+                                        <p>(<span t-esc="'%.2f'% o.calculated_discount"/>)</p>
+                                    </td>
+                                </tr>
 
-									
-								</tr>
-								    
-								<tr class="border-black o_calculated_discount" style="font-size:15px">
-								<td><strong>ส่วนลด/ Discount</strong></td>
-								<td class="text-right">
-									<!--<span t-field="o.calculated_discount"/>-->
-									<p>(<span t-esc="'%.2f'% o.calculated_discount"/>)</p>
-									
-								</td>
-								</tr>
-
-								<tr class="border-black o_total_baht_excl_VAT" style="font-size:15px">
-								<td><strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong></td>
+                                <tr class="border-black o_total_baht_excl_VAT" style="font-size:15px">
+                                <td colspan="3">
+                                    </td>
+								<td colspan="2"><strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong></td>
 								<td class="text-right">
 									<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
 								</td>	
@@ -213,7 +191,9 @@
 								</tr>-->
 
 								<tr class="border-black o_amount_tax" style="font-size:15px">
-									<td><strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
+                                    <td colspan="3">
+                                        </td>
+									<td colspan="2"><strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
 									<td class="text-right">
 										<span t-esc="'%.2f'% o.vat"/>
 									</td>
@@ -221,16 +201,23 @@
 
 
 								<tr class="border-black o_total_baht_incl_VAT" style="font-size:15px">
-									<td><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
+                                    <td colspan="3">
+                                        </td>
+									<td colspan="2"><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
 									<td class="text-right">
 										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
 								</tr>
-
+									
+							</tbody>
 							</table>
 						</div>
 					</div>
-				</div>
+				<!-- <div class = "row">
+						<div class="col-12 bm-2 text-left">
+							<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+						</div>
+				</div> -->
             
 				<div class="footer">
                     <div class="text-right" style="border-top: 1px solid black;">        
