@@ -150,38 +150,34 @@
                                         <t t-set="counter" t-value="counter + 1"/>
                                     </tr>
                                 <tr>
-                                    <td colspan="3">
+                                    <td colspan="3" rowspan="5" style="border: 1px solid black" >   
                                         <div class = "row">
                                             <div class="col-12 bm-2 text-left">
                                                 <strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
                                             </div>
                                         </div>
                                     </td>
-                                    <td colspan="2">	
+                                    <td colspan="2" style="border: 1px solid black" >	
                                         <strong>รวมทั้งสิ้น / Grand Total</strong>
                                     </td>
-                                    <td class="text-right" colspan="1">
+                                    <td class="text-right" colspan="1" style="border: 1px solid black" > 
                                         <span t-esc="'%.2f'% o.grand_total"/>
 									
 									</td>
                                 </tr>
-                                <tr class="o_calculated_discount" style="font-size:15px">
-                                    <td colspan="3">
-									a
-                                    </td>
-                                    <td colspan="2"><strong>ส่วนลด/ Discount</strong></td>
-                                    <td class="text-right" colspan="1">
+                                <tr>
+                                    
+                                    <td colspan="2" ><strong>ส่วนลด/ Discount</strong></td>
+                                    <td class="text-right" colspan="1" style="border: 1px solid black" > 
                                         <!--<span t-field="o.calculated_discount"/>-->
                                         <p>(<span t-esc="'%.2f'% o.calculated_discount"/>)</p>
                                     </td>
                                 </tr>
 
-                                <tr class= "o_total_baht_excl_VAT" style="font-size:15px">
-                                <td colspan="3">
-									a
-                                    </td>
-								<td colspan="2"><strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong></td>
-								<td class="text-right">
+                                <tr>
+                                
+								<td colspan="2" style="border: 1px solid black" ><strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong></td>
+								<td class="text-right" style="border: 1px solid black" >
 									<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
 								</td>	
 								</tr>
@@ -192,23 +188,19 @@
 									</td>
 								</tr>-->
 
-								<tr class="o_amount_tax" style="font-size:15px">
-                                    <td colspan="3">
-									a
-                                        </td>
-									<td colspan="2"><strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
-									<td class="text-right">
+								<tr>
+                                   
+									<td colspan="2" style="border: 1px solid black" ><strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
+									<td class="text-right" style="border: 1px solid black" > 
 										<span t-esc="'%.2f'% o.vat"/>
 									</td>
 								</tr>
 
 
-								<tr class="o_total_baht_incl_VAT" style="font-size:15px">
-                                    <td colspan="3">
-									a
-                                        </td>
-									<td colspan="2"><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
-									<td class="text-right">
+								<tr>
+                                    
+									<td colspan="2" style="border: 1px solid black" ><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
+									<td class="text-right" style="border: 1px solid black" >
 										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
 								</tr>
