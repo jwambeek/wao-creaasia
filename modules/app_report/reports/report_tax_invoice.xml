@@ -131,7 +131,7 @@
 								<thead>
 										<tr>
 											    <th style="border: 1px solid black" class="text-center">ลำดับที่ <br></br>No. </th>
-												<th style="border: 1px solid black; width:22%" class="text-center">สินค้า <br></br>Product</th>
+												<th style="border: 1px solid black; width:22%" class="text-center">รหัสสินค้า<br></br>Item No.</th>
 												<th style="border: 1px solid black; width:32%" class="text-center">รายการสินค้า<br></br>Description </th>
 												<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Quantity</th>
 												<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
@@ -142,7 +142,7 @@
                                 <t t-set="counter" t-value="1"/>
                                     <tr t-foreach="o.invoice_line_ids" t-as="line">
                                         <td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
-                                        <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id"/></td>
+                                        <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id.default_code"/></td>
                                         <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
                                         <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
                                         <td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
@@ -158,27 +158,29 @@
                                         </div>
                                     </td>
                                     <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">	
-                                        <small>รวมทั้งสิ้น / Grand Total</small>
+                                        <strong>รวมทั้งสิ้น / Grand Total</strong>
                                     </td>
                                     <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px" > 
-                                       <strong> <span t-esc="'%.2f'% o.grand_total"/></strong>
+                                       <span t-esc="'%.2f'% o.grand_total"/>
 									
 									</td>
                                 </tr>
                                 <tr>
                                     
-                                    <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" ><small>ส่วนลด/ Discount</small></td>
+                                    <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+									<strong>ส่วนลด/ Discount</strong></td>
                                     <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px"  > 
                                         <!--<span t-field="o.calculated_discount"/>-->
-                                        <p><strong>(<span t-esc="'%.2f'% o.calculated_discount"/>)</strong></p>
+                                        <p>(<span t-esc="'%.2f'% o.calculated_discount"/>)</p>
                                     </td>
                                 </tr>
 
                                 <tr>
                                 
-								<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px"><small>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</small></td>
+								<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">
+								<strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong></td>
 								<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px"  >
-									<strong><span t-esc="'%.2f'% o.total_baht_excl_VAT"/></strong>
+									<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
 								</td>	
 								</tr>
 								<!--<tr class="border-black o_discount_subtotal">
@@ -190,18 +192,20 @@
 
 								<tr>
                                    
-									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" ><small>ภาษีมูลค่าเพิ่ม / VAT 7%</small></td>
+									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+									<strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
 									<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" > 
-										<strong><span t-esc="'%.2f'% o.vat"/></strong>
+										<span t-esc="'%.2f'% o.vat"/>
 									</td>
 								</tr>
 
 
 								<tr>
                                     
-									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" ><small>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</small></td>
+									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+									<strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
 									<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" >
-										<strong><span t-esc="'%.2f'% o.total_baht_incl_VAT"/></strong>
+										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
 								</tr>
 									
