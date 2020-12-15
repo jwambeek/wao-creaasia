@@ -112,8 +112,8 @@
 									    <strong style="font-size:15px">เลขประจาํตวัผเู้สียภาษี/Tax ID  </strong>&#160;&#160;&#160;&#160;
 										 <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
 										<!--<br></br>
-										<strong style="font-size:15px">Tax ID No.</strong>
-									</div>-->
+										<strong style="font-size:15px">Tax ID No.</strong>-->
+									</div>
                                     <br></br>
 									<div class="col-6 bm-2 text-right"  >
 									<span>
