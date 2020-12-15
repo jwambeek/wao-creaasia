@@ -190,8 +190,8 @@
 
 								<tr>
                                    
-									<td colspan="2" style="border: 1px solid black" ><strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
-									<td class="text-right" style="border: 1px solid black" > 
+									<td colspan="2" style="border: solid ;border-color:black; border-right: 0px" ><strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
+									<td class="text-right" style="border: solid ;border-color:black; border-right: 0px" > 
 										<span t-esc="'%.2f'% o.vat"/>
 									</td>
 								</tr>
@@ -199,8 +199,8 @@
 
 								<tr>
                                     
-									<td colspan="2" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" ><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
-									<td class="text-right" style="border: solid ;border-color:black; border-width:1px 1px 1px 0px" >
+									<td colspan="2" style="border: solid ;border-color:black; border-right: none" ><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
+									<td class="text-right" style="border: solid ;border-color:black; border-left:none" >
 										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
 								</tr>
