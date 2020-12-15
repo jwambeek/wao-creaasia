@@ -132,7 +132,7 @@
 										<tr>
 											    <th style="border: 1px solid black" class="text-center">ลำดับที่ <br></br>No. </th>
 												<th style="border: 1px solid black" class="text-center">สินค้า <br></br>Product</th>
-												<th style="border: 1px solid black" class="text-center">รายการสินค้า<br></br>Description </th>
+												<th style="border: 1px solid black; width:30%" class="text-center">รายการสินค้า<br></br>Description </th>
 												<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Quantity</th>
 												<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
 												<th style="border: 1px solid black" class="text-center">จำนวนเงิน <br></br>Amount </th>
@@ -150,14 +150,14 @@
                                         <t t-set="counter" t-value="counter + 1"/>
                                     </tr>
                                 <tr>
-                                    <td colspan="3" rowspan="5" style="border: 1px solid black" >   
+                                    <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
                                         <div class = "row">
                                             <div class="col-12 bm-2 text-left">
                                                 <strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
                                             </div>
                                         </div>
                                     </td>
-                                    <td colspan="2" style="border: 1px solid black" >	
+                                    <td colspan="2" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >	
                                         <strong>รวมทั้งสิ้น / Grand Total</strong>
                                     </td>
                                     <td class="text-right" colspan="1" style="border: 1px solid black" > 
@@ -199,8 +199,8 @@
 
 								<tr>
                                     
-									<td colspan="2" style="border: 1px solid black" ><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
-									<td class="text-right" style="border: 1px solid black" >
+									<td colspan="2" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" ><strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
+									<td class="text-right" style="border: solid ;border-color:black; border-width:1px 1px 1px 0px" >
 										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
 								</tr>
