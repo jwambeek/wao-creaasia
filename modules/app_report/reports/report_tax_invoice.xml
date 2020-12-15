@@ -113,10 +113,10 @@
 
             <div class="row">
 				<div class="col-12 bm-2 text-left"  >
-					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี / Tax ID  </strong>&#160;&#160;&#160;&#160;
+					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;
 					    <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
-										<!--<br></br>
-										<strong style="font-size:15px">Tax ID No.</strong>-->
+						<br></br>
+										<strong style="font-size:15px">Tax ID No.</strong>
 				</div>
 			</div>
     </div>
