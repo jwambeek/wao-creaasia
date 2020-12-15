@@ -87,7 +87,7 @@
 
            <div class="row">
 				<div class="col-12 bm-2 text-left">
-					<strong style="font-size:15px">นามลูกค้า / ที่อยู่</strong>&#160;&#160;&#160;
+					<strong style="font-size:15px">นามลูกค้า / ที่อยู่</strong>&#160;&#160;&#160;&#160;&#160;
 					<t t-esc="o.partner_id.name"/>
 					<br></br>
 					<strong style="font-size:15px">Name / Address </strong>&#160;&#160;&#160;
