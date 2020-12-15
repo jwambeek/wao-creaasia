@@ -146,7 +146,7 @@
                                    <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
                                    <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
                                    <td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
-                                   <td style="border: 1px solid black" class="text-right"><span t-field="float(line.price_subtotal)"/></td>
+                                   <td style="border: 1px solid black" class="text-right"><span t-esc="float(line.price_subtotal)"/></td>
                                     <t t-set="counter" t-value="counter + 1"/>
                                </tr>
                            </tbody>
