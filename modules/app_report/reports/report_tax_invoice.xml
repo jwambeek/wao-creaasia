@@ -144,11 +144,11 @@
 							<tbody>
 								<tr t-foreach="o.invoice_line_ids" t-as="line">
 									<!--<td style="border: 1px solid black"><span t-field="       	"/></td>-->
-									<td style="border: 0px solid black"><span t-field="line.product_id"/></td>
-									<td style="border: 0px solid black"><span t-field="line.name"/></td>
-									<td style="border: 0px solid black"><span t-field="line.quantity"/></td>
-									<td style="border: 0px solid black"><span t-field="line.price_unit"/></td>
-									<td style="border: 0px solid black"><span t-field="line.price_subtotal"/></td>
+									<td style="border: 0px solid black" class="text-center"><span t-field="line.product_id"/></td>
+									<td style="border: 0px solid black" class="text-left"><span t-field="line.name"/></td>
+									<td style="border: 0px solid black" class="text-center"><span t-field="line.quantity"/></td>
+									<td style="border: 0px solid black" class="text-right"><span t-field="line.price_unit"/></td>
+									<td style="border: 0px solid black" class="text-right"><span t-field="line.price_subtotal"/></td>
 								</tr>
 							</tbody>
 							</table>
@@ -167,7 +167,8 @@
 								<tr class="border-black o_price_subtotal" style="font-size:15px">
 									<td><strong>ผลรวมทั้งสิ้น / Grand Total</strong></td>
 									<td class="text-right">
-										<span t-field="o.grand_total"/>
+                                        <span t-esc="'%.2f'% o.grand_total"/>
+									
 									</td>
 								</tr>
 								    
@@ -183,7 +184,7 @@
 								<tr class="border-black o_total_baht_excl_VAT" style="font-size:15px">
 								<td><strong>มูลค่าสินคา้ไมร่วมภาษีมูลค่าเพิÉม / Total Baht Excl. Vat</strong></td>
 								<td class="text-right">
-									<span t-field="o.total_baht_excl_VAT"/>
+									<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
 								</td>	
 								</tr>
 								<!--<tr class="border-black o_discount_subtotal">
