@@ -30,7 +30,7 @@
 					<!--<t t-foreach="docs" t-as="o">
 					<img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 125px;max-width: 250px"/>
 					</t>-->
-						<img t-att-src="'app_report/static/description/crea-icon.jpg'" style="max-height: 150px;max-width: 250px"/>
+						<img t-att-src="'app_report/static/description/crea-logo.jpg'" style="max-height: 150px;max-width: 250px"/>
 					</p>
 					
                 </div>
@@ -85,7 +85,7 @@
 									<div class="col-8 bm-2">
 									<strong style="font-size:15px">นามลูกคา้ / ที่อยู่ </strong>
 									<br></br>
-									    <strong style="font-size:15px">Name / Address :</strong>&#160;&#160;
+									    <strong style="font-size:15px">Name / Address </strong>&#160;&#160;&#160;
 										<t t-esc="o.partner_id.name"/>
 				<t t-esc="o.partner_id.street" />
 				<t t-esc="o.partner_id.street2" />
@@ -109,15 +109,15 @@
 					<div class="page">
 								<div class="row mt32 mb32">
 									<div class="col-6 bm-2 "  >
-									    <strong style="font-size:15px">เลขประจาํตวัผเู้สียภาษี  </strong>&#160;&#160;&#160;
+									    <strong style="font-size:15px">เลขประจาํตวัผเู้สียภาษี/Tax ID  </strong>&#160;&#160;&#160;&#160;
 										 <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
-										<br></br>
+										<!--<br></br>
 										<strong style="font-size:15px">Tax ID No.</strong>
-									</div>
+									</div>-->
                                     <br></br>
 									<div class="col-6 bm-2 text-right"  >
 									<span>
-										<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;
+										<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;
 										<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
 									</span>	
 									</div>
