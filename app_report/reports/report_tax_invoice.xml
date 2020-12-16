@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ 
+	<template id="report_tax_invoice">
+	
+	    <div class="header">
+            <div class="row">
+                <div class="col-3 bm-2 text-left">
+                    <small><strong>Crea Trading Co.,Ltd.(Head Office)</strong><br></br>
+				   712/1 TBI Building, 6th Floor<br></br>
+				   Soi Sukhumvit 26 and 28, Khlon Ton,<br></br>
+				   Khlong Toei, Bangkok,<br></br>
+				   Thailand 10110</small>
+                </div>
+                
+                <div class="col-6 bm-2 text-right">
+					<br></br><br></br>
+                    <p style="text-align:center;">
+						<img t-att-src="'app_report/static/description/crea-icon.jpg'" style="max-height: 125px;max-width: 250px"/>
+					</p>
+					
+                </div>
+                <br></br>
+                <div class="col-3 bm-2 text-right">
+                    <small><strong>บริษัท ครีเอเทรดดิ้ง จำกัด (สำนักงานใหญ่)</strong><br></br>
+				    712/1 อาคาร TBI ชั้น 6 <br></br>
+				    ซ. สุขุมวิท 26 และ 28 คลองต้น <br></br>
+				    คลองเตยกรุงเทพมหานคร <br></br>
+				    ประเทศไทย 10110 </small>
+                </div>
+			</div>
+			<div class = "row">
+				<div class="col-12 bm-2 text-right">
+					<center><h6 style="font-size:14px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
+					
+                    <center><h6 style="font-size:14px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
+					
+                </div>
+			</div>
+		</div>		
+	<br></br><br></br><br></br>				 
+	<t t-call="web.html_container">
+		<t t-foreach="docs" t-as="o">
+			<t t-call="web.external_layout">
+                <!--<div class="page">
+					<div class="oe_structure" />
+                        <div class="text-center">
+						<br></br>
+						<p style="text-align:center;">
+						<img t-att-src="'app_report/static/description/crea-icon.jpg'" style="max-height: 125px;max-width: 200px"/>
+						</p>
+
+						<br></br>
+						<h5>ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h5>
+						<br></br>
+
+						<h4><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h4>
+						<br></br>
+					    </div>
+				    </div>-->
+				
+
+				
+					<div class="page">
+								<div class="row mt32 mb32">
+									<!--<div class="col-xs-6">
+										<strong>Name / Address</strong> <t t-esc="o.partner_id"/>
+									</div>-->
+									<div class="col-3 bm-2">
+									<strong style="font-size:10px">ชื่อ / ที่อยู่ </strong>
+									<br></br>
+									    <strong style="font-size:10px">Name/Address :</strong>
+										<small>
+										<t t-esc="o.partner_id" t-options='{"widget": "contact", "fields": [ "name","address"], "no_marker": True, "phone_icons": True}'/>
+										</small>
+                                                   
+
+		                            </div>
+
+                                    <div class="col-9 bm-2 text-right" >
+									    
+										<strong style="font-size:10px">เลขที่ใบแจ้งหนี้ / Invoice No:</strong> <t t-esc="o.name"/>
+									</div>
+                                </div>
+					</div>
+					
+					<div class="page">
+								<div class="row mt32 mb32">
+									<div class="col-3 bm-2 "  >
+									    <strong style="font-size:10px">เลขประจำตัวผู้เสียภาษี</strong>
+										<br></br>
+										<strong style="font-size:10px">Tax ID No.</strong> <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
+									</div>
+                                    <br></br>
+									<div class="col-9 bm-2 text-right"  >
+									<span>
+										<strong style="font-size:10px">วันที่ในใบแจ้งหนี้ / Invoice Date:</strong>
+										<t t-esc="o.invoice_date" class="m-0 text-right"/>
+									</span>	
+									</div>
+
+								</div>
+					</div>
+					
+					<br></br>
+
+                    <div class = "page">
+						<div style="border: 1px solid black;">
+							<table border="1" class="table table-condensed" style="border-style:solid">
+								<thead>
+										<tr>
+											    <!--<th style="border: 1px solid black" class="text-center">No. </th>-->
+												<th style="border: 1px solid black" class="text-center">สินค้า <br></br>Product</th>
+												<th style="border: 1px solid black" class="text-center">คำอธิบาย <br></br>Description </th>
+												<th style="border: 1px solid black" class="text-center">ปริมาณ <br></br>Quantity</th>
+												<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
+												<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Amount </th>
+										</tr>
+								</thead>	
+							<tbody>
+								<tr t-foreach="o.invoice_line_ids" t-as="line">
+									<!--<td style="border: 1px solid black"><span t-field=" o.no      	"/></td>-->
+									<td style="border: 1px solid black"><span t-field="line.product_id"/></td>
+									<td style="border: 1px solid black"><span t-field="line.name"/></td>
+									<td style="border: 1px solid black"><span t-field="line.quantity"/></td>
+									<td style="border: 1px solid black"><span t-field="line.price_unit"/></td>
+									<td style="border: 1px solid black"><span t-field="line.price_subtotal"/></td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+					</div>
+				<div class = "row">
+				<div class="col-12 bm-2 text-left">
+					<strong style="font-size:14px">Ref::Order No.</strong> <t t-esc="o.channel_order_number"/>
+					
+                </div>
+				</div>
+				<div class="clearfix">
+					<div id="total" class="row">
+						<div t-attf-class="#{'col-5' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+							<table class="table table-sm">
+								<tr class="border-black o_price_subtotal" style="">
+									<td><strong>ผลรวมทั้งสิ้น / Grand Total</strong></td>
+									<td class="text-right">
+										<span t-field="o.grand_total"/>
+									</td>
+								</tr>
+								    
+								<tr class="border-black o_calculated_discount">
+								<td><strong>ส่วนลด / Discount</strong></td>
+								<td class="text-right">
+									<span t-field="o.calculated_discount"/>
+								</td>
+								</tr>
+
+								<tr class="border-black o_total_baht_excl_VAT">
+								<td><strong>รวมบาทไม่รวม ภาษีมูลค่าเพิ่ม / Total Baht Excl. Vat</strong></td>
+								<td class="text-right">
+									<span t-field="o.total_baht_excl_VAT"/>
+								</td>	
+								</tr>
+								<!--<tr class="border-black o_discount_subtotal">
+									<td><strong>รวมบาทไม่รวม ภาษีมูลค่าเพิ่ม / <br></br>Total Baht Excl. VAT</strong></td>
+									<td class="text-right">
+										<span t-field="line.price_subtotal - line.discount"/>
+									</td>
+								</tr>-->
+
+								<tr class="border-black o_amount_tax">
+									<td><strong>ภาษีมูลค่าเพิ่ม 7% / VAT 7%</strong></td>
+									<td class="text-right">
+										<span t-field="o.vat"/>
+									</td>
+								</tr>
+
+
+								<tr class="border-black o_total_baht_incl_VAT">
+									<td><strong>รวมบาท ภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
+									<td class="text-right">
+										<span t-field="o.total_baht_incl_VAT"/>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer">
+                    <div class="text-right" style="border-top: 1px solid black;">        
+                        <small>
+                            <span>Page</span>
+                            <span class="page" /> of <span class="topage" />
+                        </small>
+                    </div>
+                </div>     
+				
+			</t>
+		</t>
+
+	</t>
+</template>
+
+</odoo>
