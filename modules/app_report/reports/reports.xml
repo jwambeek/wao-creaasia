@@ -3,7 +3,7 @@
  
 <!-- Add the report to the XML file responsible for reports -->
 <report
-       id="report_tax_invoice"
+       id="report_tax_invoice_new"
 	   model="account.invoice"
 	   string="Tax Invoice"
 	   report_type="qweb-pdf"
