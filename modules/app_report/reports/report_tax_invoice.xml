@@ -234,7 +234,13 @@
 	</t>
 </template>
 
-
+<report
+       id="report_tax_invoice"
+	   model="account.invoice"
+	   string="Tax Invoice"
+	   report_type="qweb-pdf"
+	   name="report_tax_invoice"
+	   file="report_tax_invoice" />
 
 
 
