@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<!--main template which calls "Tax Invoice" and "Tax Invoice-Copy" templates.-->
-<template id="report_tax_invoice1">
-<t t-foreach="docs" t-as="doc">
-            <t t-call="app_report.report_tax_invoice" t-lang="doc.partner_id.lang"/>
-			
-           	
-            <t t-call="app_report.report_tax_invoice_copy"/>
-			<t t-call="app_report.report_tax_invoice_copy"/>
-		</t>	
-</template>		
-
  
 <template id="report_tax_invoice">
 	
