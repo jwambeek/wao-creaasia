@@ -5,13 +5,13 @@
 <template id="report_tax_invoice1">
 
 
- <t t-foreach="docs" t-as="doc">
-            <t t-call="app_report.report_tax_invoice2" t-lang="doc.partner_id.lang"/>
-			
-           	
-            <t t-call="app_report.report_tax_invoice2"/>
+ 
+            <t t-call="app_report.report_tax_invoice" t-lang="doc.partner_id.lang"/>
+			<div class="page">
+            <t t-call="app_report.report_tax_invoice"/>
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
-		</t>
+			<div>
+		
 	
 </template>	
 
@@ -82,9 +82,8 @@
 
 </div>
 </t>
-	
 </template>
- 
+
 <template id="report_tax_invoice">
 	
 	    <div class="header">
