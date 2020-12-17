@@ -63,7 +63,7 @@
                 </div>
 			</div>
 			<br></br>
-		</div>
+		
 		
         <t t-foreach="docs" t-as="o">
             <t t-call="web.external_layout">
