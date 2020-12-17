@@ -7,9 +7,9 @@
 
  
             <t t-call="app_report.report_tax_invoice2" />
-			</t>
+			
 			<div class="page">
-            <t t-call="app_report.report_tax_invoice2"/></t>
+            <t t-call="app_report.report_tax_invoice2" />
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
 			</div>
 		
