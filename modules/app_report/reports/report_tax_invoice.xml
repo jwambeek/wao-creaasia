@@ -6,7 +6,7 @@
 <t t-foreach="docs" t-as="doc">
             <t t-call="app_report.report_tax_invoice" t-lang="doc.partner_id.lang"/>
 			
-           	
+           	<p style="page-break-before:always;"> </p>
             <!--<t t-call="app_report.report_tax_invoice_copy"/>-->
 			<t t-call="app_report.report_tax_invoice_copy"/>
 		</t>	
