@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<report
+        id="action_report_invoice"
+        model="account.invoice"
+        string="Custom Invoice"
+        report_type="qweb-pdf"
+        name="account_custom_report.report_custom_account"
+        file="account_custom_report.report_custom_account"
+       />
+<template id="report_custom_account">
+    <t t-call="web.html_container">
+    <t t-call="web.external_layout">
+        <!-- <t t-call="report.external_layout"> -->
+        <t t-foreach="account" t-as="acc">
+        <div class="page">
+            <table class="table table-borderless" style="line-height: 7px;">
+                <tr>
+                    <td colspan="2" width="40%" style="font-size:14px;" class="text-left"><b><span t-esc="acc.company_id.name"/></b></td>
+                    <td colspan="2" rowspan="6" width="10%" class="text-left">
+                        <div style="color:blue;">
+                            <center>
+                                <img src="/account_custom_report/static/src/img/crea-icon.jpg" style="height:100px; width:250px; color:blue;" t-options='{"widget": "image"}'/><br/>
+                            </center>
+                        </div>
+                    </td>
+                    <td colspan="2" width="50%" style="font-size:14px;" class="text-left"><b>บริษัท ซี อาร์ อ เ ี อ เทรดดิ ง จํากัด (สํ านักงานใหญ่ )</b></td>
+                </tr>
+                <tr>
+                    <td colspan="2"  width="40%" style="font-size:14px;" class="text-left"><span t-esc="acc.company_id.street"/></td>
+
+                    <td colspan="2" width="50%" style="font-size:14px;" class="text-left">อาคารทีบีไอ ชั นที 6 เลขที 712/1</td>
+                </tr>
+                <tr>
+                    <td colspan="2"  width="40%" style="font-size:14px;" class="text-left"><span t-esc="acc.company_id.street2"/></td>
+
+                    <td colspan="2" width="50%" style="font-size:14px;" class="text-left">ถนนสุ ขุมวิท 26และ28 แขวงคลองตัน</td>
+                </tr>
+                <tr>
+                    <td colspan="2"  width="40%" style="font-size:14px;" class="text-left"><span t-esc="acc.company_id.city"/>,<span t-esc="acc.company_id.state_id.name"/></td>
+
+                    <td colspan="2" width="50%" style="font-size:14px;" class="text-left">เขตคลองเตย กรุ งเทพฯ <span style="margin-left:5px;" t-esc="acc.company_id.zip"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size:14px;" width="40%" class="text-left"><span t-esc="acc.company_id.country_id.name"/>,<span t-esc="acc.company_id.zip"/></td>
+
+                    <td colspan="2" style="font-size:14px;" width="50%" class="text-left">โทรศัพท์ : (662) 083-1811</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size:14px;" width="40%" class="text-left">Tax ID:<span t-esc="acc.company_id.vat"/></td>
+
+                    <td colspan="2" style="font-size:14px;" width="50%" class="text-left">เลขประจําตัวผู เ ้ สี ยภาษี : <span t-esc="acc.company_id.vat"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="font-size:14px;" width="40%" class="text-left"></td>
+                    <td colspan="2" style="font-size:14px;" width="10%" class="text-left"><center>ใบลดหน<br/><h1>CREDIT NOTE</h1></center></td>
+                    <td colspan="2" style="font-size:14px;" width="50%" class="text-left"></td>
+                </tr>
+                <tr>
+                    <td width="20%" style="font-size:14px;" class="text-left"><b>นามลูกค้า / Name</b></td>
+                    <td width="20%" style="font-size:14px;" class="text-left"><span t-esc="acc.partner_id.name"/></td>
+                    <td colspan="2" style="font-size:14px;" width="10%" class="text-left"></td>
+                    <td width="25%" style="font-size:14px;" class="text-left"><b>เลขที / No.</b></td>
+                    <td width= "25%" style="font-size:14px;" class="text-left">
+                       <span t-esc="acc.date_invoice"/>
+                    </td>
+
+                </tr>
+                <tr style="line-height: 12px; margin-top:-25px;">
+                    <td width="20%" style="font-size:14px;" class="text-left"><b>ที อยู่ / Address</b></td>
+                    <td width="20%" style="font-size:14px;" class="text-left">
+                        <span t-esc="acc.partner_id.street"/>
+<!--                        <span style="margin-left:5px;" t-esc="acc.partner_id.street2"/>-->
+                        <span style="margin-left:5px;" t-esc="acc.partner_id.city"/>
+                    </td>
+                    <td colspan="2" style="font-size:14px;" width="10%" class="text-left"></td>
+                    <td width="25%" style="font-size:14px;" class="text-left"><b>วันที / Date</b></td>
+                    <td width="25%" style="font-size:14px;" class="text-left">
+                       <span t-esc="acc.date_due"/>
+                    </td>
+
+                </tr>
+                 <tr style="line-height: 12px; margin-top:-25px;">
+                    <td width="20%" style="font-size:14px;" class="text-left"><b>สาขา / Branch</b></td>
+                    <td width="20%" style="font-size:14px;" class="text-left">
+<!--                        <span t-esc="acc.partner_id.branch_number"/>-->
+                    </td>
+                    <td colspan="2" style="font-size:14px;" width="10%" class="text-left"></td>
+                    <td width="25%" style="font-size:14px; " class="text-left"><b>อ้างอิงถึงใบแจ้งหนี เลขที /<br/>Refer to Invoice Number No.</b></td>
+                    <td width="25%" style="font-size:14px;" class="text-left">
+                       <span t-esc="acc.origin"/>
+                    </td>
+
+                </tr>
+                 <tr style="line-height: 12px; margin-top:-25px;">
+                     <td width="20%" style="font-size:14px;" class="text-left"><b>เลขประจําตัวผู เ ้ สี ยภาษ/ <br/>Tax ID No.</b></td>
+                    <td width="20%" style="font-size:14px;" class="text-left"><b><span t-esc="acc.partner_id.vat"/></b></td>
+                    <td colspan="2" style="font-size:14px;" width="10%" class="text-left"></td>
+                    <td width="25%" style="font-size:14px;" class="text-left"><b>หน้า / Page</b></td>
+                    <td width="25%" style="font-size:14px;" class="text-left">1/1</td>
+
+                </tr>
+
+            </table>
+            <table style="margin-top:-65px;">
+               <thead style="border:1px solid black;" >
+                    <th width="10%" style="border:1px solid black;" class="text-center"><strong>ลําดับท<br/>No.</strong></th>
+                    <th width="10%" style="border:1px solid black;" class="text-center"><strong>รหัส<br/>Item No.</strong></th>
+                    <th width="35%" style="border:1px solid black;" class="text-center"><strong>รายการ<br/>Description</strong></th>
+                    <th width="15%" style="border:1px solid black;" class="text-center"><strong>จํานวน<br/>Quantity</strong></th>
+                    <th width="15%" style="border:1px solid black;"  class="text-center"><strong>ราคาต่อหน่วย<br/>Unit Price</strong></th>
+                    <th width="20%" style="border:1px solid black;" class="text-center"><strong>จํานวนเงิน<br/>Amount</strong></th>
+
+               </thead>
+                <tbody>
+                <t t-set="tax_amo" t-value="0"/>
+                    <t t-set="sr" t-value="1"/>
+                    <t t-foreach="account.invoice_line_ids" t-as="line">
+                        <tr>
+                            <td width="10%" style="border:1px solid black; font-size:14px;" class="text-left"><span t-esc="sr"/> <t t-set="sr" t-value="sr + 1"/></td>
+                            <td width="10%" style="border:1px solid black;" class="text-left"><span t-esc="line.product_id.default_code"/></td>
+                            <td width="35%" style="border:1px solid black;" class="text-left"><span t-esc="line.name"/></td>
+                            <td width="15%" style="border:1px solid black;" class="text-center"><span t-esc="'{:,.0f}'.format(line.quantity)"/></td>
+
+                            <td width="15%" style="border:1px solid black;" class="text-center"><span t-esc="'{:,.0f}'.format(line.price_unit)"/></td>
+                           <td width="15%" style="border:1px solid black;" class="text-center"><b><span t-esc="'%.2f'% line.price_subtotal"/></b></td>
+                            <t t-set="tax_amo" t-value="'{:,.0f}'.format(line.invoice_line_tax_ids.amount)"/>
+                        </tr>
+                    </t>
+
+
+                    <tr>
+                        <td rowspan = "5" colspan="3" style="border:1px solid black;" width="50%" class="text-left">
+                            Ref::<br/>
+                            Note :: <span style="margin-left:30px;" t-esc="acc.name"/>
+                        </td>
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">รวม / Total</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_untaxed"/></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">ส่ วนลด / Discount</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_untaxed"/></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">มูลค่าสิ นค้าหรื อบริ การไม่รวมภาษีมูลค่าเพิ ม/ <br/>Total Baht Excl. VAT</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_untaxed"/></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">ภาษีมูลค่าเพิ ม / VAT 7%</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_tax"/></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">มูลค่าสิ นค้าหรื อบริ การรวมภาษีมูลค่าเพิ ม/ <br/>Total Baht Incl. VAT</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_total"/></td>
+                    </tr>
+                    <br/>
+                    <tr>
+                        <td colspan="6"  class="text-left">.</td>
+                    </tr>
+
+                    <tr>
+                        <br/><br/>
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">มูลค่าสิ นค้าหรื อบริ การตามใบแจ้งหนี เดิม<br/>Goods/Services Value of the Original Invoice</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_total"/></td>
+                        <td colspan="3" style="border:0px solid white;" width="50%" class="text-left"></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">มูลค่าสิ นค้าหรื อบริ การที ถูกต้อง/<br/>Corrected Goods/Services Value Amount</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_total"/></td>
+                        <td colspan="3" style="border:0px solid white;"  width="50%" class="text-left"></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">ผลต่าง/Differences</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_untaxed"/></td>
+                        <td colspan="3"  style="border:0px solid white;"  width="50%" class="text-left"></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">ภาษีมูลค่าเพิ ม / VAT 7%</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_tax"/></td>
+                        <td colspan="3"  style="border:0px solid white;" width="50%" class="text-left"></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="3" style="border:1px solid black;" width="50%" class="text-left"><span style="float:left;">รวม / Total Baht Incl. VAT</span>  <span style="float:right;" t-esc="'%.2f'% acc.amount_total"/></td>
+                        <td colspan="3"  style="border:0px solid white;" width="50%" class="text-left"></td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+
+           </div>
+        </t>
+    </t>
+    </t>
+</template>
+
+
+        
+</odoo>
