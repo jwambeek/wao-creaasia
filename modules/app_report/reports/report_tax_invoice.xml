@@ -6,7 +6,7 @@
 
 
  
-            <t t-call="app_report.report_tax_invoice" t-lang="doc.partner_id.lang"/>
+            <t t-call="app_report.report_tax_invoice" />
 			<div class="page">
             <t t-call="app_report.report_tax_invoice"/>
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
