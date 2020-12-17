@@ -64,7 +64,7 @@
 			</div>
 			<br></br>
 		</div>
-		</div>
+		
         <t t-foreach="docs" t-as="o">
             <t t-call="web.external_layout">
                 <div class="page">
@@ -74,6 +74,7 @@
             </t>
         </t>
     </t>
+	</div>
 </template>
  
 <template id="report_tax_invoice">
