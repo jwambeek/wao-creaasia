@@ -17,6 +17,52 @@
 
 <template id="report_tax_invoice2">
 <t t-call="web.html_container">
+<div class="header">
+            <div class="row">
+                <div class="col-4 bm-2 text-left">
+				  <t t-foreach="docs" t-as="o">
+					
+					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
+					<p class ="_comp_add" style="font-size:15px">
+					<t t-esc="o.company_id.street"/><br></br>
+					<t t-esc="o.company_id.street2"/><br></br>
+					<t t-esc="o.company_id.city">,</t>
+					<t t-esc="o.company_id.state_id.name"/><br></br>
+					<t t-esc="o.company_id.country_id.name"/>
+					<t t-esc="o.company_id.zip"/><br></br>
+					<strong style="font-size:15px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
+					</p>
+					
+					</t>
+					
+                </div>
+                
+                <div class="col-4 bm-2 text-right">
+					<br></br><br></br>
+                    <p style="text-align:center;">
+					<!--<t t-foreach="docs" t-as="o">
+					<img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 125px;max-width: 250px"/>
+					</t>-->
+						<img t-att-src="'app_report/static/description/crea-logo.jpg'" style="max-height: 150px;max-width: 225px"/>
+					</p>
+					
+                </div>
+                <br></br><br></br>
+                <div class="col-4 bm-2 text-right">
+					<t t-foreach="docs" t-as="o">
+					<strong style="font-size:15px"><t t-esc="o.company_id.company_name_local_lang"/></strong><br></br>
+					<p class ="_local_lang_add" style="font-size:15px">
+					     <t t-esc="o.company_id.address_local_lang"/>
+						 <br></br>
+						 <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี:</strong> <t t-esc="o.company_id.vat"/>
+						 <!--<small>เลขประจำตัวผู้เสียภาษี: <t t-esc="o.company_id.vat"/></small>-->
+					</p>	 
+					</t>
+
+                </div>
+			</div>
+			<br></br>
+		</div>
         <t t-foreach="docs" t-as="o">
             <t t-call="web.external_layout">
                 <div class="page">
