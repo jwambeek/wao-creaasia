@@ -20,6 +20,7 @@
 <t t-foreach="docs" t-as="o">
 <t t-call="web.external_layout">
 <div class="page">
+<div class="oe_structure" />
 	    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
