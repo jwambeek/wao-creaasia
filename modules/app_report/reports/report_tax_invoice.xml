@@ -17,7 +17,7 @@
 
  
 <template id="report_tax_invoice">
-	
+<div class="page">	
 	    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
@@ -246,6 +246,8 @@
 		</t>
 
 	</t>
+
+</div>	
 </template>
 
 
