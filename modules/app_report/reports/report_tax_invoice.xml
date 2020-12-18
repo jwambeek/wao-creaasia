@@ -4,28 +4,22 @@
 <!--main template which calls "Tax Invoice" and "Tax Invoice-Copy" templates.-->
 <template id="app_report.report_tax_invoice1">
     
-    <div class="page">
-      <!-- <t t-call="app_report.custom_header"/>
+    
+      <t t-call="app_report.custom_header"/>
             <t t-call="app_report.report_tax_invoice_copy" />
         
+        <div style="page-break-before: always;">
 
 	    <t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />
-        
-		<t t-call="app_report.custom_header"/>	
+        </div>
+		<!--<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />	
         
 			<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />-->
-
-		<t t-set="count" t-value="1" >
-    <t t-if="count%2!= 0">
-         <t t-call="app_report.custom_header"/>	
-			<t t-call="app_report.report_tax_invoice_copy" /> 
-    </t>
-</t>
 					
-	</div>
+	
 	        <!--<t t-call="app_report.report_tax_invoice_copy" />-->
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
 		
