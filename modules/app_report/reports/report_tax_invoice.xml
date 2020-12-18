@@ -12,7 +12,7 @@
             <t t-call="app_report.report_tax_invoice_copy" />
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
 			</div>
-			<t t-call="app_report.report_tax_invoice_copy" />
+			<!--<t t-call="app_report.report_tax_invoice_copy" />-->
 		
 	
 </template>	
