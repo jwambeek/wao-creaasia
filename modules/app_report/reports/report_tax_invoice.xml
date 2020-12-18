@@ -10,10 +10,12 @@
 	</div>	
 
 
-	<t t-call="web.external_layout">
+	
 	<div class="page">	 
+	<t t-call="web.external_layout">
 	      <t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />
+			</t>
 	</div>		
 
 	        <!--<t t-call="app_report.report_tax_invoice_copy" />-->
@@ -21,7 +23,7 @@
 		
 			
 
-		</t>
+		
 			
 		
 	
