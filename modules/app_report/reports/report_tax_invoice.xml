@@ -6,13 +6,14 @@
     
     
       <t t-call="app_report.custom_header"/>
+	          <div style="page-break-before: always;">
             <t t-call="app_report.report_tax_invoice_copy" />
-        
-        <div style="page-break-before: always;">
+        </div>
+
 
 	    <t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />
-        </div>
+        
 		<!--<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />	
         
