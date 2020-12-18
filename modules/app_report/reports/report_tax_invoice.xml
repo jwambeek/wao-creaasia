@@ -5,14 +5,14 @@
 <template id="app_report.report_tax_invoice1">
     
     
-      <t t-call="app_report.custom_header">
+      <t t-call="app_report.custom_header"/>
 	    <t t-call="app_report.report_tax_invoice_copy" />
-    </t>
+    
 
 
-	    <t t-call="app_report.custom_header">	
+	    <t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />
-        </t>
+        
 		<!--<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />	
         
