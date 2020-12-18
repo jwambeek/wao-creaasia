@@ -2,7 +2,7 @@
 <odoo>
 
 <!--main template which calls "Tax Invoice" and "Tax Invoice-Copy" templates.-->
-<template id="report_tax_invoice1">
+<template id="app_report.report_tax_invoice1">
 
 
      <t t-call="report.html_container">
