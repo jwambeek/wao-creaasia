@@ -3,11 +3,16 @@
 
 <!--main template which calls "Tax Invoice" and "Tax Invoice-Copy" templates.-->
 <template id="app_report.report_tax_invoice1">
-     <t t-call="web.html_container">
-    
+    <t t-call="web.html_container">
+    <div class="page">
        <t t-call="app_report.custom_header"/>
             <t t-call="app_report.report_tax_invoice_copy" />
+	</div>	
+
+	<div class="page">	 
+	      <t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />
+	</div>		
 		<t t-call="app_report.custom_footer"/>
 	        <!--<t t-call="app_report.report_tax_invoice_copy" />-->
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
