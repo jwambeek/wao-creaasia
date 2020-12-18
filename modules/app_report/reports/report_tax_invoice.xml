@@ -8,7 +8,7 @@
  
             <t t-call="app_report.report_tax_invoice" />
 	
-            <!--<t t-call="app_report.report_tax_invoice_copy" />-->
+            <t t-call="app_report.report_tax_invoice_copy" />
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
 			
 			
