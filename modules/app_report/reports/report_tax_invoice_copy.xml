@@ -2,8 +2,8 @@
 <odoo>
 
  
-<template id="report_tax_invoice_copy" inherit_id="report.external_layout_header">
-<xpath expr="//div[@class='header']" position="replace">			
+<template id="report_tax_invoice_copy">
+			
 	    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
@@ -51,7 +51,7 @@
 			
 			<br></br>
 		</div>
-</xpath>			
+			
 			
 			<!--<div class = "row">
 				<div class="col-12 bm-2 text-center">
