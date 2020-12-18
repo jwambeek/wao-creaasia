@@ -5,12 +5,15 @@
 <template id="report_tax_invoice1">
 
 
- 
+     <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+
             <t t-call="app_report.report_tax_invoice" />
 	
             <t t-call="app_report.report_tax_invoice_copy" />
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
-			
+		</t>	
+		</t>
 			
 		
 	
