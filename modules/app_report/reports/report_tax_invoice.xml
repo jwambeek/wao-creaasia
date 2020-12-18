@@ -26,8 +26,10 @@
 	</template>	
 
 	<template id="app_report.report_tax_invoice3">
+	<div class="page">
 	<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />
+	</div>		
 	</template>
 
 <template id="report_tax_invoice2">
