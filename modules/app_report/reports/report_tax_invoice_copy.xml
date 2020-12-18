@@ -9,10 +9,8 @@
 	<t t-call="web.html_container">
 	<t t-foreach="docs" t-as="o">
 			<t t-call="web.external_layout">
-           <div class="page">
-                    <div class="oe_structure" />
-					 
-	    <div class="header">
+			<div class="page">
+				    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
@@ -72,7 +70,10 @@
 				
 	<br></br>
 
-	                  <div class="text-center">
+			</div>
+           <div class="page">
+                    <div class="oe_structure" />
+					 <div class="text-center">
 	                        
 					<center><h6 style="font-size:19px">ใบกำกับภาษี - สำเนา</h6></center>
 					
