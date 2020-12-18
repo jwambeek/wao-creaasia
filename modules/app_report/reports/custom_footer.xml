@@ -2,6 +2,7 @@
 <odoo>
 
     <template id="custom_footer">
+    <div class="page">
     <div class="footer">
                     <div class="text-right" style="border-top: 1px solid black;">        
                         <small>
@@ -10,7 +11,7 @@
                         </small>
                     </div>
                 </div>     
-        
+    </div>   
     </template>
 
 </odoo>
