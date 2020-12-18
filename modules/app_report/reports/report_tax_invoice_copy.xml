@@ -3,9 +3,9 @@
 
  
 <template id="report_tax_invoice_copy">
-	
+		<div class="page">	
 	    <div class="header">
-		<div class="page">
+
             <div class="row">
                 <div class="col-4 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
@@ -51,7 +51,7 @@
 			</div>
 			<br></br>
 		</div>
-</div>			
+			
 			
 			<!--<div class = "row">
 				<div class="col-12 bm-2 text-center">
@@ -233,6 +233,7 @@
 		</t>
 
 	</t>
+<div>	
 </template>
 
 
