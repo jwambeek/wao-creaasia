@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_footer">
+    <div class="footer">
+                    <div class="text-right" style="border-top: 1px solid black;">        
+                        <small>
+                            <span>Page</span>
+                            <span class="page" /> of <span class="topage" />
+                        </small>
+                    </div>
+                </div>     
+        
+    </template>
+
+</odoo>
