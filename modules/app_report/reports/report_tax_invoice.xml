@@ -5,19 +5,26 @@
 <template id="app_report.report_tax_invoice1">
     
     <div class="page">
-       <t t-call="app_report.custom_header"/>
+       <!--<t t-call="app_report.custom_header"/>
             <t t-call="app_report.report_tax_invoice_copy" />
-        </t>
+        
 
 	    <t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />
-        </t>
+        
 		<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />	
-        </t>
+        
 			<t t-call="app_report.custom_header"/>	
-			<t t-call="app_report.report_tax_invoice_copy" />
-		</t>			
+			<t t-call="app_report.report_tax_invoice_copy" />-->
+
+		<t t-set="count" t-value="count+1" />
+        <t t-if="count%2!= 0">
+         <t t-call="app_report.custom_header"/>	
+			<t t-call="app_report.report_tax_invoice_copy" /> 
+        </t>
+</t>
+
 	</div>
 	        <!--<t t-call="app_report.report_tax_invoice_copy" />-->
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
