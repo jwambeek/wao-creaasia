@@ -7,9 +7,10 @@
     
 
             <t t-call="app_report.report_tax_invoice_copy" />
+			<t t-foreach="docs" t-as="o">
 	        <t t-call="app_report.report_tax_invoice_copy" />
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
-			
+			</t>
 
 		</t>
 			
