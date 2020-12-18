@@ -7,27 +7,17 @@
     <div class="page">
        <t t-call="app_report.custom_header"/>
             <t t-call="app_report.report_tax_invoice_copy" />
-	</div>	
 
-
-	
-	<div class="page">	 
-	
-	      <t t-call="app_report.custom_header"/>	
+	    <t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />
-		
-	</div>		
 
+		<t t-call="app_report.custom_header"/>	
+			<t t-call="app_report.report_tax_invoice_copy" />			
+	</div>
 	        <!--<t t-call="app_report.report_tax_invoice_copy" />-->
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
 		
-			
-
-		
-			
-		
-	
-</template>	
+	</template>	
 
 <template id="report_tax_invoice2">
 <t t-call="web.html_container">
