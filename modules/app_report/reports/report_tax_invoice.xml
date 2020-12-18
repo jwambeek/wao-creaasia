@@ -9,10 +9,10 @@
             <t t-call="app_report.report_tax_invoice" />
 			
 			<div class="page">
-            <t t-call="app_report.report_tax_invoice" />
+            <t t-call="app_report.report_tax_invoice_copy" />
 			<!--<t t-call="app_report.report_tax_invoice_copy"/>-->
 			</div>
-			<t t-call="app_report.report_tax_invoice" />
+			<t t-call="app_report.report_tax_invoice_copy" />
 		
 	
 </template>	
