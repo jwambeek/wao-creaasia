@@ -2,14 +2,9 @@
 <odoo>
 
  
-<template id="report_tax_invoice_copy">
-<t t-call="web.html_container">
-	<t t-foreach="docs" t-as="o">
-	<t t-call="web.external_layout">
-
-				
-				    <div class="header">
-				
+<template id="report_tax_invoice">
+	
+	    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
@@ -53,21 +48,28 @@
 
                 </div>
 			</div>
-			
 			<br></br>
 		</div>
-		
-		
-	<br></br>
-
-
-
-
-           <div class="page">
+			
+			
+			<!--<div class = "row">
+				<div class="col-12 bm-2 text-center">
+					<center><h6 style="font-size:15px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
+					
+                    <center><h6 style="font-size:15px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
+					
+                </div>
+			</div>-->
+				
+	<br></br>				 
+	<t t-call="web.html_container">
+		<t t-foreach="docs" t-as="o">
+			<t t-call="web.external_layout">
+			<div class="page">
                     <div class="oe_structure" />
-					 <div class="text-center">
+	                  <div class="text-center">
 	                        
-					<center><h6 style="font-size:19px">ใบกำกับภาษี - สำเนา</h6></center>
+<center><h6 style="font-size:19px">ใบกำกับภาษี - สำเนา</h6></center>
 					
                     <center><h6 style="font-size:19px"><strong>TAX INVOICE - COPY</strong></h6></center>
                       <br></br>   
@@ -225,12 +227,11 @@
                         </small>
                     </div>
                 </div>     
-            
 				
-			
-		</t>
+			</t>
 		</t>
 
 	</t>
+
 </template>	
 </odoo>
