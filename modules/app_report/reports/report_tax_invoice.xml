@@ -8,12 +8,12 @@
       <!--<t t-call="app_report.custom_header"/>
 	    <t t-call="app_report.report_tax_invoice_copy" />-->
     
-      <div class="page">
+    
 
 
 
 		<t t-call="app_report.report_tax_invoice" />
-		</div>
+		
 		<t t-call="app_report.report_tax_invoice_copy" />	
         
 			<!--<t t-call="app_report.custom_header"/>	
