@@ -13,8 +13,7 @@
 
 
 		<t t-call="app_report.report_tax_invoice" />
-		<p style="page-break-before:auto;"> </p>
-			<t t-call="app_report.report_tax_invoice_copy" />	
+			<t t-call="app_report.report_tax_invoice2" />	
         
 			<!--<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />-->
@@ -33,6 +32,8 @@
             <t t-call="web.external_layout">
                 <div class="page">
                     <h2>Report title</h2>
+							<p style="page-break-before:auto;"> </p>
+
                     <p>This object's name is <span t-field="o.name"/></p>
                 </div>
             </t>
