@@ -3,7 +3,7 @@
 
  
 <template id="report_tax_invoice_copy">
-	<xpath expr="//div[@class='header']" position="replace">
+	
 	    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
@@ -50,17 +50,6 @@
 			</div>
 			<br></br>
 			</div>
-		</xpath>
-			
-			
-			<!--<div class = "row">
-				<div class="col-12 bm-2 text-center">
-					<center><h6 style="font-size:15px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
-					
-                    <center><h6 style="font-size:15px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
-					
-                </div>
-			</div>-->
 				
 	<br></br>				 
 	<t t-call="web.html_container">
