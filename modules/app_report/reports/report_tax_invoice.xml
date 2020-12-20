@@ -12,9 +12,9 @@
         <t t-call="app_report.custom_header">	
 		</t>
 
-		</div>
+		
 			<t t-call="app_report.report_tax_invoice_copy" />	
-        
+        </div>
 			<!--<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />-->
 					
