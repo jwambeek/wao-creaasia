@@ -5,7 +5,7 @@
 <template id="report_tax_invoice_copy">
 <t t-call="web.html_container">
 	<t t-foreach="docs" t-as="o">
-	<!--<t t-call="web.external_layout">-->
+	<t t-call="web.external_layout">
 
 				<div class="page">
 				    <div class="header">
@@ -225,6 +225,7 @@
             
 				
 		</div>	
+		</t>
 		</t>
 
 	</t>
