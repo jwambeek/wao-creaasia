@@ -8,15 +8,13 @@
       <t t-call="app_report.custom_header"/>
 	    <t t-call="app_report.report_tax_invoice_copy" />
     
+      <div class="page">
+        <t t-call="app_report.custom_header"/>	
 
-
-	    	
-			<t t-call="app_report.report_tax_invoice3" />
-        
-		<!--<t t-call="app_report.custom_header"/>	
+		</div>
 			<t t-call="app_report.report_tax_invoice_copy" />	
         
-			<t t-call="app_report.custom_header"/>	
+			<!--<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />-->
 					
 	
@@ -25,14 +23,7 @@
 		
 	</template>	
 
-	<template id="app_report.report_tax_invoice3">
-	<div class="page">
-	<t t-call="app_report.custom_header"/>	
-			<t t-call="app_report.report_tax_invoice_copy" />
-			<t t-call="app_report.custom_header"/>	
-			<t t-call="app_report.report_tax_invoice_copy" />
-	</div>		
-	</template>
+	
 
 <template id="report_tax_invoice2">
 <t t-call="web.html_container">
