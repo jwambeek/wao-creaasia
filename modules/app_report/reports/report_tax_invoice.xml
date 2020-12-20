@@ -14,7 +14,7 @@
 
 		<t t-call="app_report.report_tax_invoice" />
 		<p style="page-break-before:auto;"> </p>
-		<t t-call="app_report.custom_header" />	
+		<p><t t-call="app_report.custom_header" /></p>	
         
 			<!--<t t-call="app_report.custom_header"/>	
 			<t t-call="app_report.report_tax_invoice_copy" />-->
