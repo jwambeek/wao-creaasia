@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--main template which calls "Tax Invoice" and "Tax Invoice-Copy" templates.-->
+<template id="app_report.main_template">
+    
+       <t t-call="app_report.report_tax_invoice" />
+		<t t-call="app_report.report_tax_invoice_copy" />
+        <!--<t t-call="app_report.report_tax_invoice_copy" />-->
+</template>	
+
+</odoo>
