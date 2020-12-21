@@ -60,7 +60,7 @@
 	<br></br>
 
         <t t-foreach="docs" t-as="o">
-			<!--<t t-call="web.internal_layout">-->
+			<t t-call="web.internal_layout">
                 <div class="page">
                     <div class="oe_structure" />
 	                  <div class="text-center">
@@ -224,7 +224,7 @@
                     </div>
                 </div>     
 				
-			
+		</t>	
 		</t>
 
 	</t>
