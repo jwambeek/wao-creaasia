@@ -8,8 +8,8 @@
                <!--<xpath expr="//t[@t-call='app_report.report_tax_invoice_copy']" position="replace">
                <div></div>
                </xpath>-->
-                <t t-call="app_report.report_tax_invoice_copy" invisible="1"/>
-                               <t t-call="app_report.report_tax_invoice_copy"/>
+                <t t-call="app_report.report_tax_invoice_copy" optional="disabled"/>
+                <t t-call="app_report.report_tax_invoice_copy"/>
         </t>
     </t>
         
