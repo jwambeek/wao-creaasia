@@ -3,8 +3,6 @@
 
  
 <template id="report_tax_invoice_copy">
-	<t t-call="web.html_container">
-
         	<div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
@@ -53,6 +51,9 @@
 			</div>
 				
 	<br></br>
+	<t t-call="web.html_container">
+
+
 
         <t t-foreach="docs" t-as="o">
           <t t-call="web.external_layout">
