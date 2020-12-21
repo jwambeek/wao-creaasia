@@ -4,20 +4,26 @@
  
 <template id="report_tax_invoice_copy">
 	
-	    <div class="header">
+				 
+	<t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+			<t t-call="web.internal_layout">
+
+        <div class="page">
+			    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
-				  <t t-foreach="docs" t-as="k">
+				  <t t-foreach="docs" t-as="o">
 					
-					<strong style="font-size:15px"><t t-esc="k.company_id.name"/></strong><br></br>
+					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
 					<p class ="_comp_add" style="font-size:15px">
-					<t t-esc="k.company_id.street"/><br></br>
-					<t t-esc="k.company_id.street2"/><br></br>
-					<t t-esc="k.company_id.city">,</t>
-					<t t-esc="k.company_id.state_id.name"/><br></br>
-					<t t-esc="k.company_id.country_id.name"/>
-					<t t-esc="k.company_id.zip"/><br></br>
-					<strong style="font-size:15px">Tax ID :</strong> <t t-esc="k.company_id.vat"/>
+					<t t-esc="o.company_id.street"/><br></br>
+					<t t-esc="o.company_id.street2"/><br></br>
+					<t t-esc="o.company_id.city"></t>
+					<t t-esc="o.company_id.state_id.name"/><br></br>
+					<t t-esc="o.company_id.country_id.name"/>
+					<t t-esc="o.company_id.zip"/><br></br>
+					<strong style="font-size:15px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
 					</p>
 					
 					</t>
@@ -36,12 +42,12 @@
                 </div>
                 <br></br><br></br>
                 <div class="col-4 bm-2 text-right">
-					<t t-foreach="docs" t-as="k">
-					<strong style="font-size:15px"><t t-esc="k.company_id.company_name_local_lang"/></strong><br></br>
+					<t t-foreach="docs" t-as="o">
+					<strong style="font-size:15px"><t t-esc="o.company_id.company_name_local_lang"/></strong><br></br>
 					<p class ="_local_lang_add" style="font-size:15px">
-					     <t t-esc="k.company_id.address_local_lang"/>
+					     <t t-esc="o.company_id.address_local_lang"/>
 						 <br></br>
-						 <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี:</strong> <t t-esc="k.company_id.vat"/>
+						 <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี:</strong> <t t-esc="o.company_id.vat"/>
 						 <!--<small>เลขประจำตัวผู้เสียภาษี: <t t-esc="o.company_id.vat"/></small>-->
 					</p>	 
 					</t>
@@ -51,10 +57,10 @@
 			<br></br>
 			</div>
 				
-	<br></br>				 
-	<t t-call="web.html_container">
-        <t t-foreach="docs" t-as="o">
-			<t t-call="web.external_layout">
+	<br></br>
+		</div>
+
+
 			<div class="page">
                     <div class="oe_structure" />
 	                  <div class="text-center">
