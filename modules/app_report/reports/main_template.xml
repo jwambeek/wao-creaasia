@@ -5,8 +5,9 @@
     
 
     <t t-call="app_report.report_tax_invoice" />
+    <p style="page-break-after:always;"></p>
 	<t t-call="app_report.report_tax_invoice_copy" />
-    <t t-call="app_report.report_tax_invoice_copy" />
+    <!--<t t-call="app_report.report_tax_invoice_copy" />-->
         
 </template>	
 
