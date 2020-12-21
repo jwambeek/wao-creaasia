@@ -5,11 +5,11 @@
   	<t t-call="web.html_container">  
  	    <t t-foreach="docs" t-as="o">
                <t t-call="app_report.report_tax_invoice" />
-               <xpath expr="//t[@t-call='app_report.report_tax_invoice_copy']" position="replace">
+               <!--<xpath expr="//t[@t-call='app_report.report_tax_invoice_copy']" position="replace">
                <div></div>
-
-               <t t-call="app_report.report_tax_invoice_copy" />
-                              </xpath>
+               </xpath>-->
+                <t t-call="app_report.report_tax_invoice_copy" invisible="1"/>
+                               <t t-call="app_report.report_tax_invoice_copy"/>
         </t>
     </t>
         
