@@ -1,6 +1,6 @@
 {
     'name' : 'Tax Reports',
-    'version': '1.4',
+    'version': '1.5',
     'Summary': 'Tax Report Prints',
     'description': 'To print the new report',
     'license': 'LGPL-3',
@@ -15,6 +15,7 @@
         #'reports/custom_header.xml',
         #'reports/custom_footer.xml',
         'reports/main_template.xml',
+        'reports/example.xml'
     
     ],
     'installable': True,
