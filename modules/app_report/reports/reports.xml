@@ -5,9 +5,9 @@
 <report
        id="report_tax_invoice_new"
 	   model="account.invoice"
-	   string="Tax Invoice"
+	   string="Tax Invoice Copy"
 	   report_type="qweb-pdf"
-	   name="app_report.main_template"
-	   file="app_report.main_template" />
+	   name="app_report.report_tax_invoice_copy"
+	   file="app_report.report_tax_invoice_copy" />
 	   
 </odoo>
