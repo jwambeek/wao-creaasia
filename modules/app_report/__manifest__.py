@@ -15,7 +15,7 @@
         #'reports/custom_header.xml',
         #'reports/custom_footer.xml',
         'reports/main_template.xml',
-        'reports/report_tax_invoice_copy1.xml'
+    
     ],
     'installable': True,
     'application':True,
