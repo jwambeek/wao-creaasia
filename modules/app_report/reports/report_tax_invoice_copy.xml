@@ -3,12 +3,6 @@
 
  
 <template id="report_tax_invoice_copy">
-	
-				 
-	<t t-call="web.html_container">
-        <t t-foreach="docs" t-as="o">
-			<t t-call="web.internal_layout">
-<t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
         <div class="page">
 			    <div class="header">
             <div class="row">
@@ -59,7 +53,11 @@
 				
 	<br></br>
 		</div>
-
+	
+				 
+	<t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+			<t t-call="web.internal_layout">
 
 			<div class="page">
                     <div class="oe_structure" />
