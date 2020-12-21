@@ -2,17 +2,11 @@
 <odoo>
 <!--main template which calls "Tax Invoice" and "Tax Invoice-Copy" templates.-->
 <template id="app_report.main_template">
-  	<t t-call="web.html_container">  
- 	    <t t-foreach="docs" t-as="o">
-               <t t-call="app_report.report_tax_invoice" />
-               <!--<xpath expr="//t[@t-call='app_report.report_tax_invoice_copy']" position="replace">
-               <div></div>
-               </xpath>-->
-                <t t-call="app_report.report_tax_invoice_copy" optional="disabled"/>
-                <t t-call="app_report.report_tax_invoice_copy"/>
-        </t>
-    </t>
-        
+
+            <t t-call="app_report.report_tax_invoice" />
+            <t t-call="app_report.report_tax_invoice_copy1"/>
+            <t t-call="app_report.report_tax_invoice_copy"/>
+    
 </template>	
 
 </odoo>
