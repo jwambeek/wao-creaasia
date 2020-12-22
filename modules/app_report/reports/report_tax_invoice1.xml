@@ -5,9 +5,7 @@
 <template id="app_report.report_tax_invoice1">
 					 
 	<t t-call="web.html_container">
-		<t t-foreach="docs" t-as="o">
-			<t t-call="web.external_layout">
-				    <div class="header">
+					    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
@@ -65,6 +63,9 @@
 			</div>-->
 				
 	<br></br>
+		<t t-foreach="docs" t-as="o">
+			<t t-call="web.external_layout">
+
 			<div class="page">
                     <div class="oe_structure" />
 	                  <div class="text-center">
@@ -125,7 +126,7 @@
 					
 					
 
-
+<div class="page">
 							<table border="1" class="table table-condensed" >
 								<thead>
 										<tr>
@@ -211,7 +212,7 @@
 							</tbody>
 							</table>
 						
-				
+				</div>
 				<!-- <div class = "row">
 						<div class="col-12 bm-2 text-left">
 							<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
