@@ -2,7 +2,7 @@
 <odoo>
 
  
-<template id="report_tax_invoice">
+<template id="report_tax_invoice1">
 	
 	    <div class="header">
             <div class="row">
