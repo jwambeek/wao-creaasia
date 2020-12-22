@@ -1,6 +1,6 @@
 {
     'name' : 'Tax Reports',
-    'version': '1.2',
+    'version': '1.3',
     'Summary': 'Tax Report Prints',
     'description': 'To print the new report',
     'license': 'LGPL-3',
@@ -9,7 +9,7 @@
     ],    
     'data': [
         'reports/report_tax_invoice.xml',
-        'reports/report_tax_invoice_copy.xml',
+        'reports/report_tax_invoice_copy1.xml',
         'reports/reports.xml',
         'views/app_report_view.xml',
     

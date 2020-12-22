@@ -15,7 +15,7 @@
 	   model="account.invoice"
 	   string="Tax Invoice Copy"
 	   report_type="qweb-pdf"
-	   name="app_report.report_tax_invoice_copy"
-	   file="app_report.report_tax_invoice_copy"/>
+	   name="app_report.report_tax_invoice_copy1"
+	   file="app_report.report_tax_invoice_copy1"/>
 	   
 </odoo>
