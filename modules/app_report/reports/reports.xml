@@ -11,7 +11,7 @@
 	   file="app_report.report_tax_invoice" />
 
 <report
-       id="report_tax_invoice_new"
+       id="report_tax_invoice_copy"
 	   model="account.invoice"
 	   string="Tax Invoice Copy"
 	   report_type="qweb-pdf"
