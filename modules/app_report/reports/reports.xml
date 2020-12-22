@@ -9,7 +9,7 @@
 	   report_type="qweb-pdf"
 	   name="app_report.report_tax_invoice"
 	   file="app_report.report_tax_invoice" />
-	   
+
 <report
        id="report_tax_invoice_new"
 	   model="account.invoice"
