@@ -3,8 +3,11 @@
 
  
 <template id="app_report.report_tax_invoice1">
-	
-	    <div class="header">
+					 
+	<t t-call="web.html_container">
+		<t t-foreach="docs" t-as="o">
+			<t t-call="web.external_layout">
+				    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
@@ -61,10 +64,7 @@
                 </div>
 			</div>-->
 				
-	<br></br>				 
-	<t t-call="web.html_container">
-		<t t-foreach="docs" t-as="o">
-			<t t-call="web.external_layout">
+	<br></br>
 			<div class="page">
                     <div class="oe_structure" />
 	                  <div class="text-center">
