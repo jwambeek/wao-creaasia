@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
- 
+<data> 
 <!-- Add the report to the XML file responsible for reports -->
 <report
        id="report_tax_invoice"
@@ -19,5 +19,5 @@
 	   file="app_report.report_tax_invoice_copy"/>
 
 
-	   
+</data>	   
 </odoo>
