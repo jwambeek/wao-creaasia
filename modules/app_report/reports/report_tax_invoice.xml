@@ -10,6 +10,7 @@
 			<div class="page">
                      <t t-call="app_report.custom_header1">
                      </t>
+			</div>		 
 			<div class="page">
 			
                     <div class="oe_structure" />
@@ -174,7 +175,7 @@
                     </div>
                 </div>     
 				
-			</div>
+			
 		</t>
 
 	</t>
