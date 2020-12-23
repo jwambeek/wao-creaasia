@@ -125,7 +125,7 @@
 					
 					
 
-                    <div class = "page">
+                    
 						<div >
 							<table border="1" class="table table-condensed" >
 								<thead>
@@ -158,7 +158,7 @@
                                         </div>
                                     </td>
                                     <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">	
-                                        <strong>รวมทั้งสิ้น / Grand Total</strong>
+                                        <strong>รวม / Total</strong>
                                     </td>
                                     <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px" > 
                                        <span t-esc="'%.2f'% o.grand_total"/>
@@ -212,7 +212,7 @@
 							</tbody>
 							</table>
 						</div>
-					</div>
+				
 				<!-- <div class = "row">
 						<div class="col-12 bm-2 text-left">
 							<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
