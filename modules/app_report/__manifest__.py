@@ -9,7 +9,7 @@
     ],    
     'data': [
         #'data/data.xml',
-        'reports/custom_header.xml',
+        'reports/custom_header1.xml',
         'reports/report_tax_invoice.xml',
         'reports/reports.xml',
         'views/app_report_testview.xml'
