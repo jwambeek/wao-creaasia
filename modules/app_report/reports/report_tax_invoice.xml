@@ -4,7 +4,7 @@
  
 <template id="report_tax_invoice">
 	
-	<t t-call="web.html_container">
+	<!--<t t-call="web.html_container">-->
 
 			<t t-call="web.basic_layout">
 			<div class="page">
@@ -177,7 +177,7 @@
                 </div>     
 				
 			</t>
-		</t>
+		
 
 	</t>
 </template>
