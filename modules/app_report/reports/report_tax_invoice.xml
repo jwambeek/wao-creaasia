@@ -3,7 +3,7 @@
 
  
 <template id="report_tax_invoice">
-				<div class="page">
+				<div class="first-page">
                      <t t-call="app_report.custom_header1"/>
                      
 			</div>
