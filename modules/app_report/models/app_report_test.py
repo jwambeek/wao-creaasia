@@ -102,7 +102,7 @@ class AccountInvoice_Data(models.Model):
         for order in self:
             cal_amount = 0
             for  line_items in order.invoice_line_ids:
-                line_items.amount = line_items.quantity * line_items.price_unit
+                #line_items.amount = line_items.quantity * line_items.price_unit
                 cal_amount = cal_amount + (line_items.quantity * line_items.price_unit)
             order.total_amount = cal_amount
 
