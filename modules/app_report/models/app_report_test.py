@@ -138,7 +138,7 @@ class AccountInvoice_Data(models.Model):
         for orders in self:
             total_incl_vat = 0
             for line_items in orders.invoice_line_ids:
-                total_incl_vat = total_incl_vat + ((line_items.amount - (line_items.discount * line_items.price_unit)/100) * line_items.invoice_line_tax_ids.amount )/100
+                total_incl_vat = total_incl_vat + ((line_items.amount - (line_items.discount * line_items.price_unit)/100) + (line_items.invoice_line_tax_ids.amount/100 * (line_items.amount - (line_items.discount * line_items.price_unit)/100)))
             orders.total_baht_incl_VAT = total_incl_vat
 
     total_baht_incl_VAT = fields.Float(string = 'Total Baht Incl VAT', compute = '_cal_total_baht_incl_vat', store = True, digits=(12,4))
