@@ -91,7 +91,7 @@ class AccountInvoice_Data(models.Model):
     channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
     #address_local_lang =  fields.Text(string = 'Address (Thai)', tracking=True,readonly=True)
 
-    @api.depends('invoice_line_ids.price_unit','invoice_line_ids.quantity')
+    @api.depends('invoice_line_ids','invoice_line_ids.price_unit','invoice_line_ids.quantity')
     def _cal_amount(self):
         for order in self:
             exc = 0
@@ -156,7 +156,7 @@ class AccountInvoice_Data(models.Model):
 class AccountInvoice_Line_Data(models.Model):
     _inherit = 'account.invoice.line'
     seller_discount = fields.Float('seller_discount')
-    amount = fields.Float(string='Amount',compute = '_cal_amount',readonly=True )
+    amount = fields.Float(string='Amount',readonly=True )
 
 
 
