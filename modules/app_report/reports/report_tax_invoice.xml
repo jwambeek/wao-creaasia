@@ -3,13 +3,14 @@
 
  
 <template id="report_tax_invoice">
-				<div class="page">
+				<!--<div class="page">
                      <t t-call="app_report.custom_header1"/>
                      
-			</div>
+			</div>-->
 	
 			<t t-call="web.html_container">
 			<t t-call="web.basic_layout">
+			<t t-call="app_report.custom_header1"/>
 			<t t-foreach="docs" t-as="o">		 
 			<div class="page">
 			
@@ -70,49 +71,47 @@
     </div>
 <br></br>
 					
-					
+<table border="1" class="table table-condensed" >
+	<thead>
+		<tr>
+			<th style="border: 1px solid black; width: 10%" class="text-center">ลำดับที่ <br></br>No. </th>
+			<th style="border: 1px solid black" class="text-center">รหัสสินค้า<br></br>Item No.</th>
+			<th style="border: 1px solid black; width:32%" class="text-center">รายการสินค้า<br></br>Description </th>
+			<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Quantity</th>
+			<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
+			<th style="border: 1px solid black; width:12%" class="text-center">จำนวนเงิน <br></br>Amount </th>
+		</tr>
+	</thead>	
+	<tbody>
+    <t t-set="counter" t-value="1"/>
+        <tr t-foreach="o.invoice_line_ids" t-as="line">
+            <td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
+            <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id.default_code"/></td>
+            <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
+            <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
+            <td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
+            <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.price_subtotal)"/></td>
+            <t t-set="counter" t-value="counter + 1"/>
+        </tr>
+        <tr>
+    <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
+        <div class = "row">
+            <div class="col-12 bm-2 text-left">
+                <strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+            </div>
+        </div>
+    </td>
 
-                    
-						<div >
-							<table border="1" class="table table-condensed" >
-								<thead>
-										<tr>
-											    <th style="border: 1px solid black; width: 10%" class="text-center">ลำดับที่ <br></br>No. </th>
-												<th style="border: 1px solid black" class="text-center">รหัสสินค้า<br></br>Item No.</th>
-												<th style="border: 1px solid black; width:32%" class="text-center">รายการสินค้า<br></br>Description </th>
-												<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Quantity</th>
-												<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
-												<th style="border: 1px solid black; width:12%" class="text-center">จำนวนเงิน <br></br>Amount </th>
-										</tr>
-								</thead>	
-							<tbody>
-                                <t t-set="counter" t-value="1"/>
-                                    <tr t-foreach="o.invoice_line_ids" t-as="line">
-                                        <td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
-                                        <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id.default_code"/></td>
-                                        <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
-                                        <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
-                                        <td style="border: 1px solid black" class="text-right"><span t-field="line.price_unit"/></td>
-                                        <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.price_subtotal)"/></td>
-                                        <t t-set="counter" t-value="counter + 1"/>
-                                    </tr>
-                                <tr>
-                                    <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
-                                        <div class = "row">
-                                            <div class="col-12 bm-2 text-left">
-                                                <strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">	
-                                        <strong>รวม / Total</strong>
-                                    </td>
-                                    <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px" > 
-                                       <span t-esc="'%.2f'% o.grand_total"/>
-									
-									</td>
-                                </tr>
-                                <tr>
+    <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">	
+        <strong>รวม / Total</strong>
+    </td>
+    
+	<td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px" > 
+        <span t-esc="'%.2f'% o.grand_total"/>
+	</td>
+    </tr>
+    
+	<tr>
                                     
                                     <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
 									<strong>ส่วนลด/ Discount</strong></td>
