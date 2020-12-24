@@ -92,6 +92,12 @@ class AccountInvoice_Data(models.Model):
     #address_local_lang =  fields.Text(string = 'Address (Thai)', tracking=True,readonly=True)
 
     @api.depends('invoice_line_ids.price_unit','invoice_line_ids.quantity')
+    def _cal_amount(self):
+        for line_items in self:
+            line_items.amount = line_items.quantity * line_items.price_unit
+
+
+    @api.depends('invoice_line_ids.price_unit','invoice_line_ids.quantity')
     def _cal_total_amount(self):
         for order in self:
             cal_amount = 0
