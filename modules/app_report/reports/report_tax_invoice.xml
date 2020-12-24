@@ -37,7 +37,7 @@
 						<t t-elif="o.company_id.name == 'Crea Co., Ltd.'">
 							<span>CC - <span t-esc ="o.origin"/></span>
 						</t>
-						<t t-elif="o.company_id.name == 'YourCompany'">
+						<t t-elif="o.company_id.name == 'Rewind Pte. Ltd.'">
 							<span>RW - <span t-esc ="o.origin"/></span>
 						</t>
 				</div>
