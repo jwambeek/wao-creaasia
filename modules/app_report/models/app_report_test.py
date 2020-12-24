@@ -156,7 +156,7 @@ class AccountInvoice_Data(models.Model):
 class AccountInvoice_Line_Data(models.Model):
     _inherit = 'account.invoice.line'
     seller_discount = fields.Float('seller_discount')
-    amount = fields.Float(string='Amount',readonly=True )
+    amount = fields.Float(string='Amount',compute = '_cal_amount',readonly=True )
 
 
 
