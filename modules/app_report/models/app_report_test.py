@@ -123,22 +123,22 @@ class AccountInvoice_Data(models.Model):
 
     grand_total = fields.Float(string = 'Grand Total', store = True, compute = '_cal_grand_total')
 """
-    @api.depends('invoice_line_ids.discount', 'invoice_line_ids.price_unit','invoice_line_ids.amount')
+    @api.depends('invoice_line_ids.discount', 'invoice_line_ids.price_unit','invoice_line_ids.amount','invoice_line_ids.quantity')
     def _cal_total_baht_escl_vat(self):
         for orders in self:
             total_excl_vat = 0
             for line_items in orders.invoice_line_ids:
-                total_excl_vat = total_excl_vat + (line_items.amount - (line_items.discount * line_items.price_unit)/100)
+                total_excl_vat = total_excl_vat + (line_items.amount - (line_items.discount * line_items.price_unit * line_items.quantity)/100)
             orders.total_baht_excl_VAT = total_excl_vat
 
     total_baht_excl_VAT = fields.Float(string = 'Total Baht Excl VAT', compute = '_cal_total_baht_escl_vat', store= True, digits=(12,4))
 
-    @api.depends('invoice_line_ids.invoice_line_tax_ids.amount','invoice_line_ids.discount','invoice_line_ids.price_unit','invoice_line_ids.amount')
+    @api.depends('invoice_line_ids.invoice_line_tax_ids.amount','invoice_line_ids.discount','invoice_line_ids.price_unit','invoice_line_ids.amount','invoice_line_ids.quantity')
     def _cal_total_baht_incl_vat(self):
         for orders in self:
             total_incl_vat = 0
             for line_items in orders.invoice_line_ids:
-                total_incl_vat = total_incl_vat + ((line_items.amount - (line_items.discount * line_items.price_unit)/100) + (line_items.invoice_line_tax_ids.amount/100 * (line_items.amount - (line_items.discount * line_items.price_unit)/100)))
+                total_incl_vat = total_incl_vat + ((line_items.amount - (line_items.discount * line_items.price_unit * line_items.quantity)/100) + (line_items.invoice_line_tax_ids.amount/100 * (line_items.amount - (line_items.discount * line_items.price_unit * line_items.quantity)/100)))
             orders.total_baht_incl_VAT = total_incl_vat
 
     total_baht_incl_VAT = fields.Float(string = 'Total Baht Incl VAT', compute = '_cal_total_baht_incl_vat', store = True, digits=(12,4))
