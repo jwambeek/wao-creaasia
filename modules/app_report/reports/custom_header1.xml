@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<template id="custom_header1">
+<template id="custom_header1" inherit_id="web.external_layout">
+<xpath expr="//div[@class='header']" position="replace">
            
            	    <div class="header">
             <div class="row">
@@ -58,7 +59,7 @@
 					
                 </div>
 			</div>-->
-				
+	</xpath>			
 	<br></br>
 
 
