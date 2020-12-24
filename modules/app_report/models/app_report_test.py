@@ -128,10 +128,13 @@ class AccountInvoice_Data(models.Model):
 
     grand_total = fields.Float(string = 'Grand Total', store = True, compute = '_cal_grand_total')
 """
-    @api.depends('calculated_discount', 'total_amount')
+    @api.depends('invoice_line_ids.discount', 'invoice_line_ids.price_unit','invoice_line_ids.amount')
     def _cal_total_baht_escl_vat(self):
         for orders in self:
-            orders.total_baht_excl_VAT = orders.total_amount - orders.calculated_discount
+            total_excl_vat = 0
+            for line_items in orders.invoice_line_ids:
+                total_excl_vat = total_excl_vat + (line_items.amount - (line_items.discount * line_items.price_unit)/100)
+            orders.total_baht_excl_VAT = total_excl_vat
 
     total_baht_excl_VAT = fields.Float(string = 'Total Baht Excl VAT', compute = '_cal_total_baht_escl_vat', store= True, digits=(12,4))
 

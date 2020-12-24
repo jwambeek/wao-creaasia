@@ -140,7 +140,7 @@
 									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
 									<strong>ภาษีมูลค่าเพิ่ม / VAT 7%</strong></td>
 									<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" > 
-										<span t-esc="'%.2f'% o.vat"/>
+										<span t-esc="o.invoice_line_tax_ids"/>
 									</td>
 								</tr>
 
