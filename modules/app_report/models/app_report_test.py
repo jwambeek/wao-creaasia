@@ -135,13 +135,10 @@ class AccountInvoice_Data(models.Model):
 
     total_baht_excl_VAT = fields.Float(string = 'Total Baht Excl VAT', compute = '_cal_total_baht_escl_vat', store= True, digits=(12,4))
 
-    @api.depends('total_baht_excl_VAT','invoice_line_tax_ids')
+    @api.depends('total_baht_excl_VAT')
     def _cal_total_baht_incl_vat(self):
         for orders in self:
-            total_incl_VAT = 0
-            for line_items in orders.invoice_line_ids:
-                total_incl_VAT = total_incl_VAT + (orders.total_baht_excl_VAT * line_items.invoice_line_tax_ids)/100
-            orders.total_baht_incl_VAT = total_incl_VAT    
+            orders.total_baht_incl_VAT = orders.total_baht_excl_VAT * 1.07
 
     total_baht_incl_VAT = fields.Float(string = 'Total Baht Incl VAT', compute = '_cal_total_baht_incl_vat', store = True, digits=(12,4))
 
