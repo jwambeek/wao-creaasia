@@ -32,7 +32,7 @@
 			    <div class="col-12 bm-2 text-right" >
 						<strong style="font-size:15px">เลขที่ / No.</strong>&#160;&#160;&#160;&#160; 
 						<t t-if="company_id.name == 'CREA Trading Co., Ltd.'">
-						<span>CT - <span t-esc ="o.origin"/></span>
+						<span t-esc ="o.origin"/>
 						</t>
 				</div>
             </div>
