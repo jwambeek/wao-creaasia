@@ -153,7 +153,7 @@ class AccountInvoice_Data(models.Model):
     
 class AccountInvoice_Line_Data(models.Model):
     _inherit = 'account.invoice.line'
-    seller_discount = fields.Float(string='Seller Discount',required=True)
+    seller_discount = fields.Float(string='Seller Discount')
     amount = fields.Float(string='Amount',compute='_cal_amount',readonly=True )
 
     @api.depends('price_unit','quantity')
