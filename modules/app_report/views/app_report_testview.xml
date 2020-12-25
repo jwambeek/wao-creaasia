@@ -35,6 +35,9 @@
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="after">
                       <field name="amount" invisible="1"/>
             </xpath>
+                        <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="after">
+                      <field name="seller_discount"/>
+            </xpath>
     </field>
     </record>
 
