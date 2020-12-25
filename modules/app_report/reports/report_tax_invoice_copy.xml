@@ -155,13 +155,6 @@
 							</tbody>
 							</table>
 						
-				
-				<!-- <div class = "row">
-						<div class="col-12 bm-2 text-left">
-							<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
-						</div>
-				</div> -->
-            
 				<div class="footer">
                     <div class="text-right" style="border-top: 1px solid black;">        
                         <small>
