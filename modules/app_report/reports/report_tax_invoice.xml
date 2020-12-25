@@ -38,7 +38,7 @@
 							<span>CC - <span t-esc ="o.origin"/></span>
 						</t>
 						<t t-elif="o.company_id.name == 'YourCompany'">
-							<span>RW - <span t-esc ="o.order_id.id"/></span>
+							<span>RW - <span t-esc ="o.id"/></span>
 						</t>
 				</div>
             </div>
