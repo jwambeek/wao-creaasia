@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<template id="custom_header1" inherit_id="web.external_layout_standard" >
-    <xpath expr="//div[hasclass('header')]" position="replace">
+<template id="custom_header1" inherit_id="web.external_layout" >
+    <xpath expr="//div[@class='header']" position="replace">
 
            
            	    <div class="header">
