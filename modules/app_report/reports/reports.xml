@@ -7,16 +7,16 @@
 	   model="account.invoice"
 	   string="Tax Invoice"
 	   report_type="qweb-pdf"
-	   name="app_report.report_tax_invoice"
-	   file="app_report.report_tax_invoice" />
+	   name="app_report.report_tax_invoice1"
+	   file="app_report.report_tax_invoice1" />
 
 <report
        id="report_tax_invoice_copy"
 	   model="account.invoice"
 	   string="Tax Invoice Copy"
 	   report_type="qweb-pdf"
-	   name="app_report.report_tax_invoice_copy"
-	   file="app_report.report_tax_invoice_copy" />
+	   name="app_report.report_tax_invoice_copy1"
+	   file="app_report.report_tax_invoice_copy1" />
 
 
 	   

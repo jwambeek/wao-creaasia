@@ -2,7 +2,7 @@
 <odoo>
 
  
-<template id="report_tax_invoice_copy">
+<template id="report_tax_invoice1">
 				<!--<div class="page">
                      <t t-call="app_report.custom_header1"/>
                      
@@ -17,9 +17,9 @@
                     <div class="oe_structure" />
 	                  <div class="text-center">
 	                        
-					<center><h6 style="font-size:19px">สำเนาใบกำกับภาษี	</h6></center>
+					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงิน	</h6></center>
 					
-                    <center><h6 style="font-size:19px"><strong>TAX INVOICE COPY</strong></h6></center>
+                    <center><h6 style="font-size:19px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
                       <br></br>   
                        </div>
 					

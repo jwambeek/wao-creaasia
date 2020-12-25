@@ -10,8 +10,8 @@
     'data': [
         #'data/data.xml',
         'reports/custom_header1.xml',
-        'reports/report_tax_invoice.xml',
-        'reports/report_tax_invoice_copy.xml',
+        'reports/report_tax_invoice1.xml',
+        'reports/report_tax_invoice_copy1.xml',
         'reports/reports.xml',
         'views/app_report_testview.xml'
     ],
