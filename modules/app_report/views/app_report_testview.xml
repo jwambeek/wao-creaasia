@@ -33,7 +33,7 @@
     <field name="model">account.invoice</field >
     <field name="arch" type= "xml">
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="after">
-                      <field name="amount"/>
+                      <field name="amount" invisible="1"/>
             </xpath>
     </field>
     </record>
