@@ -98,7 +98,7 @@
             <t t-set="counter" t-value="counter + 1"/>
         </tr>
 
-	<div>	
+		
         <tr>
     <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
         <div class = "row">
@@ -152,7 +152,7 @@
 										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
 								</tr>
-								</div>
+							
 									
 							</tbody>
 							</table>
