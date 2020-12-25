@@ -3,18 +3,15 @@
 
  
 <template id="report_tax_invoice1">
-				<!--<div class="page">
-                     <t t-call="app_report.custom_header1"/>
-                     
-			</div>-->
-			<t t-call="app_report.custom_header1"/>
 			<t t-call="web.html_container">
             <t t-call="web.basic_layout">
+				<div class="page">
+                     <t t-call="app_report.custom_header1"/>
+                </div>
 			
 			<t t-foreach="docs" t-as="o">		 
 			<div class="page">
-			
-                    <div class="oe_structure" />
+			    <div class="oe_structure" />
 	                  <div class="text-center">
 	                        
 					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงิน	</h6></center>
@@ -128,42 +125,25 @@
 			<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
 		</td>	
 	</tr>
-								<!--<tr class="border-black o_discount_subtotal">
-									<td><strong>รวมบาทไม่รวม ภาษีมูลค่าเพิ่ม / <br></br>Total Baht Excl. VAT</strong></td>
-									<td class="text-right">
-										<span t-field="line.price_subtotal - line.discount"/>
-									</td>
-								</tr>-->
 
 	<tr>
-                                   
-									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
-									<strong>ภาษีมูลค่าเพิ่ม / VAT </strong></td>
-									<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" > 
-										<span t-esc="'%.2f'% o.vat"/>
-									</td>
-								</tr>
+    <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+		<strong>ภาษีมูลค่าเพิ่ม / VAT </strong></td>
+			<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" > 
+				<span t-esc="'%.2f'% o.vat"/>
+	</td>
+	</tr>
 
-
-								<tr>
-                                    
-									<td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
-									<strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
-									<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" >
-										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
-									</td>
-								</tr>
-									
-							</tbody>
-							</table>
+    <tr>
+    <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+		<strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong></td>
+			<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" >
+				<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
+	</td>
+	</tr>
+	</tbody>
+	</table>
 						
-				
-				<!-- <div class = "row">
-						<div class="col-12 bm-2 text-left">
-							<strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
-						</div>
-				</div> -->
-            
 				<div class="footer">
                     <div class="text-right" style="border-top: 1px solid black;">        
                         <small>

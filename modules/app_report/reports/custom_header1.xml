@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <template id="custom_header1" >
-
-           
-           	    <div class="header">
             <div class="row">
                 <div class="col-4 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
@@ -47,22 +44,8 @@
 
                 </div>
 			</div>
-			<br></br>
-		</div>
-			
-			
-			<!--<div class = "row">
-				<div class="col-12 bm-2 text-center">
-					<center><h6 style="font-size:15px">ใบกำกับภาษี / ใบเสร็จรับเงินอย่างเป็นทางการ</h6></center>
-					
-                    <center><h6 style="font-size:15px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
-					
-                </div>
-			</div>-->
-				
+			<br></br>	
 	<br></br>
 
 </template>           
-    
-
 </odoo>
