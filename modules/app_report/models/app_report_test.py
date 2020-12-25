@@ -42,6 +42,11 @@ class SaleOrder_Data(models.Model):
         })
         return invoice_vals
 
+    
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+    seller_discount = fields.Float(string='Seller Discount')
+
     def _prepare_invoice_line(self, qty):
         """
         Prepare the dict of values to create the new invoice line for a sales order line.
@@ -79,9 +84,6 @@ class SaleOrder_Data(models.Model):
         }
         return res
 
-class SaleOrderLine(models.Model):
-    _inherit = 'sale.order.line'
-    seller_discount = fields.Float(string='Seller Discount')
 
 class AccountInvoice_Data(models.Model):
     _inherit = 'account.invoice'
