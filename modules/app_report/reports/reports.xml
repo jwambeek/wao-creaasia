@@ -34,7 +34,8 @@
 	   string="Tax Invoice Copy"
 	   report_type="qweb-pdf"
 	   name="app_report.report_tax_invoice_copy"
-	   file="app_report.report_tax_invoice_copy" />
+	   file="app_report.report_tax_invoice_copy"
+	   paperformat="paperformat_report_tax_invoice" />
 
 
 	   
