@@ -97,6 +97,8 @@
             <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.amount)"/></td>
             <t t-set="counter" t-value="counter + 1"/>
         </tr>
+
+	<div>	
         <tr>
     <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
         <div class = "row">
@@ -131,12 +133,6 @@
 			<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
 		</td>	
 	</tr>
-								<!--<tr class="border-black o_discount_subtotal">
-									<td><strong>รวมบาทไม่รวม ภาษีมูลค่าเพิ่ม / <br></br>Total Baht Excl. VAT</strong></td>
-									<td class="text-right">
-										<span t-field="line.price_subtotal - line.discount"/>
-									</td>
-								</tr>-->
 
 	<tr>
                                    
@@ -156,6 +152,7 @@
 										<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 									</td>
 								</tr>
+								</div>
 									
 							</tbody>
 							</table>
