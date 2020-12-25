@@ -7,6 +7,9 @@
                <field name="confirmation_date" position = "before" >
                     <field name="channel_order_number"/>   
                 </field>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                      <field name="seller_discount"/>
+               </xpath>
                 
                 
         </field>
