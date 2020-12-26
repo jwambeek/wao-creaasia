@@ -92,7 +92,7 @@
             <t t-set="counter" t-value="counter + 1"/>
         </tr>
 
-	</tbody>	
+	<div class="page">	
         
 	<tr>
     <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
@@ -148,8 +148,8 @@
 									</td>
 								</tr>
 							
-									
-							
+							</div>		
+							</body>
 							</table>
 						
 				<div class="footer">
