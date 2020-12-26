@@ -92,7 +92,7 @@
             <t t-set="counter" t-value="counter + 1"/>
         </tr>
 
-	<div class="page">	
+	<div class="row clearfix">	
         
 	<tr>
     <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
