@@ -92,7 +92,7 @@
             <t t-set="counter" t-value="counter + 1"/>
         </tr>
 	
-    <p style="page-break-after:always;"> </p>  
+    <div style="page-break-after:auto;">  
 	<tr>
         <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
             <div class = "row">
@@ -147,7 +147,7 @@
 		</td>
 	</tr>
 							
-		
+	</div>	
 	</tbody>
 	</table>
 						
