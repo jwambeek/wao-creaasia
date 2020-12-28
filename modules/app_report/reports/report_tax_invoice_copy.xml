@@ -92,7 +92,24 @@
             <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.amount)"/></td>
             <t t-set="counter" t-value="counter + 1"/>
         </tr>
-        <tr>
+
+    </tbody> 
+	</table> 
+
+	<table border="1" class="table table-condensed">
+	<thead>
+	<tr style="height:0%" >
+            <th style="border: 0px ; width: 10%" class="text-center"></th>
+			<th style="border: 0px ; width: 16%" class="text-center"></th>
+			<th style="border: 0px ; width:32%" class="text-center"></th>
+			<th style="border: 0px ; width: 15%" class="text-center"></th>
+			<th style="border: 0px ; width: 15%" class="text-center"></th>
+			<th style="border: 0px ; width:12%" class="text-center"></th>
+	</tr>
+    </thead>
+
+	<tbody>		
+    <tr>
     <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
         <div class = "row">
             <div class="col-12 bm-2 text-left">
