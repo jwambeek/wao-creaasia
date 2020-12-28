@@ -95,7 +95,7 @@
 	</table> 
 
 	<table border="1" class="table table-condensed">
-	</head>
+	</thead>
 <tr style="height:0%" >
 	        <th style="border: 1px solid black; width: 10%;height:0%" class="text-center"></th>
 			<th style="border: 1px solid black; width: 16%;height:0%" class="text-center"></th>
@@ -104,7 +104,7 @@
 			<th style="border: 1px solid black; width: 15%;height:0%" class="text-center"></th>
 			<th style="border: 1px solid black; width:12%;height:0%" class="text-center"></th>
 	</tr>
-	</head>
+	</thead>
 	<tbody>
 
 	<tr>
