@@ -73,10 +73,10 @@
 	<thead>
 		<tr>
 			<th style="border: 1px solid black; width: 10%" class="text-center">ลำดับที่ <br></br>No. </th>
-			<th style="border: 1px solid black" class="text-center">รหัสสินค้า<br></br>Item No.</th>
+			<th style="border: 1px solid black; width: 16%" class="text-center">รหัสสินค้า<br></br>Item No.</th>
 			<th style="border: 1px solid black; width:32%" class="text-center">รายการสินค้า<br></br>Description </th>
-			<th style="border: 1px solid black" class="text-center">จำนวน <br></br>Quantity</th>
-			<th style="border: 1px solid black" class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
+			<th style="border: 1px solid black; width: 15% " class="text-center">จำนวน <br></br>Quantity</th>
+			<th style="border: 1px solid black; width: 15% " class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
 			<th style="border: 1px solid black; width:12%" class="text-center">จำนวนเงิน <br></br>Amount </th>
 		</tr>
 	</thead>	
@@ -98,10 +98,10 @@
 	<thead>
 	<tr>
 	<th style="border: 1px solid black; width: 10%" class="text-center"><br></br></th>
-			<th style="border: 1px solid black" class="text-center"><br></br></th>
+			<th style="border: 1px solid black; width: 16%" class="text-center"><br></br></th>
 			<th style="border: 1px solid black; width:32%" class="text-center"><br></br></th>
-			<th style="border: 1px solid black" class="text-center"><br></br></th>
-			<th style="border: 1px solid black" class="text-center"><br></br></th>
+			<th style="border: 1px solid black; width: 15%" class="text-center"><br></br></th>
+			<th style="border: 1px solid black; width: 15%" class="text-center"><br></br></th>
 			<th style="border: 1px solid black; width:12%" class="text-center"><br></br></th>
 	</tr>
     </thead>
