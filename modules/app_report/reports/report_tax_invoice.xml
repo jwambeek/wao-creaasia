@@ -96,13 +96,13 @@
 
 	<table border="1" class="table table-condensed">
 	<thead>
-	<tr style="height:0%">
-	<th style="border: 1px solid black; width: 10%" class="text-center"><br></br></th>
-			<th style="border: 1px solid black; width: 16%" class="text-center"><br></br></th>
-			<th style="border: 1px solid black; width:32%" class="text-center"><br></br></th>
-			<th style="border: 1px solid black; width: 15%" class="text-center"><br></br></th>
-			<th style="border: 1px solid black; width: 15%" class="text-center"><br></br></th>
-			<th style="border: 1px solid black; width:12%" class="text-center"><br></br></th>
+	<tr>
+	<th style="border: 1px solid black; width: 10%; height:0%" class="text-center"><br></br></th>
+			<th style="border: 1px solid black; width: 16%;height:0%" class="text-center"><br></br></th>
+			<th style="border: 1px solid black; width:32%;height:0%" class="text-center"><br></br></th>
+			<th style="border: 1px solid black; width: 15%;height:0%" class="text-center"><br></br></th>
+			<th style="border: 1px solid black; width: 15%;height:0%" class="text-center"><br></br></th>
+			<th style="border: 1px solid black; width:12%;height:0%" class="text-center"><br></br></th>
 	</tr>
     </thead>
 	<tbody>
