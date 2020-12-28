@@ -96,7 +96,7 @@
 
 	<table border="1" class="table table-condensed">
 	<thead>
-	<tr style="height:0%">
+	<tr style="height:0%" >
 	<th style="border: 1px solid black; width: 10%" class="text-center"></th>
 			<th style="border: 1px solid black; width: 16%" class="text-center"></th>
 			<th style="border: 1px solid black; width:32%" class="text-center"></th>
