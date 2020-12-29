@@ -47,7 +47,8 @@
                 </div>
 			</div>
 			<br></br>
-					
+
+		<div class="page">			
         <div class = "row">
 	                <div class="col-12 bm-2 text-center">
 
@@ -56,9 +57,9 @@
                         <br></br>   
                 </div>
 		</div>
-        
+        </div>
 		    
-
+        <div class="page">
 	       <div class="row">                        
 			    <div class="col-12 bm-2 text-right" >
 					<t t-foreach="docs" t-as="o">
@@ -109,7 +110,7 @@
 				</t>
 				</div>
 			</div>
-    
+    </div>
 
 </div>			
 				
