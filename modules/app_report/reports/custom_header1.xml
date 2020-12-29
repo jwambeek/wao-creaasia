@@ -47,82 +47,10 @@
                 </div>
 			</div>
 			<br></br>
-		<!--</div>-->
+		</div>
 
 			
-			
-             <div class = "row">
-	                  <div class="col-12 bm-2 text-center">
-	                        
-					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงิน	</h6></center>
-					
-                    <center><h6 style="font-size:19px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
-                      <br></br>   
-                       </div>
-					
-		    </div>			   
-			
-			
-
-    
-
-	       <div class="row">                        
-			    <div class="col-12 bm-2 text-right" >
-					<t t-foreach="docs" t-as="o">
-						<strong style="font-size:15px">เลขที่ / No.</strong>&#160;&#160;&#160;&#160; 
-                        <t t-esc="o.number"/>
-					</t>
-				</div>
-            </div>
-
-           <div class="row">
-				<div class="col-12 bm-2 text-left">
-				<t t-foreach="docs" t-as="o">
-					<strong style="font-size:15px">นามลูกค้า / ที่อยู่</strong>&#160;&#160;&#160;&#160;&#160;
-					<t t-esc="o.partner_id.name"/>
-					<br></br>
-					<strong style="font-size:15px">Name / Address </strong>&#160;&#160;&#160;
-				<!-- <t t-esc="o.partner_id.name"/> -->
-				<t t-esc="o.partner_id.street" />
-				<t t-esc="o.partner_id.street2" />
-				<t t-esc="o.partner_id.city" />
-				<t t-esc="o.partner_id.state_id.name"/>
-				<t t-esc="o.partner_id.country_id.name"/>
-				<t t-esc="o.partner_id.zip" />
-				<!--<t t-esc="o.partner_id" t-options='{"widget": "contact", "fields": [ "name","address"], "no_marker": True, "phone_icons": True}'/>-->
-				</t>
-				</div>
-            </div>
-
-			<div class="row">
-				<div class="col-12 bm-2 text-right"  >
-							<t t-foreach="docs" t-as="o">
-									<span>
-										<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;&#160;
-										<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
-									</span>	
-							</t>
-				</div>
-
-			</div>
-
-            <div class="row">
-				<div class="col-12 bm-2 text-left"  >
-				<t t-foreach="docs" t-as="o">
-					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;&#160;
-					    <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
-						<br></br>
-						<strong style="font-size:15px">Tax ID No.</strong>
-						<br></br><br></br>
-				</t>		
-				</div>
-			</div>
-
-	
-
-
-</div>
-	
+				
 
 </template>           
 </odoo>
