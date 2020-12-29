@@ -66,7 +66,7 @@
 
     
 
-	       <div class="row">                        
+	       <div class="row" style="height:1cm">                        
 			    <div class="col-12 bm-2 text-right" >
 					<t t-foreach="docs" t-as="o">
 						<strong style="font-size:15px">เลขที่ / No.</strong>&#160;&#160;&#160;&#160; 
@@ -75,7 +75,7 @@
 				</div>
             </div>
 
-           <div class="row">
+           <div class="row" style="height:1cm">
 				<div class="col-12 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px">นามลูกค้า / ที่อยู่</strong>&#160;&#160;&#160;&#160;&#160;
@@ -94,7 +94,7 @@
 				</div>
             </div>
 
-			<div class="row">
+			<div class="row" style="height:1cm">
 				<div class="col-12 bm-2 text-right"  >
 							<t t-foreach="docs" t-as="o">
 									<span>
@@ -106,7 +106,7 @@
 
 			</div>
 
-            <div class="row">
+            <div class="row" style="height:1cm">
 				<div class="col-12 bm-2 text-left"  >
 				<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;&#160;
