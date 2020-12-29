@@ -2,7 +2,7 @@
 <odoo>
 <template id="custom_header1" >
 <div class="header">
-<div class="page">
+
             <div class="row">
                 <div class="col-4 bm-2 text-left">
 				  <t t-foreach="docs" t-as="o">
@@ -48,7 +48,7 @@
 			</div>
 			<br></br>
 		</div>
-	</div>
+	
 	
 	<br></br>
 
