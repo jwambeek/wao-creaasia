@@ -91,8 +91,6 @@
             <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.amount)"/></td>
 			<t t-set="counter" t-value="counter + 1"/>
         </tr>
-    </tbody> 
-	</table> 
 
 	<table border="1" class="table table-condensed">
 	<thead>
@@ -160,7 +158,10 @@
 			<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
 		</td>
 	</tr>
-							
+
+	    </tbody> 
+	</table> 
+						
 		
 	</tbody>
 	</table>
