@@ -47,13 +47,9 @@
                 </div>
 			</div>
 			<br></br>
-		</div>
+		<!--</div>-->
 
-	
-	
-	<br></br>
-
-	<t t-foreach="docs" t-as="o">		 
+		           <t t-foreach="docs" t-as="o">		 
 			<div class="page">
 			
                     <div class="oe_structure" />
@@ -112,9 +108,15 @@
 				</div>
 			</div>
     </div>
-	</t>
 <br></br>
 
+</t>
+
+	
+	
+	<br></br>
+
+	
 
 </template>           
 </odoo>

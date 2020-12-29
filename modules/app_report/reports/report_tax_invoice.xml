@@ -11,7 +11,7 @@
             <t t-call="web.external_layout">
 			
 			
-
+		           <t t-foreach="docs" t-as="o">
 					
 <table border="1" class="table table-condensed" >
 	<thead>
@@ -121,6 +121,6 @@
 			</t>
 		
 </t>
-
+</t>
 </template>
 </odoo>
