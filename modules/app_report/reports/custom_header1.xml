@@ -46,20 +46,20 @@
 
                 </div>
 			</div>
-			<br></br>
+			<br></br><br><br>
 
-		<div class="page">			
+					
         <div class = "row">
-	                <div class="col-12 bm-2 text-center">
+	            <div class="col-12 bm-2 text-center">
 
 	                    <center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงิน	</h6></center>
 				        <center><h6 style="font-size:19px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
                         <br></br>   
                 </div>
 		</div>
-        </div>
+        
 		    
-        <div class="page">
+        <div class="row">
 	       <div class="row">                        
 			    <div class="col-12 bm-2 text-right" >
 					<t t-foreach="docs" t-as="o">
