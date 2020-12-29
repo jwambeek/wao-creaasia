@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <template id="custom_header1" >
-<div class="header" style="font-size:15px; line-height=30%">
+<div class="header" style="height:50cm">
 
             <div class="row">
                 <div class="col-4 bm-2 text-left">
