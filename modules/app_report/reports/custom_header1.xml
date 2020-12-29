@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <template id="custom_header1" >
-<div class="header" style="height:10cm">
+<div class="header" >
 
             <div class="row">
                 <div class="col-4 bm-2 text-left">
@@ -51,7 +51,7 @@
 
 			
 			
-             <div class = "row">
+             <div class = "row" style="height:1cm">
 	                  <div class="col-12 bm-2 text-center">
 	                        
 					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงิน	</h6></center>
