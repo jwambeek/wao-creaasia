@@ -4,7 +4,130 @@
  
 <template id="report_tax_invoice">
 
-		<t t-call="app_report.custom_header1"/>
+		<!--<t t-call="app_report.custom_header1"/>-->
+
+		<div class="header">
+
+            <div class="row">
+                <div class="col-4 bm-2 text-left">
+				  <t t-foreach="docs" t-as="o">
+					
+					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
+					<p class ="_comp_add" style="font-size:15px">
+					<t t-esc="o.company_id.street"/><br></br>
+					<t t-esc="o.company_id.street2"/><br></br>
+					<t t-esc="o.company_id.city">,</t>
+					<t t-esc="o.company_id.state_id.name"/><br></br>
+					<t t-esc="o.company_id.country_id.name"/>
+					<t t-esc="o.company_id.zip"/><br></br>
+					<strong style="font-size:15px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
+					</p>
+					
+					</t>
+					
+                </div>
+                
+                <div class="col-4 bm-2 text-right">
+					<br></br><br></br>
+                    <p style="text-align:center;">
+					<!--<t t-foreach="docs" t-as="o">
+					<img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 125px;max-width: 250px"/>
+					</t>-->
+						<img t-att-src="'app_report/static/description/crea-logo.jpg'" style="max-height: 150px;max-width: 225px"/>
+					</p>
+					
+                </div>
+                <br></br><br></br>
+                <div class="col-4 bm-2 text-right">
+					<t t-foreach="docs" t-as="o">
+					<strong style="font-size:15px"><t t-esc="o.company_id.company_name_local_lang"/></strong><br></br>
+					<p class ="_local_lang_add" style="font-size:15px">
+					     <t t-esc="o.company_id.address_local_lang"/>
+						 <br></br>
+						 <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี:</strong> <t t-esc="o.company_id.vat"/>
+						 <!--<small>เลขประจำตัวผู้เสียภาษี: <t t-esc="o.company_id.vat"/></small>-->
+					</p>	 
+					</t>
+
+                </div>
+			</div>
+			<br></br>
+		<!--</div>-->
+
+			
+			
+             <div class = "row">
+	                  <div class="col-12 bm-2 text-center">
+	                        
+					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงิน	</h6></center>
+					
+                    <center><h6 style="font-size:19px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
+                      <br></br>   
+                       </div>
+					
+		    </div>			   
+			
+			
+
+    
+
+	       <div class="row">                        
+			    <div class="col-12 bm-2 text-right" >
+					<t t-foreach="docs" t-as="o">
+						<strong style="font-size:15px">เลขที่ / No.</strong>&#160;&#160;&#160;&#160; 
+                        <t t-esc="o.number"/>
+					</t>
+				</div>
+            </div>
+
+           <div class="row">
+				<div class="col-12 bm-2 text-left">
+				<t t-foreach="docs" t-as="o">
+					<strong style="font-size:15px">นามลูกค้า / ที่อยู่</strong>&#160;&#160;&#160;&#160;&#160;
+					<t t-esc="o.partner_id.name"/>
+					<br></br>
+					<strong style="font-size:15px">Name / Address </strong>&#160;&#160;&#160;
+				<!-- <t t-esc="o.partner_id.name"/> -->
+				<t t-esc="o.partner_id.street" />
+				<t t-esc="o.partner_id.street2" />
+				<t t-esc="o.partner_id.city" />
+				<t t-esc="o.partner_id.state_id.name"/>
+				<t t-esc="o.partner_id.country_id.name"/>
+				<t t-esc="o.partner_id.zip" />
+				<!--<t t-esc="o.partner_id" t-options='{"widget": "contact", "fields": [ "name","address"], "no_marker": True, "phone_icons": True}'/>-->
+				</t>
+				</div>
+            </div>
+
+			<div class="row">
+				<div class="col-12 bm-2 text-right"  >
+							<t t-foreach="docs" t-as="o">
+									<span>
+										<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;&#160;
+										<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
+									</span>	
+							</t>
+				</div>
+
+			</div>
+
+            <div class="row">
+				<div class="col-12 bm-2 text-left"  >
+				<t t-foreach="docs" t-as="o">
+					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;&#160;
+					    <t t-esc="o.partner_id.vat" class="m-0 text-left"/>
+						<br></br>
+						<strong style="font-size:15px">Tax ID No.</strong>
+						<br></br><br></br>
+				</t>		
+				</div>
+			</div>
+
+	
+
+
+</div>
+<br></br>
 				 
 
 			<t t-call="web.html_container">
