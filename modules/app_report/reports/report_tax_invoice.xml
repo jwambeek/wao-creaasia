@@ -4,11 +4,11 @@
  
 <template id="report_tax_invoice">
 
-			     <t t-call="app_report.custom_header1"/>
+		<t t-call="app_report.custom_header1"/>
 				 
 
 			<t t-call="web.html_container">
-						<t t-foreach="docs" t-as="o">
+			<t t-foreach="docs" t-as="o">
             <t t-call="web.external_layout">
 		 
 			<div class="page">
@@ -40,6 +40,7 @@
 	</table> 
 </div>
 
+<div class="page">
 	<table border="1" class="table table-condensed">
 	<thead>
 	<tr style="height:0%" >
@@ -110,7 +111,7 @@
 		
 	</tbody>
 	</table>
-						
+	</div>					
 				<div class="footer">
                     <div class="text-right" style="border-top: 1px solid black;">        
                         <small>
