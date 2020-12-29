@@ -49,10 +49,10 @@
 			<br></br>
 		<!--</div>-->
 
-			<div class="page">
 			
-                    
-	                  <div class="text-center">
+			
+                    <div class = "row">
+	                  <div class="col-12 bm-2 text-center">
 	                        
 					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงิน	</h6></center>
 					
