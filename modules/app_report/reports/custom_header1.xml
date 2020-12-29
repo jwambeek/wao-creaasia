@@ -101,7 +101,7 @@
 										<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;&#160;
 										<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
 									</span>	
-							<t t-foreach="docs" t-as="o">
+							</t>
 				</div>
 
 			</div>
