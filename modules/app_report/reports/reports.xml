@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<record id="paperformat_report_tax_invoice" model="report.paperformat">
+<!--<record id="paperformat_report_tax_invoice" model="report.paperformat">
         <field name="name">Tax Invoice A4</field>
         <field name="default" eval="True"/>
         <field name="format">A4</field>
@@ -15,7 +15,7 @@
         <field name="header_line" eval="False"/>
         <field name="header_spacing">43</field>
         <field name="dpi">90</field>
-    </record>
+    </record>-->
 ​
  
 <!-- Add the report to the XML file responsible for reports -->
@@ -25,8 +25,7 @@
 	   string="Tax Invoice"
 	   report_type="qweb-pdf"
 	   name="app_report.report_tax_invoice"
-	   file="app_report.report_tax_invoice"
-	   paperformat="paperformat_report_tax_invoice" />
+	   file="app_report.report_tax_invoice" />
 
 <report
        id="report_tax_invoice_copy"
@@ -34,8 +33,7 @@
 	   string="Tax Invoice Copy"
 	   report_type="qweb-pdf"
 	   name="app_report.report_tax_invoice_copy"
-	   file="app_report.report_tax_invoice_copy"
-	   paperformat="paperformat_report_tax_invoice" />
+	   file="app_report.report_tax_invoice_copy" />
 
 
 	   
