@@ -70,7 +70,7 @@
 			</div>
     </div> -->
 <br></br>
-<div class="page">					
+<div>					
 <table border="1" class="table table-condensed" >
 	<thead>
 		<tr>
@@ -98,7 +98,7 @@
 	</table> 
 </div>
 
-<div class="page">
+<div>
 	<table border="1" class="table table-condensed">
 	<thead>
 	<tr style="height:0%" >
@@ -174,7 +174,7 @@
 									
 							</tbody>
 							</table>
-		</div>			
+			</div>		
 				<div class="footer">
                     <div class="text-right" style="border-top: 1px solid black;">        
                         <small>
