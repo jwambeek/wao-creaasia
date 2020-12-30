@@ -12,13 +12,7 @@
             <t t-call="web.basic_layout">
 		<t t-foreach="docs" t-as="o">
 			<div class="page">
-<table border="1" class="table table-condensed"  >
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
+<table border="1" class="table table-condensed" style="margin-top:10%" >
 
 
 
