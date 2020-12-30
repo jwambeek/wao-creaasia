@@ -16,7 +16,7 @@
 					
 <table border="1" class="table table-condensed" >
 	<thead>
-		<tr>
+		<tr style="height:10%">
 			<th style="border: 1px solid black; width: 10%" class="text-center">ลำดับที่ <br></br>No. </th>
 			<th style="border: 1px solid black; width: 16%" class="text-center">รหัสสินค้า<br></br>Item No.</th>
 			<th style="border: 1px solid black; width:32%" class="text-center">รายการสินค้า<br></br>Description </th>
