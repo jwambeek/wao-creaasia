@@ -12,10 +12,17 @@
             <t t-call="web.basic_layout">
 		<t t-foreach="docs" t-as="o">
 			<div class="page">
-<table border="1" class="table table-condensed" >
+<table border="1" class="table table-condensed"  >
 <tr><td></td></tr>
 <tr><td></td></tr>
 <tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+
+
 	<thead>
 		<tr>
 			<th style="border: 1px solid black; width: 10%" class="text-center">ลำดับที่ <br></br>No. </th>
