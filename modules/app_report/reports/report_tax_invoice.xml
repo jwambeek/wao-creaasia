@@ -12,11 +12,18 @@
             <t t-call="web.basic_layout">
 		<t t-foreach="docs" t-as="o">
 			<div class="page">
-<table border="1" class="table table-condensed" style="margin-top:10%" >
+<table border="1" class="table table-condensed"  >
 
+<thead>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
 
-
-	<thead>
 		<tr>
 			<th style="border: 1px solid black; width: 10%" class="text-center">ลำดับที่ <br></br>No. </th>
 			<th style="border: 1px solid black; width: 16%" class="text-center">รหัสสินค้า<br></br>Item No.</th>
