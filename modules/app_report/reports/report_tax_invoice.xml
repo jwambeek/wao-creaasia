@@ -12,9 +12,11 @@
             <t t-call="web.basic_layout">
 		<t t-foreach="docs" t-as="o">
 			<div class="page">
+<table>			
 <tr></tr>
 <tr></tr>
 <tr></tr>
+</table>
 <table border="1" class="table table-condensed" >
 	<thead>
 		<tr>
