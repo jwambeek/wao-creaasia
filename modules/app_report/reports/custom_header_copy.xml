@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<template id="custom_header1" >
+<template id="custom_header_copy" >
 <div class="header" >
 
             <div class="row">
@@ -54,9 +54,9 @@
              <div class = "row">
 	                  <div class="col-12 bm-2 text-center">
 	                        
-					<center><h6 style="font-size:19px">ใบกำกับภาษี / ใบเสร็จรับเงิน	</h6></center>
+					<center><h6 style="font-size:19px">สำเนาใบกำกับภาษี	</h6></center>
 					
-                    <center><h6 style="font-size:19px"><strong>TAX INVOICE / OFFICIAL RECEIPT</strong></h6></center>
+                    <center><h6 style="font-size:19px"><strong>TAX INVOICE COPY</strong></h6></center>
                       <br></br>   
                        </div>
 					
