@@ -73,9 +73,9 @@
                         <t t-esc="o.number"/>
 					</t>
 				</div>
-                <br></br>
+                
             </div>
-
+            <br></br>
            <!--<div class="row" >
 				<div class="col-12 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
