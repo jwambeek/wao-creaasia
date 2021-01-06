@@ -94,14 +94,14 @@
             </div>-->
 
         <div class="row" >
-            <div class="col-xs-6">
+            <div class="col-6 bm-2 text-left">
             	<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px">นามลูกค้า / Name</strong>&#160;&#160;&#160;&#160;&#160;
 					<t t-esc="o.partner_id.name"/>
                 </t>    
             </div>
             <br></br>
-			<div class="col-xs-6 text-right" >
+			<div class="col-6 bm-2 text-right" >
 				<t t-foreach="docs" t-as="o">
 					<span>
 						<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;
