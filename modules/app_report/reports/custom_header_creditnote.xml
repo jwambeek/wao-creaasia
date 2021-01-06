@@ -139,7 +139,7 @@
 				<t t-foreach="docs" t-as="o">
 					<span>
 						<strong style="font-size:15px">อ้างถึงเลขที่ใบแจ้งหนี้เลขที่/</strong>&#160;&#160;&#160;&#160;&#160;
-						<t t-esc="o.partner_id.origin"/>
+						<t t-esc="o.origin"/>
                     </span>	
 				</t>									
             </div>
@@ -174,7 +174,7 @@
 				<t t-foreach="docs" t-as="o">
 					<span>
 						<strong style="font-size:15px">หน้า / Page</strong>&#160;&#160;&#160;&#160;&#160;
-		
+		                <span class="page" /> of <span class="topage" />
                     </span>	
 				</t>									
             </div>
