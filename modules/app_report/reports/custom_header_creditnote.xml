@@ -126,7 +126,7 @@
 				</t>
 			</div>
         </div>
-        <div><br style="line-height:2px"/></div>
+        <br style="line-height:2px"/>
 
         <div class="row" >
             <div class="col-6 bm-2 text-left">
@@ -135,7 +135,7 @@
 					<!--<t t-esc="o.partner_id.branch_number"/>-->
                 </t>    
             </div>
-            <br></br>
+            
 			<div class="col-6 bm-2 text-right">
 				<t t-foreach="docs" t-as="o">
 					<span>
@@ -144,9 +144,8 @@
                     </span>	
 				</t>									
             </div>
-            <br></br>
         </div>
-        
+        <br></br>
 
         <div class="row" >
             <div class="col-6 bm-2 text-left">
@@ -165,13 +164,13 @@
 				</t>									
             </div>
         </div>
-        
+        <br></br>
 
         <div class="row" >
             <div class="col-6 bm-2 text-left">
 				<strong style="font-size:15px">Tax ID No.</strong>                    
             </div>
-            <br></br>
+            
 			<div class="col-6 bm-2 text-right">
 				<t t-foreach="docs" t-as="o">
 					<span>
@@ -180,7 +179,6 @@
                     </span>	
 				</t>									
             </div>
-            <br></br>
         </div>
 
 
