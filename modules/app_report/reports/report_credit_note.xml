@@ -155,7 +155,7 @@
 
 
         <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">	
-            <strong>รวม / Goods/Services Value of the Original Invoice</strong>
+            <strong>มูลค่าสินค้าหรือบริการตามใบแจ้งหนี้เดิม / Goods/Services Value of the Original Invoice</strong>
         </td>
     
 	    <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px" > 
@@ -165,7 +165,7 @@
     
 	<tr>
         <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
-		    <strong>ส่วนลด/ Corrected Goods/Services Value Amount</strong></td>
+		    <strong>มูลค่าสินค้าหรือบริการที่ถูกต้อง / Corrected Goods/Services Value Amount</strong></td>
                 <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px"  > 
                 <!--<span t-field="o.calculated_discount"/>-->
             <p>(<span t-esc="'%.2f'% o.calculated_discount"/>)</p>
@@ -174,7 +174,7 @@
 
     <tr>
         <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">
-	        <strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Differences</strong>
+	        <strong>ผลต่าง / Differences </strong>
 		</td>
 		<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px"  >
 			<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
@@ -192,7 +192,7 @@
 
     <tr>
         <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
-			<strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong>
+			<strong>รวม / Total Baht Incl. VAT </strong>
 		</td>
 		<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" >
 			<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>

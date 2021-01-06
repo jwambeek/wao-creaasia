@@ -54,7 +54,7 @@
              <div class = "row">
 	                  <div class="col-12 bm-2 text-center">
 	                        
-					<center><h6 style="font-size:19px">ใบลดหนี </h6></center>
+					<center><h6 style="font-size:19px">ใบลดหนี้	 </h6></center>
 					
                     <center><h6 style="font-size:19px"><strong>CREDIT NOTE</strong></h6></center>
                       <br></br>   
@@ -139,7 +139,7 @@
 			<div class="col-6 bm-2 text-right">
 				<t t-foreach="docs" t-as="o">
 					<span>
-						<strong style="font-size:15px">อ้างถึงเลขที่ใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;&#160;&#160;
+						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;&#160;&#160;
 						<t t-esc="o.origin"/>
                     </span>	
 				</t>									
