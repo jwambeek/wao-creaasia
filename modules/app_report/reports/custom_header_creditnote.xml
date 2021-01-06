@@ -101,10 +101,10 @@
                 </t>    
             </div>
             <br></br>
-			<div class="col-xs-6">
+			<div class="col-xs-6 text-right" >
 				<t t-foreach="docs" t-as="o">
 					<span>
-						<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;&#160;
+						<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;
 						<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
 					</span>	
 				</t>									
@@ -123,6 +123,24 @@
 				<t t-esc="o.partner_id.zip" />
 				</t>
 			</div>
+        </div>
+
+        <div class="row" >
+            <div class="col-xs-6">
+            	<t t-foreach="docs" t-as="o">
+					<strong style="font-size:15px">สาขา / Branch</strong>&#160;&#160;&#160;&#160;&#160;
+					<t t-esc="o.partner_id.name"/>
+                </t>    
+            </div>
+            <br></br>
+			<div class="col-xs-6">
+				<t t-foreach="docs" t-as="o">
+					<span>
+						<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;&#160;
+						<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
+					</span>	
+				</t>									
+            </div>
         </div>
 
 
