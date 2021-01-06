@@ -175,7 +175,7 @@
 			<div class="col-6 bm-2 text-right">
 				<t t-foreach="docs" t-as="o">
 					<span>
-						<strong style="font-size:15px">หน้า / Page</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						<strong style="font-size:15px">หน้า / Page</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 		                <span class="page" />/<span class="topage" />
                     </span>	
 				</t>									
