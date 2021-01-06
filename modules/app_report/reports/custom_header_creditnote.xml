@@ -101,7 +101,7 @@
 					<t t-esc="o.partner_id.name"/>
                 </t>    
             </div>
-            <br></br>
+            
 			<div class="col-6 bm-2 text-right" >
 				<t t-foreach="docs" t-as="o">
 					<span>
@@ -110,13 +110,13 @@
 					</span>	
 				</t>									
             </div>
-            <br></br>
         </div>
+        <br></br>
 
         <div class="row" >
 			<div class="col-12 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
-                    <strong style="font-size:15px">ที่อยู่ / Address </strong>&#160;&#160;&#160;
+                    <strong style="font-size:15px">ที่อยู่ / Address </strong>&#160;&#160;&#160;&#160;&#160;
 				<t t-esc="o.partner_id.street" />
 				<t t-esc="o.partner_id.street2" />
 				<t t-esc="o.partner_id.city" />
@@ -126,6 +126,7 @@
 				</t>
 			</div>
         </div>
+        <br></br>
 
         <div class="row" >
             <div class="col-6 bm-2 text-left">
@@ -138,13 +139,14 @@
 			<div class="col-6 bm-2 text-right">
 				<t t-foreach="docs" t-as="o">
 					<span>
-						<strong style="font-size:15px">อ้างถึงเลขที่ใบแจ้งหนี้เลขที่/</strong>&#160;&#160;&#160;&#160;&#160;
+						<strong style="font-size:15px">อ้างถึงเลขที่ใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;&#160;&#160;
 						<t t-esc="o.origin"/>
                     </span>	
 				</t>									
             </div>
             <br></br>
         </div>
+        <br></br>
 
         <div class="row" >
             <div class="col-6 bm-2 text-left">
@@ -153,7 +155,7 @@
 					    <t t-esc="o.partner_id.vat" />
                 </t>    
             </div>
-            <br></br>
+            
 			<div class="col-6 bm-2 text-right">
 				<t t-foreach="docs" t-as="o">
 					<span>
@@ -162,8 +164,8 @@
                     </span>	
 				</t>									
             </div>
-            <br></br>
         </div>
+        <br></br>
 
         <div class="row" >
             <div class="col-6 bm-2 text-left">
@@ -173,8 +175,8 @@
 			<div class="col-6 bm-2 text-right">
 				<t t-foreach="docs" t-as="o">
 					<span>
-						<strong style="font-size:15px">หน้า / Page</strong>&#160;&#160;&#160;&#160;&#160;
-		                <span class="page" /> of <span class="topage" />
+						<strong style="font-size:15px">หน้า / Page</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+		                <span class="page" />/<span class="topage" />
                     </span>	
 				</t>									
             </div>
