@@ -126,7 +126,7 @@
 				</t>
 			</div>
         </div>
-        <br style="line-height:2vh"/>
+        <div><br style="line-height:2px"/></div>
 
         <div class="row" >
             <div class="col-6 bm-2 text-left">
