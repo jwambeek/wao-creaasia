@@ -139,6 +139,75 @@
 	</tbody>
 	</table>
 	</div>
+
+
+    <div class="page">
+    <table border="1" class="table table-condensed">
+	<thead>
+    
+    <tr style="height:0%" >
+            <th style="border: 0px ; width: 10%" class="text-center"></th>
+			<th style="border: 0px ; width: 16%" class="text-center"></th>
+			
+			
+	</tr>
+    </thead>
+	<tbody>
+
+	<tr>
+            
+
+
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">	
+            <strong>รวม / Total</strong>
+        </td>
+    
+	    <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px" > 
+           <span t-esc="'%.2f'% o.total_amount"/>
+	    </td>
+    </tr>
+    
+	<tr>
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+		    <strong>ส่วนลด/ Discount</strong></td>
+                <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px"  > 
+                <!--<span t-field="o.calculated_discount"/>-->
+            <p>(<span t-esc="'%.2f'% o.calculated_discount"/>)</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">
+	        <strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong>
+		</td>
+		<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px"  >
+			<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
+		</td>	
+	</tr>
+
+	<tr>
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+			<strong>ภาษีมูลค่าเพิ่ม / VAT </strong>
+		</td>
+		<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" > 
+			<span t-esc="'%.2f'% o.vat"/>
+		</td>
+	</tr>
+
+    <tr>
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+			<strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong>
+		</td>
+		<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" >
+			<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
+		</td>
+	</tr>
+							
+		
+	</tbody>
+	</table>
+	</div>
+
 						
 				<div class="footer">
                     <div class="text-right" style="border-top: 1px solid black;">        
