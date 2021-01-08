@@ -38,6 +38,10 @@
                         <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="after">
                       <field name="seller_discount"/>
             </xpath>
+
+            <field name="amount_total" position="after">
+                      <field name="billed_exchange_rate" /> 
+            </field>
     </field>
     </record>
 

@@ -164,6 +164,8 @@ class AccountInvoice_Line_Data(models.Model):
     _inherit = 'account.invoice.line'
     seller_discount = fields.Float(string='Seller Discount',tracking=True)
     amount = fields.Float(string='Amount',compute='_cal_amount',readonly=True )
+    
+    billed_exchange_rate = fields.Float(string='Bill Exchange Rate',compute='_cal_bill_exchange_rate', store=True, readonly=True)
 
     @api.depends('price_unit','quantity')
     def _cal_amount(self):
@@ -171,10 +173,18 @@ class AccountInvoice_Line_Data(models.Model):
             line_items.amount = line_items.quantity * line_items.price_unit
 
 
+ 
+    @api.depends('amount_untaxed','amount_total')
+    def _cal_bill_exchange_rate(self):
+        for orders in self:
+            orders.billed_exchange_rate = orders.amount_untaxed / orders.amount_total
+
 
 class ResPartner_Data(models.Model):
     _inherit = 'res.company'
 
     address_local_lang =  fields.Text(string = 'Local language address')
-    company_name_local_lang = fields.Text(string = 'Company name (in local lang)')        
+    company_name_local_lang = fields.Text(string = 'Company name (in local lang)')  
+    
+          
 
