@@ -113,13 +113,6 @@ class AccountInvoice_Data(models.Model):
 
     calculated_discount = fields.Float(string = 'Discount', compute = '_cal_total_discount', store = True, digits=(12,4))
 
-    """@api.depends('amount_untaxed','calculated_discount')
-    def _cal_grand_total(self):
-        for order in self:
-            order.grand_total = order.amount_untaxed + order.calculated_discount
-
-    grand_total = fields.Float(string = 'Grand Total', store = True, compute = '_cal_grand_total')
-"""
     @api.depends('invoice_line_ids.seller_discount', 'invoice_line_ids.price_unit','invoice_line_ids.amount','invoice_line_ids.quantity')
     def _cal_total_baht_escl_vat(self):
         for orders in self:
@@ -153,7 +146,13 @@ class AccountInvoice_Data(models.Model):
 
     vat = fields.Float(string = 'Vat', compute = '_cal_total_vat', store = True, digits=(12,4))
 
-    
+    @api.depends('total_amount','total_baht_excl_VAT')
+    def _corrected_service_amount(self):
+        for orders in self:
+            orders.corrected_service_amount = orders.total_amount - orders.total_baht_excl_VAT
+
+    corrected_service_amount = fields.Float(string = 'Corrected Service Amount', compute = '_corrected_service_amount', store = True, digits=(12,4))        
+
 class AccountInvoice_Line_Data(models.Model):
     _inherit = 'account.invoice.line'
     seller_discount = fields.Float(string='Seller Discount',tracking=True)
