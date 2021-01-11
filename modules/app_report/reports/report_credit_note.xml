@@ -170,7 +170,7 @@
 		    <strong>มูลค่าสินค้าหรือบริการที่ถูกต้อง / Corrected Goods/Services Value Amount</strong></td>
                 <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px"  > 
                 <!--<span t-field="o.calculated_discount"/>-->
-            <span t-field="o.total_amount - o.total_baht_excl_VAT"/>
+            <span t-field="'%.2f'% o.calculated_discount"/>
         </td>
     </tr>
 
