@@ -98,8 +98,8 @@ class AccountInvoice_Data(models.Model):
 
     channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
     number = fields.Char(related='move_id.name', store=True, readonly=True, copy=False)
-    test = fields.Float(related='move_id.amount_untaxed', store=True, readonly=True, copy=False)
-    origin = fields.Float(string='Source Document',
+    test = fields.Monetary(related='move_id.line_ids.amount_untaxed', store=True, readonly=True, copy=False)
+    origin = fields.Monetary(string='Source Document',
         help="Reference of the document that produced this invoice.",
         readonly=True, states={'draft': [('readonly', False)]})
 
