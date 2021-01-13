@@ -121,7 +121,7 @@ class AccountInvoice_Data(models.Model):
         if report_invoice and report_invoice.attachment:
             for invoice in self:
                 with invoice.env.do_in_draft():
-                    invoice.test, invoice.state = invoice.move_name, 'open'
+                    invoice.number, invoice.state = invoice.move_name, 'open'
                     attachment = self.env.ref('account.account_invoices').retrieve_attachment(invoice)
                 if attachment:
                     attachment.unlink()
