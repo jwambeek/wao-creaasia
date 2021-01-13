@@ -163,7 +163,7 @@ class AccountInvoice_Data(models.Model):
         values['date_invoice'] = date_invoice or fields.Date.context_today(invoice)
         values['date_due'] = values['date_invoice']
         values['state'] = 'draft'
-        values['number'] = False
+        values['test'] = False
         values['origin'] = invoice.test
         values['refund_invoice_id'] = invoice.id
         values['reference'] = False
