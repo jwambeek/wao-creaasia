@@ -42,7 +42,7 @@
                     <field name="test"/>   
                 </field>-->
             
-                                <field name="amount_untaxed" position = "after" >
+                                <field name="origin" position = "after" >
                                     <field name="tax_invoice_amount" groups="base.group_user" attrs="{'invisible': [('tax_invoice_amount', '=', False)]}"/>
                                     <!-- Since the same form view is used for customer invoices and credit notes,
                                     we can't set a domain or a default value context on partner_bank_id. We must
