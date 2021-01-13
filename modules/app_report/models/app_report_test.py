@@ -145,11 +145,11 @@ class AccountInvoice_Data(models.Model):
         args = args or []
         invoice_ids = []
         if name:
-            #invoice_ids = self._search([('number', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
-            invoice_ids = self._search([('test', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
+            invoice_ids = self._search([('number', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
+            #invoice_ids = self._search([('test', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
         if not invoice_ids:
-            #invoice_ids = self._search([('number', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
-            invoice_ids = self._search([('test', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
+            invoice_ids = self._search([('number', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
+            #invoice_ids = self._search([('test', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
         if not invoice_ids:
             invoice_ids = self._search([('name', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
         return self.browse(invoice_ids).name_get()
