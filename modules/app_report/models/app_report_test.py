@@ -103,6 +103,10 @@ class AccountInvoice_Data(models.Model):
         help="Reference of the document that produced this invoice.",
         readonly=True, states={'draft': [('readonly', False)]})
 
+    tax_invoice_amount = fields.Monetary(string='Tax Invoice Amount',
+        help="Reference of the document that produced this invoice.",
+        readonly=True, states={'draft': [('readonly', False)]})    
+
     @api.multi
     def action_invoice_draft(self):
         if self.filtered(lambda inv: inv.state != 'cancel'):
@@ -117,7 +121,7 @@ class AccountInvoice_Data(models.Model):
         if report_invoice and report_invoice.attachment:
             for invoice in self:
                 with invoice.env.do_in_draft():
-                    invoice.test, invoice.state = invoice.move_name, 'open'
+                    invoice.number,invoice.test, invoice.state = invoice.move_name, 'open'
                     attachment = self.env.ref('account.account_invoices').retrieve_attachment(invoice)
                 if attachment:
                     attachment.unlink()
@@ -133,7 +137,8 @@ class AccountInvoice_Data(models.Model):
         }
         result = []
         for inv in self:
-            result.append((inv.id, "%s %s" % (inv.test or TYPES[inv.type], inv.name or '')))
+            result.append((inv.id, "%s %s" % (inv.number or TYPES[inv.type], inv.name or '')),
+                          (inv.id, "%s %s" % (inv.test or TYPES[inv.type], inv.name or '')))
         return result
 
     @api.model
@@ -141,8 +146,10 @@ class AccountInvoice_Data(models.Model):
         args = args or []
         invoice_ids = []
         if name:
+            invoice_ids = self._search([('number', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
             invoice_ids = self._search([('test', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
         if not invoice_ids:
+            invoice_ids = self._search([('number', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
             invoice_ids = self._search([('test', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
         if not invoice_ids:
             invoice_ids = self._search([('name', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
@@ -191,8 +198,10 @@ class AccountInvoice_Data(models.Model):
         values['date_invoice'] = date_invoice or fields.Date.context_today(invoice)
         values['date_due'] = values['date_invoice']
         values['state'] = 'draft'
+        values['number'] = False
+        values['origin'] = invoice.number
         values['test'] = False
-        values['origin'] = invoice.test
+        values['tax_invoice_amount'] = invoice.test
         values['refund_invoice_id'] = invoice.id
         values['reference'] = False
 

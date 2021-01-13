@@ -38,9 +38,20 @@
                         <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="after">
                       <field name="seller_discount"/>
             </xpath>
-                <field name="amount_untaxed" position = "after" >
+                <!--<field name="amount_untaxed" position = "after" >
                     <field name="test"/>   
-                </field>
+                </field>-->
+                <page string="Other Info" name="other_info">
+                            <group>
+
+                                    <field name="tax_invoice_amount" groups="base.group_user" attrs="{'invisible': [('tax_invoice_amount', '=', False)]}"/>
+                                    <!-- Since the same form view is used for customer invoices and credit notes,
+                                    we can't set a domain or a default value context on partner_bank_id. We must
+                                    rely on the onchange -->
+                                
+                                </group>
+                            </page>
+                        
 
     </field>
     </record>
