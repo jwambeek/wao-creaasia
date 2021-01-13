@@ -98,7 +98,7 @@ class AccountInvoice_Data(models.Model):
 
     channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
     number = fields.Char(related='move_id.name', store=True, readonly=True, copy=False)
-    test = fields.Char(related='move_id.partner_id', store=True, readonly=True, copy=False)
+    test = fields.Char(related='move_id.name', store=True, readonly=True, copy=False)
 
     @api.model
     def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None):
