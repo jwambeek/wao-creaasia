@@ -120,6 +120,31 @@ class AccountInvoice_Data(models.Model):
                     attachment.unlink()
         return True
 
+    @api.multi
+    def name_get(self):
+        TYPES = {
+            'out_invoice': _('Invoice'),
+            'in_invoice': _('Vendor Bill'),
+            'out_refund': _('Credit Note'),
+            'in_refund': _('Vendor Credit note'),
+        }
+        result = []
+        for inv in self:
+            result.append((inv.id, "%s %s" % (inv.test or TYPES[inv.type], inv.name or '')))
+        return result
+
+    @api.model
+    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+        args = args or []
+        invoice_ids = []
+        if name:
+            invoice_ids = self._search([('test', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
+        if not invoice_ids:
+            invoice_ids = self._search([('test', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
+        if not invoice_ids:
+            invoice_ids = self._search([('name', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
+        return self.browse(invoice_ids).name_get()
+
     @api.model
     def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None):
         """ Prepare the dict of values to create the new credit note from the invoice.
