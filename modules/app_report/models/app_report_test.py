@@ -280,10 +280,10 @@ class AccountInvoice_Data(models.Model):
     vat = fields.Float(string = 'Vat', compute = '_cal_total_vat', store = True, digits=(12,4))
 
     # Function :- Corrected Goods/Service Amount for Credit Note Report
-    @api.depends('total_amount','total_baht_excl_VAT')
+    @api.depends('tax_invoice_amount','total_amount')
     def _corrected_service_amount(self):
         for orders in self:
-            orders.corrected_service_amount = orders.total_amount - orders.total_baht_excl_VAT
+            orders.corrected_service_amount = orders.tax_invoice_amount - orders.total_amount
 
     corrected_service_amount = fields.Float(string = 'Corrected Service Amount', compute = '_corrected_service_amount', store = True, digits=(12,4))        
 

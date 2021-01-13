@@ -153,15 +153,12 @@
 	<tbody>
 
 	<tr>
-            
-
-
         <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">	
             <strong>มูลค่าสินค้าหรือบริการตามใบแจ้งหนี้เดิม / Goods/Services Value of the Original Invoice</strong>
         </td>
     
 	    <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px" > 
-           <span t-esc="'%.2f'% o.total_amount"/>
+           <span t-esc="'%.2f'% o.tax_invoice_amount"/>
 	    </td>
     </tr>
     
