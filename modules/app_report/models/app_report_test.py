@@ -98,7 +98,7 @@ class AccountInvoice_Data(models.Model):
 
     channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
     number = fields.Char(related='move_id.name', store=True, readonly=True, copy=False)
-    test = fields.Float(related='move_id.line_ids.amount_residual', store=True, readonly=True, copy=False)
+    test = fields.Monetary(related='move_id.line_ids.amount_residual', store=True, readonly=True, copy=False)
     origin = fields.Monetary(string='Source Document',
         help="Reference of the document that produced this invoice.",
         readonly=True, states={'draft': [('readonly', False)]})
@@ -121,7 +121,7 @@ class AccountInvoice_Data(models.Model):
         if report_invoice and report_invoice.attachment:
             for invoice in self:
                 with invoice.env.do_in_draft():
-                    invoice.number,invoice.test, invoice.state = invoice.move_name, 'open'
+                    invoice.test, invoice.state = invoice.move_name, 'open'
                     attachment = self.env.ref('account.account_invoices').retrieve_attachment(invoice)
                 if attachment:
                     attachment.unlink()
@@ -145,10 +145,10 @@ class AccountInvoice_Data(models.Model):
         args = args or []
         invoice_ids = []
         if name:
-            invoice_ids = self._search([('number', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
+            #invoice_ids = self._search([('number', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
             invoice_ids = self._search([('test', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
         if not invoice_ids:
-            invoice_ids = self._search([('number', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
+            #invoice_ids = self._search([('number', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
             invoice_ids = self._search([('test', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
         if not invoice_ids:
             invoice_ids = self._search([('name', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
