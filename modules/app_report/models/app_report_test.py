@@ -100,6 +100,26 @@ class AccountInvoice_Data(models.Model):
     number = fields.Char(related='move_id.name', store=True, readonly=True, copy=False)
     test = fields.Char(related='move_id.name', store=True, readonly=True, copy=False)
 
+    @api.multi
+    def action_invoice_draft(self):
+        if self.filtered(lambda inv: inv.state != 'cancel'):
+            raise UserError(_("Invoice must be cancelled in order to reset it to draft."))
+        # go from canceled state to draft state
+        self.write({'state': 'draft', 'date': False})
+        # Delete former printed invoice
+        try:
+            report_invoice = self.env['ir.actions.report']._get_report_from_name('account.report_invoice')
+        except IndexError:
+            report_invoice = False
+        if report_invoice and report_invoice.attachment:
+            for invoice in self:
+                with invoice.env.do_in_draft():
+                    invoice.test, invoice.state = invoice.move_name, 'open'
+                    attachment = self.env.ref('account.account_invoices').retrieve_attachment(invoice)
+                if attachment:
+                    attachment.unlink()
+        return True
+
     @api.model
     def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None):
         """ Prepare the dict of values to create the new credit note from the invoice.
