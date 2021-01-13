@@ -89,7 +89,7 @@
         <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
             <div class = "row">
                 <div class="col-12 bm-2 text-left">
-                   <strong style="font-size:15px">Ref::</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+                   <strong style="font-size:15px">Ref::</strong>&#160;&#160;&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
                    <br></br>
                    <strong style="font-size:15px">Note ::</strong>&#160;&#160;&#160; <t t-esc="o.name"/>
                 </div>
