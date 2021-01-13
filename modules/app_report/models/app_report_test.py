@@ -201,7 +201,7 @@ class AccountInvoice_Data(models.Model):
         values['type'] = TYPE2REFUND[invoice['type']]
         values['date_invoice'] = date_invoice or fields.Date.context_today(invoice)
         values['date_due'] = values['date_invoice']
-        values['channel_order_number'] = channel_order_number
+        values['channel_order_number'] = values['channel_order_number']
         values['state'] = 'draft'
         values['number'] = False
         values['origin'] = invoice.number
