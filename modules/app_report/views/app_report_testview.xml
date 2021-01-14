@@ -39,7 +39,7 @@
                       <field name="seller_discount"/>
             </xpath>
             <field name="amount_untaxed" position = "after" >
-                    <field name="tax_invoice_amount"/>   
+                    <field name="tax_invoice_amount" invisible="1"/>   
             </field>
     </field>
     </record>
