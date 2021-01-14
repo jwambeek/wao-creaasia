@@ -97,7 +97,7 @@
         <br></br>
 
         <div class="row" >
-			<div class="col-12 bm-2 text-left">
+			<div class="col-8 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
                     <strong style="font-size:15px">ที่อยู่ / Address </strong>&#160;&#160;&#160;&#160;&#160;
 				<t t-esc="o.partner_id.street" />
