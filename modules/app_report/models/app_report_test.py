@@ -102,7 +102,7 @@ class AccountInvoice_Data(models.Model):
         help="Reference of the document that produced this invoice.",
         readonly=True, states={'draft': [('readonly', False)]})
     
-    test = fields.Monetary(related='move_id.amount_untaxed', readonly=True, copy=False)
+    #test = fields.Monetary(related='move_id.line_ids.amount_residual', store=True, readonly=True, copy=False)
     tax_invoice_amount = fields.Monetary(string='Tax Invoice Amount',
         help="Reference of the document that produced this invoice.",
         readonly=True, states={'draft': [('readonly', False)]})    
@@ -160,7 +160,7 @@ class AccountInvoice_Data(models.Model):
         return self.browse(invoice_ids).name_get()
 
     @api.model
-    def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None,channel_order_number=None):
+    def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None,channel_order_number=None,amount_untaxed=None):
         """ Prepare the dict of values to create the new credit note from the invoice.
             This method may be overridden to implement custom
             credit note generation (making sure to call super() to establish
@@ -202,11 +202,12 @@ class AccountInvoice_Data(models.Model):
         values['date_invoice'] = date_invoice or fields.Date.context_today(invoice)
         values['date_due'] = values['date_invoice']
         values['channel_order_number'] = invoice.channel_order_number
+        values['tax_invoice_amount'] = invoice.amount_untaxed
         values['state'] = 'draft'
         values['number'] = False
         values['origin'] = invoice.number
-        values['test'] = False
-        values['tax_invoice_amount'] = invoice.test
+        #values['test'] = False
+        #values['tax_invoice_amount'] = invoice.test
         values['refund_invoice_id'] = invoice.id
         values['reference'] = False
 
