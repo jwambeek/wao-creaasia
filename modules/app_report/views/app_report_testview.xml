@@ -38,6 +38,9 @@
                         <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="after">
                       <field name="seller_discount"/>
             </xpath>
+            <field name="amount_untaxed" position = "after" >
+                    <field name="tax_invoice_amount"/>   
+            </field>
     </field>
     </record>
 
