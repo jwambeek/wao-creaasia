@@ -97,63 +97,8 @@ class AccountInvoice_Data(models.Model):
     _inherit = 'account.invoice'
 
     channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
-    number = fields.Char(related='move_id.name', store=True, readonly=True, copy=False)
-    origin = fields.Char(string='Source Document',
-        help="Reference of the document that produced this invoice.",
-        readonly=True, states={'draft': [('readonly', False)]})
-    
-    #test = fields.Monetary(related='move_id.line_ids.amount_residual', store=True, readonly=True, copy=False)
-    tax_invoice_amount = fields.Monetary(string='Tax Invoice Amount',
-        help="Reference of the document that produced this invoice.",
+    tax_invoice_amount = fields.Monetary(string='Tax Invoice Amount',help="Total Amount of Original Tax Invoice",
         readonly=True, states={'draft': [('readonly', False)]})    
-
-    @api.multi
-    def action_invoice_draft(self):
-        if self.filtered(lambda inv: inv.state != 'cancel'):
-            raise UserError(_("Invoice must be cancelled in order to reset it to draft."))
-        # go from canceled state to draft state
-        self.write({'state': 'draft', 'date': False})
-        # Delete former printed invoice
-        try:
-            report_invoice = self.env['ir.actions.report']._get_report_from_name('account.report_invoice')
-        except IndexError:
-            report_invoice = False
-        if report_invoice and report_invoice.attachment:
-            for invoice in self:
-                with invoice.env.do_in_draft():
-                    invoice.number,invoice.test, invoice.state = invoice.move_name, 'open'
-                    attachment = self.env.ref('account.account_invoices').retrieve_attachment(invoice)
-                if attachment:
-                    attachment.unlink()
-        return True
-
-    @api.multi
-    def name_get(self):
-        TYPES = {
-            'out_invoice': _('Invoice'),
-            'in_invoice': _('Vendor Bill'),
-            'out_refund': _('Credit Note'),
-            'in_refund': _('Vendor Credit note'),
-        }
-        result = []
-        for inv in self:
-            result.append((inv.id, "%s %s" % (inv.number or TYPES[inv.type], inv.name or '')))
-        return result
-
-
-    @api.model
-    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
-        args = args or []
-        invoice_ids = []
-        if name:
-            invoice_ids = self._search([('number', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
-            #invoice_ids = self._search([('test', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
-        if not invoice_ids:
-            invoice_ids = self._search([('number', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
-           # invoice_ids = self._search([('test', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
-        if not invoice_ids:
-            invoice_ids = self._search([('name', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
-        return self.browse(invoice_ids).name_get()
 
     @api.model
     def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None,channel_order_number=None,total_amount=None):
@@ -202,8 +147,6 @@ class AccountInvoice_Data(models.Model):
         values['state'] = 'draft'
         values['number'] = False
         values['origin'] = invoice.number
-        #values['test'] = False
-        #values['tax_invoice_amount'] = invoice.test
         values['refund_invoice_id'] = invoice.id
         values['reference'] = False
 
