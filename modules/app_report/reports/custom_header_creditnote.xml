@@ -144,7 +144,7 @@
             </div>
 			<div class="col-4 bm-2 text-left">
             	<t t-foreach="docs" t-as="o">
-					<t t-esc="o.partner_id.branch_number"/>
+					<!--<t t-esc="o.partner_id.branch_number"/>-->
                 </t>    
             </div>
             
