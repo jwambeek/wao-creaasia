@@ -1,11 +1,11 @@
 {
     'name' : 'Tax Reports',
-    'version': '3.5',
+    'version': '3.6',
     'Summary': 'Tax Report Prints',
     'description': 'To print the new report',
     'license': 'LGPL-3',
     'depends': [
-        'sale_management','website','account_accountant','hr'
+        'sale_management','website','account_accountant'
     ],    
     'data': [
         'reports/custom_header1.xml',
