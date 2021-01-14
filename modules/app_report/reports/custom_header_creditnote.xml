@@ -67,10 +67,10 @@
     
 
 	       <div class="row" >  
-				<div class="col-8 bm-2 text-right" >
+				<div class="col-7 bm-2 text-right" >
 					
 				</div>
-				<div class="col-2 bm-2 text-left" >
+				<div class="col-3 bm-2 text-left" >
 					<t t-foreach="docs" t-as="o">
 						<strong style="font-size:15px">เลขที่ / No.</strong>&#160;&#160;&#160;&#160; 
 					</t>
@@ -92,17 +92,29 @@
             <br></br>
 
         <div class="row" >
-            <div class="col-6 bm-2 text-left">
+            <div class="col-2 bm-2 text-left">
             	<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px">นามลูกค้า / Name</strong>&#160;&#160;&#160;&#160;&#160;
+					
+                </t>    
+            </div>
+		    <div class="col-5 bm-2 text-left">
+            	<t t-foreach="docs" t-as="o">
+
 					<t t-esc="o.partner_id.name"/>
                 </t>    
             </div>
             
-			<div class="col-6 bm-2 text-right" >
+			<div class="col-3 bm-2 text-left" >
 				<t t-foreach="docs" t-as="o">
 					<span>
 						<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;&#160;
+					</span>	
+				</t>									
+            </div>
+			<div class="col-2 bm-2 text-right" >
+				<t t-foreach="docs" t-as="o">
+					<span>
 						<span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>
 					</span>	
 				</t>									
@@ -111,9 +123,13 @@
         <br></br>
 
         <div class="row" >
-			<div class="col-8 bm-2 text-left">
+			<div class="col-2 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
                     <strong style="font-size:15px">ที่อยู่ / Address </strong>&#160;&#160;&#160;&#160;&#160;
+				</t>
+			</div>
+			<div class="col-5 bm-2 text-left">
+				<t t-foreach="docs" t-as="o">
 				<t t-esc="o.partner_id.street" />
 				<t t-esc="o.partner_id.street2" />
 				<t t-esc="o.partner_id.city" />
@@ -122,45 +138,84 @@
 				<t t-esc="o.partner_id.zip" />
 				</t>
 			</div>
+			<div class="col-5 bm-2 text-left">
+			</div>
+			
         </div>
         <br style="line-height:2px"/>
 
         <div class="row" >
-            <div class="col-7 bm-2 text-left">
+            <div class="col-2 bm-2 text-left">
             	<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px">สาขา / Branch</strong>&#160;&#160;&#160;&#160;&#160;
 					<!--<t t-esc="o.partner_id.branch_number"/>-->
                 </t>    
             </div>
+			<div class="col-5 bm-2 text-left">
+            	<t t-foreach="docs" t-as="o">
+					<!--<t t-esc="o.partner_id.branch_number"/>-->
+                </t>    
+            </div>
             
-			<div class="col-5 bm-2 text-right">
+            
+			<div class="col-3 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
-					<span>
 						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;
-
-						<t t-esc="o.origin"/><br></br>
-                    <center><strong style="font-size:10px width:30px" >Refer to Invoice Number No.</strong></center>
-
-                    </span>	
+                
+				</t>									
+            </div>
+			<div class="col-2 bm-2 text-right">
+				<t t-foreach="docs" t-as="o">
+                   <t t-esc="o.origin"/><br></br>
+                    <!--<center><strong style="font-size:10px width:30px" >Refer to Invoice Number No.</strong></center>-->
+	
 				</t>									
             </div>
         </div>
         <br></br>
 
         <div class="row" >
-            <div class="col-6 bm-2 text-left">
+            <div class="col-2 bm-2 text-left">
             	<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;&#160;
-					    <t t-esc="o.partner_id.vat" /><br></br>
-					<strong style="font-size:15px">Tax ID No.</strong>
                 </t>    
             </div>
-			<div class="col-6 bm-2 text-right">
+			<div class="col-5 bm-2 text-right">
+            	<t t-foreach="docs" t-as="o">
+                     <t t-esc="o.partner_id.vat" /><br></br>
+                </t>    
+            </div>
+			<div class="col-3 bm-2 text-left">
+            	<t t-foreach="docs" t-as="o">
+					<strong style="font-size:15px">Refer to Invoice Number No.  </strong>&#160;&#160;&#160;&#160;&#160;
+                </t>    
+            </div>
+		</div>
+		<div class="row">
+		    <div class="col-2 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
-					<span>
+				
+						<strong style="font-size:15px">Tax ID No. </strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+		                
+                    
+				</t>									
+            </div>
+            
+			<div class="col-5 bm-2 text-left">
+		    </div>
+            
+			<div class="col-3 bm-2 text-left">
+				<t t-foreach="docs" t-as="o">
+				
 						<strong style="font-size:15px">หน้า / Page</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+				</t>									
+            </div>
+			<div class="col-2 bm-2 text-right">
+				<t t-foreach="docs" t-as="o">
+				
 		                <span class="page" />/<span class="topage" />
-                    </span>	
+                    
 				</t>									
             </div>
             
