@@ -119,10 +119,10 @@
                 </t>    
             </div>
             
-			<div class="col-4 bm-2 text-center">
+			<div class="col-4 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
 					<span>
-						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;&#160;&#160;
+						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;
 
 						<t t-esc="o.origin"/><br></br>
 						<strong style="font-size:15px" >Refer to Invoice Number No.</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;
