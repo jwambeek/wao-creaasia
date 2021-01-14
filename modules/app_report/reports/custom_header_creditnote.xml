@@ -125,7 +125,7 @@
 						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;
 
 						<t t-esc="o.origin"/><br></br>
-						<center><strong style="font-size:10px width:30px" >Refer to Invoice Number No.</strong></center>
+						<strong style="font-size:15px" >Refer to Invoice Number No.</strong>&#160;&#160;&#160;&#160;&#160;&#160;<h6></h6>
 
                     </span>	
 				</t>									
