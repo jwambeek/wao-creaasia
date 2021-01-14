@@ -119,7 +119,7 @@
                 </t>    
             </div>
             
-			<div class="col-4 bm-1 text-left">
+			<div class="col-5 bm-1 text-left">
 				<t t-foreach="docs" t-as="o">
 					<span>
 						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;
