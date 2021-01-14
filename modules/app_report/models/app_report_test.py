@@ -156,7 +156,7 @@ class AccountInvoice_Data(models.Model):
         return self.browse(invoice_ids).name_get()
 
     @api.model
-    def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None,channel_order_number=None,amount_untaxed=None):
+    def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None,channel_order_number=None,total_amount=None):
         """ Prepare the dict of values to create the new credit note from the invoice.
             This method may be overridden to implement custom
             credit note generation (making sure to call super() to establish
@@ -198,7 +198,7 @@ class AccountInvoice_Data(models.Model):
         values['date_invoice'] = date_invoice or fields.Date.context_today(invoice)
         values['date_due'] = values['date_invoice']
         values['channel_order_number'] = invoice.channel_order_number
-        values['tax_invoice_amount'] = invoice.amount_untaxed
+        values['tax_invoice_amount'] = invoice.total_amount
         values['state'] = 'draft'
         values['number'] = False
         values['origin'] = invoice.number
