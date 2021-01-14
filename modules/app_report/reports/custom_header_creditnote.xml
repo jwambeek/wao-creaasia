@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="custom_header_creditnote" >
+<div class="header" >
+
+            <div class="row">
+                <div class="col-4 bm-2 text-left">
+				  <t t-foreach="docs" t-as="o">
+					
+					<strong style="font-size:15px"><t t-esc="o.company_id.name"/></strong><br></br>
+					<p class ="_comp_add" style="font-size:15px">
+					<t t-esc="o.company_id.street"/><br></br>
+					<t t-esc="o.company_id.street2"/><br></br>
+					<t t-esc="o.company_id.city">,</t>
+					<t t-esc="o.company_id.state_id.name"/><br></br>
+					<t t-esc="o.company_id.country_id.name"/>
+					<t t-esc="o.company_id.zip"/><br></br>
+					<strong style="font-size:15px">Tax ID :</strong> <t t-esc="o.company_id.vat"/>
+					</p>
+					
+					</t>
+					
+                </div>
+                
+                <div class="col-4 bm-2 text-right">
+					<br></br><br></br>
+                    <p style="text-align:center;">
+					<!--<t t-foreach="docs" t-as="o">
+					<img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 125px;max-width: 250px"/>
+					</t>-->
+						<img t-att-src="'app_report/static/description/crea-logo.jpg'" style="max-height: 150px;max-width: 225px"/>
+					</p>
+					
+                </div>
+                <br></br><br></br>
+                <div class="col-4 bm-2 text-right">
+					<t t-foreach="docs" t-as="o">
+					<strong style="font-size:15px"><t t-esc="o.company_id.company_name_local_lang"/></strong><br></br>
+					<p class ="_local_lang_add" style="font-size:15px">
+					     <t t-esc="o.company_id.address_local_lang"/>
+						 <br></br>
+						 <strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี:</strong> <t t-esc="o.company_id.vat"/>
+					</p>	 
+					</t>
+
+                </div>
+			</div>
+			<br></br>
+		
+            <div class = "row">
+	            <div class="col-12 bm-2 text-center">
+	                <center><h6 style="font-size:19px">ใบลดหนี้ / ใบกำกับภาษี </h6></center>
+					<center><h6 style="font-size:19px"><strong>CREDIT NOTE / TAX INVOICE </strong></h6></center>
+                      <br></br>   
+                </div>
+					
+		    </div>			   
+			
+			<div class="row" >  
+				<div class="col-7 bm-2 text-right" >
+				</div>
+
+				<div class="col-3 bm-2 text-left" >
+						<strong style="font-size:15px">เลขที่ / No.</strong>&#160;&#160;&#160;&#160; 
+				</div>
+
+				<div class="col-2 bm-2 text-right" >
+					<t t-foreach="docs" t-as="o"> 
+                        <t t-esc="o.number"/>
+					</t>
+				</div>
+            </div>
+        
+
+            <div class="row" >
+                <div class="col-3 bm-2 text-left">
+					<strong style="font-size:15px">นามลูกค้า / Name</strong>&#160;&#160;&#160;&#160;&#160;   
+                </div>
+
+		        <div class="col-4 bm-2 text-left">
+            	    <t t-foreach="docs" t-as="o">
+                        <t t-esc="o.partner_id.name"/>
+                    </t>    
+                </div>
+            
+			    <div class="col-3 bm-2 text-left" >
+					<strong style="font-size:15px">วันที่ / Date </strong>&#160;&#160;&#160;&#160;&#160;									
+                </div>
+
+			    <div class="col-2 bm-2 text-right" >
+				    <t t-foreach="docs" t-as="o">
+				        <span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>									
+                </div>
+            </div>
+
+        <div class="row" >
+			<div class="col-3 bm-2 text-left">
+                <strong style="font-size:15px">ที่อยู่ / Address </strong>&#160;&#160;&#160;&#160;&#160;
+			</div>
+
+			<div class="col-4 bm-2 text-left">
+				<t t-foreach="docs" t-as="o">
+				<t t-esc="o.partner_id.street" />
+				<t t-esc="o.partner_id.street2" />
+				<t t-esc="o.partner_id.city" />
+				<t t-esc="o.partner_id.state_id.name"/>
+				<t t-esc="o.partner_id.country_id.name"/>
+				<t t-esc="o.partner_id.zip" />
+				</t>
+			</div>
+
+			<div class="col-5 bm-2 text-left">
+			</div>
+			
+        </div>
+        
+        <div class="row" >
+            <div class="col-3 bm-2 text-left">
+					<strong style="font-size:15px">สาขา / Branch</strong>&#160;&#160;&#160;&#160;&#160;
+            </div>
+
+			<div class="col-4 bm-2 text-left">
+            	<t t-foreach="docs" t-as="o">
+					<!--<t t-esc="o.partner_id.branch_number"/>-->
+                </t>    
+            </div>
+            
+            <div class="col-3 bm-2 text-left">
+				<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;								
+            </div>
+
+			<div class="col-2 bm-2 text-right">
+				<t t-foreach="docs" t-as="o">
+                    <t t-esc="o.origin"/><br></br>
+	            </t>									
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-3 bm-2 text-left">
+				<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;&#160;    
+            </div>
+
+			<div class="col-4 bm-2 text-left">
+            	<t t-foreach="docs" t-as="o">
+                    <t t-esc="o.partner_id.vat" /><br></br>
+                </t>    
+            </div>
+
+			<div class="col-5 bm-2 text-left">
+				<strong style="font-size:15px">Refer to Invoice Number No.  </strong>&#160;&#160;&#160;&#160;&#160;  
+            </div>
+		</div>
+
+		<div class="row">
+		    <div class="col-3 bm-2 text-left">
+                <strong style="font-size:15px">Tax ID No. </strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;									
+            </div>
+            
+			<div class="col-4 bm-2 text-left">
+		    </div>
+            
+			<div class="col-3 bm-2 text-left">
+				<strong style="font-size:15px">หน้า / Page</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			</div>
+
+			<div class="col-2 bm-2 text-right">
+			    <span class="page" />/<span class="topage" />									
+            </div>
+        </div>
+        <br></br>
+</div>
+</template>           
+</odoo>
