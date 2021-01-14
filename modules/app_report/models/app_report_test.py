@@ -103,7 +103,7 @@ class AccountInvoice_Data(models.Model):
         help="Reference of the document that produced this invoice.",
         readonly=True, states={'draft': [('readonly', False)]})
 
-    tax_invoice_amount = fields.Monetary(string='Tax Invoice Amount',
+    tax_invoice_amount = fields.Float(string='Tax Invoice Amount',
         help="Reference of the document that produced this invoice.",
         readonly=True, states={'draft': [('readonly', False)]})    
 
