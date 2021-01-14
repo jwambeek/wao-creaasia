@@ -112,14 +112,14 @@
         <br style="line-height:2px"/>
 
         <div class="row" >
-            <div class="col-7 bm-2 text-left">
+            <div class="col-8 bm-2 text-left">
             	<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px">สาขา / Branch</strong>&#160;&#160;&#160;&#160;&#160;
 					<!--<t t-esc="o.partner_id.branch_number"/>-->
                 </t>    
             </div>
             
-			<div class="col-5 bm-2 text-right">
+			<div class="col-5 bm-2 text-left">
 				<t t-foreach="docs" t-as="o">
 					<span>
 						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;&#160;&#160;
