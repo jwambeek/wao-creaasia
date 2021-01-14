@@ -1,6 +1,6 @@
 {
     'name' : 'Tax Reports',
-    'version': '3.5',
+    'version': '4.0',
     'Summary': 'Tax Report Prints',
     'description': 'To print the new report',
     'license': 'LGPL-3',
