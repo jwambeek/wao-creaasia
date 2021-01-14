@@ -4,7 +4,6 @@ from odoo.exceptions import UserError, ValidationError
 
 class SaleOrder_Data(models.Model):
     _inherit = 'sale.order'
-
     channel_order_number = fields.Char(string = 'Channel Order No.')
 
     def _prepare_invoice(self):

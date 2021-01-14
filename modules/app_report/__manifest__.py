@@ -16,7 +16,6 @@
         'reports/report_credit_note.xml',
         'reports/reports.xml',
         'views/app_report_testview.xml',
-
     ],
     'installable': True,
     'application':True,
