@@ -125,7 +125,7 @@
 						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;&#160;&#160;
 
 						<t t-esc="o.origin"/><br></br>
-						<strong style="font-size:15px text-left" >Refer to Invoice Number No.</strong>&#160;&#160;&#160;&#160;&#160;
+						<strong style="font-size:15px" >Refer to Invoice Number No.</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 
                     </span>	
 				</t>									
@@ -134,11 +134,20 @@
         <br></br>
 
         <div class="row" >
-            <div class="col-12 bm-2 text-left">
+            <div class="col-6 bm-2 text-left">
             	<t t-foreach="docs" t-as="o">
 					<strong style="font-size:15px">เลขประจำตัวผู้เสียภาษี  </strong>&#160;&#160;&#160;&#160;&#160;
-					    <t t-esc="o.partner_id.vat" />
+					    <t t-esc="o.partner_id.vat" /><br></br>
+					<strong style="font-size:15px">Tax ID No.</strong>
                 </t>    
+            </div>
+			<div class="col-6 bm-2 text-right">
+				<t t-foreach="docs" t-as="o">
+					<span>
+						<strong style="font-size:15px">หน้า / Page</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+		                <span class="page" />/<span class="topage" />
+                    </span>	
+				</t>									
             </div>
             
 			<!--<div class="col-6 bm-2 text-right">
@@ -152,7 +161,7 @@
         </div>
         <br></br>
 
-        <div class="row" >
+        <!--<div class="row" >
             <div class="col-6 bm-2 text-left">
 				<strong style="font-size:15px">Tax ID No.</strong>                    
             </div>
@@ -165,7 +174,7 @@
                     </span>	
 				</t>									
             </div>
-        </div>
+        </div>-->
 
 
 
