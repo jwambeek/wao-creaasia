@@ -122,9 +122,10 @@
 			<div class="col-6 bm-2 text-right">
 				<t t-foreach="docs" t-as="o">
 					<span>
-						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ / Refer to Invoice Number No.</strong>&#160;&#160;&#160;&#160;&#160;
-						<!--<strong style="font-size:15px">Refer to Invoice Number No.</strong>&#160;&#160;&#160;&#160;&#160;-->
-						<t t-esc="o.origin"/>
+						<strong style="font-size:15px">อ้างอิงถึงใบแจ้งหนี้เลขที่ /</strong>&#160;&#160;&#160;&#160;&#160;
+
+						<t t-esc="o.origin"/><br></br>
+						<strong style="font-size:15px text-left" >Refer to Invoice Number No.</strong>&#160;&#160;&#160;&#160;&#160;
 
                     </span>	
 				</t>									
