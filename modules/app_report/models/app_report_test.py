@@ -1,6 +1,7 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 
+
 class SaleOrder_Data(models.Model):
     _inherit = 'sale.order'
 
@@ -84,16 +85,84 @@ class SaleOrderLine(models.Model):
         }
         return res
 
+# mapping invoice type to refund type
+TYPE2REFUND = {
+    'out_invoice': 'out_refund',        # Customer Invoice
+    'in_invoice': 'in_refund',          # Vendor Bill
+    'out_refund': 'out_invoice',        # Customer Credit Note
+    'in_refund': 'in_invoice',          # Vendor Credit Note
+}
 
 class AccountInvoice_Data(models.Model):
     _inherit = 'account.invoice'
 
-    # seller_discount = fields.Float(string = 'Seller Discount',readonly=True, tracking=True)
-
     channel_order_number = fields.Char(string = 'Channel Order No.',readonly=True, tracking=True)
-    #address_local_lang =  fields.Text(string = 'Address (Thai)', tracking=True,readonly=True)
+    tax_invoice_amount = fields.Monetary(string='Tax Invoice Amount',help="Total Amount of Original Tax Invoice",
+        readonly=True, states={'draft': [('readonly', False)]})    
 
+    @api.model
+    def _prepare_refund(self, invoice, date_invoice=None, date=None, description=None, journal_id=None,channel_order_number=None,total_amount=None):
+        """ Prepare the dict of values to create the new credit note from the invoice.
+            This method may be overridden to implement custom
+            credit note generation (making sure to call super() to establish
+            a clean extension chain).
 
+            :param record invoice: invoice as credit note
+            :param string date_invoice: credit note creation date from the wizard
+            :param integer date: force date from the wizard
+            :param string description: description of the credit note from the wizard
+            :param integer journal_id: account.journal from the wizard
+            :return: dict of value to create() the credit note
+        """
+        values = {}
+        for field in self._get_refund_copy_fields():
+            if invoice._fields[field].type == 'many2one':
+                values[field] = invoice[field].id
+            else:
+                values[field] = invoice[field] or False
+
+        values['invoice_line_ids'] = self._refund_cleanup_lines(invoice.invoice_line_ids)
+
+        tax_lines = invoice.tax_line_ids
+        taxes_to_change = {
+            line.tax_id.id: line.tax_id.refund_account_id.id
+            for line in tax_lines.filtered(lambda l: l.tax_id.refund_account_id != l.tax_id.account_id)
+        }
+        cleaned_tax_lines = self._refund_cleanup_lines(tax_lines)
+        values['tax_line_ids'] = self._refund_tax_lines_account_change(cleaned_tax_lines, taxes_to_change)
+
+        if journal_id:
+            journal = self.env['account.journal'].browse(journal_id)
+        elif invoice['type'] == 'in_invoice':
+            journal = self.env['account.journal'].search([('type', '=', 'purchase')], limit=1)
+        else:
+            journal = self.env['account.journal'].search([('type', '=', 'sale')], limit=1)
+        values['journal_id'] = journal.id
+
+        values['type'] = TYPE2REFUND[invoice['type']]
+        values['date_invoice'] = date_invoice or fields.Date.context_today(invoice)
+        values['date_due'] = values['date_invoice']
+        values['channel_order_number'] = invoice.channel_order_number
+        values['tax_invoice_amount'] = invoice.total_amount
+        values['state'] = 'draft'
+        values['number'] = False
+        values['origin'] = invoice.number
+        values['refund_invoice_id'] = invoice.id
+        values['reference'] = False
+
+        if values['type'] == 'in_refund':
+            values['payment_term_id'] = invoice.partner_id.property_supplier_payment_term_id.id
+            partner_bank_result = self._get_partner_bank_id(values['company_id'])
+            if partner_bank_result:
+                values['partner_bank_id'] = partner_bank_result.id
+        else:
+            values['payment_term_id'] = invoice.partner_id.property_payment_term_id.id
+
+        if date:
+            values['date'] = date
+        if description:
+            values['name'] = description
+        return values
 
 
     @api.depends('invoice_line_ids.price_unit','invoice_line_ids.quantity')
@@ -118,13 +187,6 @@ class AccountInvoice_Data(models.Model):
 
     calculated_discount = fields.Float(string = 'Discount', compute = '_cal_total_discount', store = True, digits=(12,4))
 
-    """@api.depends('amount_untaxed','calculated_discount')
-    def _cal_grand_total(self):
-        for order in self:
-            order.grand_total = order.amount_untaxed + order.calculated_discount
-
-    grand_total = fields.Float(string = 'Grand Total', store = True, compute = '_cal_grand_total')
-"""
     @api.depends('invoice_line_ids.seller_discount', 'invoice_line_ids.price_unit','invoice_line_ids.amount','invoice_line_ids.quantity')
     def _cal_total_baht_escl_vat(self):
         for orders in self:
@@ -147,6 +209,8 @@ class AccountInvoice_Data(models.Model):
                     total_incl_vat = total_incl_vat + ((line_items.amount - (line_items.seller_discount * line_items.price_unit * line_items.quantity)/100) + (line_items.invoice_line_tax_ids.amount/100 * (line_items.amount - (line_items.seller_discount * line_items.price_unit * line_items.quantity)/100)))
                     orders.total_baht_incl_VAT = total_incl_vat
 
+
+
     total_baht_incl_VAT = fields.Float(string = 'Total Baht Incl VAT', compute = '_cal_total_baht_incl_vat', store = True, digits=(12,4))
 
     @api.depends('total_baht_excl_VAT','total_baht_incl_VAT')
@@ -156,7 +220,14 @@ class AccountInvoice_Data(models.Model):
 
     vat = fields.Float(string = 'Vat', compute = '_cal_total_vat', store = True, digits=(12,4))
 
-    
+    # Function :- Corrected Goods/Service Amount for Credit Note Report
+    @api.depends('tax_invoice_amount','total_amount')
+    def _corrected_service_amount(self):
+        for orders in self:
+            orders.corrected_service_amount = orders.tax_invoice_amount - orders.total_amount
+
+    corrected_service_amount = fields.Float(string = 'Corrected Service Amount', compute = '_corrected_service_amount', store = True, digits=(12,4))        
+
 class AccountInvoice_Line_Data(models.Model):
     _inherit = 'account.invoice.line'
     seller_discount = fields.Float(string='Seller Discount',tracking=True)
@@ -168,10 +239,11 @@ class AccountInvoice_Line_Data(models.Model):
             line_items.amount = line_items.quantity * line_items.price_unit
 
 
-
 class ResPartner_Data(models.Model):
     _inherit = 'res.company'
 
     address_local_lang =  fields.Text(string = 'Local language address')
-    company_name_local_lang = fields.Text(string = 'Company name (in local lang)')        
+    company_name_local_lang = fields.Text(string = 'Company name (in local lang)')  
+    
+          
 

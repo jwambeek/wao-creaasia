@@ -1,6 +1,6 @@
 {
     'name' : 'Tax Reports',
-    'version': '2.8',
+    'version': '2.9',
     'Summary': 'Tax Report Prints',
     'description': 'To print the new report',
     'license': 'LGPL-3',
@@ -12,8 +12,11 @@
         'reports/report_tax_invoice1.xml',
         'reports/custom_header_copy.xml',
         'reports/report_tax_invoice_copy1.xml',
+        'reports/custom_header_creditnote',
+        'reports/report_credit_note',
         'reports/reports.xml',
-        'views/app_report_testview.xml'
+        'views/app_report_testview.xml',
+
     ],
     'installable': True,
     'application':True,
