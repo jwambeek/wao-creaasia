@@ -2,7 +2,7 @@
 <odoo>
 
  
-<template id="report_credit_note">
+<template id="report_credit_note1">
 <div class="page">
 		<t t-call="app_report.custom_header_creditnote" />
 	</div>			 
