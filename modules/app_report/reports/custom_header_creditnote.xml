@@ -89,7 +89,8 @@
 
 			    <div class="col-2 bm-2 text-right" >
 				    <t t-foreach="docs" t-as="o">
-				        <span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>									
+				        <span t-field="o.date_invoice" t-options='{"format": "dd-MM-yy"}'/>	
+                    </t>								
                 </div>
             </div>
 
