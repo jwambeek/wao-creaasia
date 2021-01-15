@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ 
+<template id="report_tax_invoice_copy1">
+<div class="page">
+		<t t-call="app_report.custom_header_copy"/>
+	</div>			 
+
+			<t t-call="web.html_container">
+
+            <t t-call="web.basic_layout">
+		<t t-foreach="docs" t-as="o">
+			<div class="page">
+
+    <table border="1" class="table table-condensed"  >
+    <thead>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+
+        <tr>
+			<th style="border: 1px solid black; width: 10%" class="text-center">ลำดับที่ <br></br>No. </th>
+			<th style="border: 1px solid black; width: 16%" class="text-center">รหัสสินค้า<br></br>Item No.</th>
+			<th style="border: 1px solid black; width:32%" class="text-center">รายการสินค้า<br></br>Description </th>
+			<th style="border: 1px solid black; width: 15% " class="text-center">จำนวน <br></br>Quantity</th>
+			<th style="border: 1px solid black; width: 15% " class="text-center">ราคาต่อหน่วย <br></br>Unit Price </th>
+			<th style="border: 1px solid black; width:12%" class="text-center">จำนวนเงิน <br></br>Amount </th>
+		</tr>
+	</thead>	
+	<tbody>
+    <t t-set="counter" t-value="1"/>
+        <tr t-foreach="o.invoice_line_ids" t-as="line">
+            <td style="border: 1px solid black" class="text-center"><span t-esc="counter"/></td>
+            <td style="border: 1px solid black" class="text-center"><span t-field="line.product_id.default_code"/></td>
+            <td style="border: 1px solid black" class="text-left"><span t-field="line.name"/></td>
+            <td style="border: 1px solid black" class="text-center"><span t-esc="'%.0f'% line.quantity"/></td>
+            <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.price_unit)"/></td>
+            <td style="border: 1px solid black" class="text-right"><span t-esc="'%.2f'% float(line.amount)"/></td>
+			<t t-set="counter" t-value="counter + 1"/>
+        </tr>
+    </tbody> 
+	</table> 
+</div>
+
+<p style="page-break-before:always;"> </p>		
+
+<div class="page">
+    <table border="1" class="table table-condensed">
+	<thead>
+	    <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+
+	<tr style="height:0%" >
+            <th style="border: 0px ; width: 10%" class="text-center"></th>
+			<th style="border: 0px ; width: 16%" class="text-center"></th>
+			<th style="border: 0px ; width:32%" class="text-center"></th>
+			<th style="border: 0px ; width: 15%" class="text-center"></th>
+			<th style="border: 0px ; width: 15%" class="text-center"></th>
+			<th style="border: 0px ; width:12%" class="text-center"></th>
+	</tr>
+    </thead>
+	<tbody>
+
+	<tr>
+        <td colspan="3" rowspan="5" style="border: solid ;border-color:black; border-width:1px 0px 1px 1px" >   
+            <div class = "row">
+                <div class="col-12 bm-2 text-left">
+                   <strong style="font-size:15px">Ref::Order No.</strong>&#160;&#160;&#160; <t t-esc="o.channel_order_number"/>
+                </div>
+            </div>
+        </td>
+
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">	
+            <strong>รวม / Total</strong>
+        </td>
+    
+	    <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px" > 
+           <span t-esc="'%.2f'% o.total_amount"/>
+	    </td>
+    </tr>
+    
+	<tr>
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+		    <strong>ส่วนลด/ Discount</strong></td>
+                <td class="text-right" colspan="1" style="border: 1px solid ;border-color:black; border-left: 0px"  > 
+                <!--<span t-field="o.calculated_discount"/>-->
+            <p>(<span t-esc="'%.2f'% o.calculated_discount"/>)</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px">
+	        <strong>มูลค่าสินค้าไม่รวมภาษีมูลค่าเพิ่ม / Total Baht Excl. VAT</strong>
+		</td>
+		<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px"  >
+			<span t-esc="'%.2f'% o.total_baht_excl_VAT"/>
+		</td>	
+	</tr>
+
+	<tr>
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+			<strong>ภาษีมูลค่าเพิ่ม / VAT </strong>
+		</td>
+		<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" > 
+			<span t-esc="'%.2f'% o.vat"/>
+		</td>
+	</tr>
+
+    <tr>
+        <td colspan="2" style="border: 1px solid ;border-color:black; border-right: 0px" >
+			<strong>มูลค่าสินค้ารวมภาษีมูลค่าเพิ่ม / Total Baht Incl. VAT</strong>
+		</td>
+		<td class="text-right" style="border: 1px solid ;border-color:black; border-left: 0px" >
+			<span t-esc="'%.2f'% o.total_baht_incl_VAT"/>
+		</td>
+	</tr>
+							
+		
+	</tbody>
+	</table>
+	</div>
+						
+				<div class="footer">
+                    <div class="text-right" style="border-top: 1px solid black;">        
+                        <small>
+                            <span>Page</span>
+                            <span class="page" /> of <span class="topage" />
+                        </small>
+                    </div>
+                </div>     
+
+			</t>
+						
+</t>
+</t>
+</template>
+</odoo>

@@ -44,7 +44,7 @@
 	   report_type="qweb-pdf"
 	   name="app_report.report_credit_note"
 	   file="app_report.report_credit_note"
-	   paperformat="paperformat_report_tax_invoice"/>
+	   paperformat="paperformat_report_tax_invoice" />
 
 
 
