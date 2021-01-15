@@ -40,7 +40,7 @@
 <report
        id="report_tax_invoice"
 	   model="account.invoice"
-	   string="Tax Invoice"
+	   string="Tax Invoice1"
 	   report_type="qweb-pdf"
 	   name="app_report.report_tax_invoice"
 	   file="app_report.report_tax_invoice"
