@@ -29,35 +29,6 @@
 	   paperformat="paperformat_report_tax_invoice"/>
 
 <report
-       id="report_tax_invoice1"
-	   model="account.invoice"
-	   string="Tax Invoice"
-	   report_type="qweb-pdf"
-	   name="app_report.report_tax_invoice"
-	   file="app_report.report_tax_invoice"
-	   paperformat="paperformat_report_tax_invoice"/>
-
-<report
-       id="report_tax_invoice2"
-	   model="account.invoice"
-	   string="Tax Invoice"
-	   report_type="qweb-pdf"
-	   name="app_report.report_tax_invoice"
-	   file="app_report.report_tax_invoice"
-	   paperformat="paperformat_report_tax_invoice"/>
-
-<report
-       id="report_tax_invoice3"
-	   model="account.invoice"
-	   string="Tax Invoice"
-	   report_type="qweb-pdf"
-	   name="app_report.report_tax_invoice"
-	   file="app_report.report_tax_invoice"
-	   paperformat="paperformat_report_tax_invoice"/>
-
-
-
-<report
        id="report_tax_invoice_copy"
 	   model="account.invoice"
 	   string="Tax Invoice Copy"
